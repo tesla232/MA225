@@ -1,0 +1,78 @@
+\documentclass{letter}
+\usepackage{amsmath,amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage[margin=.9in]{geometry}
+\usepackage{cite}
+\usepackage{asymptote}
+
+\newtheorem*{theorem*}{Theorem}
+
+\begin{document}
+\pagestyle{empty}
+
+{\Large MA 225 Problem Set 1: logic 1}\\
+\begin{description}
+\item[exercises] These problems don't require you to write proofs.
+\begin{enumerate}
+	\item We will show that although it's nice to have lots of connectives, we don't actually {\em need} them all.
+			\begin{enumerate}\itemsep=1.25mm
+				\item Express the following formul\ae\  using only the symbols $P$, $Q$, $\sim$, and $\wedge$: \\
+				$P\vee Q$, $P\Rightarrow Q$, $P\Leftrightarrow Q$ \\
+                               
+				\item Express the following formul\ae\  using only the symbols $P$, $Q$, $\sim$, and $\vee$:\\
+					$P\wedge Q$, $P\Rightarrow Q$, $P\Leftrightarrow Q$ \\
+                                  $P \wedge Q: \sim ( \sim (P \vee Q) \vee \sim ( P \vee \sim Q) \vee \sim ( \sim P \vee Q))$
+				\item Express the following formul\ae\ using only the symbols $P$, $Q$, $\sim$, and $\Rightarrow$:\\
+				$P\wedge Q$, $P\vee Q$, $P\Leftrightarrow Q$ \\
+                                
+				\item Explain why this means we only need $\sim$ and {\em one} of $\wedge$, $\vee$, and $\Rightarrow$. \\
+                                   Because we can use the rules above and replace symbols given with the rules.
+			\end{enumerate}
+	\item Define the connective $\veebar$ so that $P\veebar Q$ is true exactly when exactly one of $P$ and $Q$ is true.
+			\begin{enumerate}\itemsep=1.25mm
+				\item Make a truth table for $P\veebar Q$.
+				\item Show that $P\veebar Q$ is equivalent to $(P\vee Q)\wedge (\sim (P\wedge Q))$.
+				\item Express $\sim (P\veebar Q)$ in terms of $\sim$, $\vee$, and $\wedge$. 
+			\end{enumerate}
+	\item Make a truth table for $P\veebar Q\veebar R$.
+	\item For each of the following, identify the antecedent and the consequent. Then indicate whether the statement is true or false.
+		\begin{enumerate}
+                        \item {Antecedent} [consequent]
+			\item [The Nile River flows east] only if {64 is a perfect square}. \\ 
+                        \item This statement is false, as the statement suggests the Nile flows east if 64 is a perfect square, which can be seen with $8^2$. \\ 
+			\item {$1+1=2$ is sufficient} for [$3>6$]. \\ 
+                        \item This statement is false, as while $1+1=2$, it states that this true fact is enough to determine $3>6$, which is false. \\
+			\item If Euclid's birthday was April 2, then rectangles have four sides. \\
+			\item If squares have three sides, then triangles have four sides. \\
+			\item Fish bite only when the moon is full. \\
+			\item An indictment is necessary for a conviction. \\
+		\end{enumerate}
+	\item Consider each of the following sentences as you would understand them if you heard it on the street. Identify, for each sentence, the antecedent and the consequent.
+			\begin{enumerate}\itemsep=1.25mm
+				\item I will go to the store unless it is raining. The antecedent is raining, and the consequent is not going to the store.
+				\item The Dolphins will not make the playoffs unless the Bears win all the rest of their games. The antecedent is the Bears winning all of the rest of their games, and the consequent is making playoffs. \\
+				\item You cannot go to the game unless you do your homework first. The antecendent is doing your homework first, and the consequent is being able to go to the game. \\
+				\item You won't win the lottery unless you buy a ticket. Buying a ticket is the anticedent, and winning the lottery is the consequent
+			\end{enumerate}
+	\item In each of the previous problem's sentences, use a different conditional keyword to express the sentence. You may {\bfseries not} use {\em if. . . then}. {\bfseries Be sure your rephrasing agrees with your answer in the previous problem!} \\
+	\item Which of the following are tautologies? Which are contradictions? For each, give an explanation that uses a truth table {\bfseries and} an explanation that does not use a truth table. ({\em Hint.} Try expressing in words what each says.)
+			\begin{enumerate}\itemsep=1.25mm
+				\item $(\alpha\wedge \gamma)\vee \left[(\sim \alpha)\wedge(\sim\gamma)\right]$
+				\item $\sim\left[P\wedge (\sim P)\right]$
+				\item $(\Psi \wedge \Phi)\vee \left[(\sim \Psi)\vee(\sim \Phi)\right]$
+				\item $[A\wedge B]\vee [A\wedge (\sim B)] \vee [(\sim A)\wedge B] \vee [(\sim A)\wedge (\sim B)]$
+			\end{enumerate}
+	\item Submit part 4 of the worksheet {\em Useful Logical Facts}.
+\end{enumerate}
+\item[proofs] Write a complete proof for each of the following statements.
+	\begin{enumerate}
+		\item $\veebar$ is associative.
+                  Theorum: $\veebar$ is an associative operator
+                  Proof:
+		\item All the claims in the worksheet {\em Useful Logical Facts}.
+	\end{enumerate}
+\end{description}
+\end{document}
+
