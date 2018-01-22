@@ -143,9 +143,10 @@ The expression is a Tautologie, as all of the inputs produce True. This expressi
                                     False & False & True \\ \hline
                                     \end{tabular}
                                     \end{center}
+The above expresion was a Tautologie, as all of the values were true regardless of input. The expression essentially checks if its inverse is true under or, which it is unless bothinput values are True, in which case the or matched with the inverse part checks to see if the is True, making the proposition always true. \\
 				\item $[A\wedge B]\vee [A\wedge (\sim B)] \vee [(\sim A)\wedge B] \vee [(\sim A)\wedge (\sim B)]$ \\ 
                                   
-The above expresion was a Tautologie, as all of the values were true regardless of input. The expression essentially checks if its inverse is true under or, which it is unless bothinput values are True, in which case the or matched with the inverse part checks to see if the is True, making the proposition always true. \\
+
 \begin{center}
                                   \begin{tabular}{||c|c|c||}
                                     \hline
