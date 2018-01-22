@@ -84,9 +84,9 @@
                          ++Antecedent++  --consequent-- \\
                          \begin{enumerate}
 			\item  --The Nile River flows east-- only if ++64 is a perfect square++. \\ 
-                        \item  This statement is false, as the statement suggests the Nile flows east if 64 is a perfect square, which can be seen with $8^2$. \\ 
+                         This statement is false, as the statement suggests the Nile flows east if 64 is a perfect square, which can be seen with $8^2$. \\ 
 			\item  ++$1+1=2$++ is sufficient for -- 3>6 --. \\ 
-                        \item  This statement is false, as while 1+1=2, it states that this true fact is enough to determine $3>6$, which is false. \\
+                         This statement is false, as while 1+1=2, it states that this true fact is enough to determine $3>6$, which is false. \\
 			\item  If ++Euclid's birthday was April 2++, then --rectangles have four sides.-- \\
                          This statement is true, as it does not say that this is the only time when rectangles have four sides, and since they have four sides, this statement is true. \\
 			\item  ++If squares have three sides++, then --triangles have four sides--. \\
