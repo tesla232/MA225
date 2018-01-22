@@ -1,2 +1,2 @@
 #!/bin/bash
-git add /HW*/* & git commit -a --allow-empty-message -m '' & git push
+git add /HW1/* & git commit -a --allow-empty-message -m '' & git push
