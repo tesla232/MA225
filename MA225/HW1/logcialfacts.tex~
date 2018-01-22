@@ -36,15 +36,31 @@ Proof:  Using the proof table above, we can use rows b and c which show when P i
 				\item If $P\Rightarrow Q$ is true and $Q$ is false, then $P$ must be false. \\
 Proof: Looking at the proof table, we can see based off column 2 and 3, the only row which satisfies this is row e. \\
 				\item If $P\wedge Q$ is true, then $P$ is true; if $P$ is true, then $P\vee Q$ is true. \\
-Proof: We can prove the statement by looking at columns 1 2 and 4 to see that the only time P$\wedge$ Q is True is when P and Q are true, therefore P is True. Next, we can look at rows b and c where P are true and column 5 to see that when P is true, so is $P \vee Q$. \\
+Proof: We can prove the statement by looking at columns 1 2 and 4 of the truth table above to see that the only time P$\wedge$ Q is True is when P and Q are true, therefore P is True. Next, we can look at rows b and c where P are true and column 5 to see that when P is true, so is $P \vee Q$. \\
+\begin{center}
+\begin{tabular}{c||c|c|c|c|c|c||}
+
+$$ & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline
+$$ & P & Q & R & P$ \Rightarrow Q$ & Q $\Rightarrow R$ R & $P \Rightarrow R$ \\ \hline
+a & True & True & True & True & True & True \\ \hline
+b & True & True & False & True & False & False \\ \hline
+c & True & False & True & False & True & True \\ \hline
+d & True & False & False & False & True & False \\ \hline
+e & False & True & True & True & True & True \\ \hline
+f & False & True & False & True & False & True \\ \hline
+g & False & False & True & True & True & True \\ \hline
+h & False & False & False & True & True & True \\ \hline
+\end{tabular}
+\end{center}
+
 				\item If $P\Rightarrow Q$ and $Q\Rightarrow R$ are both true, then $P\Rightarrow R$ is true. \\
-Proof: Looking at the proof table the only way which $P \Rightarrow R$ can be false is if P is True and R is false. We can then see that \\  
+Proof: Looking at the proof directly above in rows a g e and h, which represent all combinations of P Q and R in which P $\Rightarrow$ Q and Q $\Rightarrow$ R are true, we can see that in column 6 that $P \Rightarrow R$ is always true.\\  
 				\item $P\Rightarrow (Q\vee R)$ is equivalent to $\left(P\wedge (\sim Q)\right)\Rightarrow R$ and $\left(P\wedge (\sim R)\right)\Rightarrow Q$.
 Proof: 
 \begin{center}
 \begin{tabular}{c||c|c|c|c|c|c|c||}
 $$ & 1 & 2 & 3 & 4 & 5 & 6\\ \hline
-$$ & P & Q & R & $P\Rightarrow (Q\vee R)$ & $\left(P\wedge (\sim Q)\right)\Rightarrow R$ & $\left(P\wedge (\sim R)\right)\Rightarrow Q$ \\
+$$ & P & Q & R & $P\Rightarrow (Q\vee R)$ & $\left(P\wedge (\sim Q)\right)\Rightarrow R$ & $\left(P\wedge (\sim R)\right)\Rightarrow Q$ \\ \hline
 a & True & True & True & True & True & True \\ \hline 
 b & True & True & False & True & True & True \\ \hline
 c & True & False & True & True & True & True \\ \hline
@@ -55,13 +71,13 @@ g & False & False & True & True & True & True \\ \hline
 h & False & False & False & False & False & False \\ \hline
 \end{tabular}
 \end{center}
-We can see from the proof table that for all values in columns 4 5 and 6, all values are equal, therefore the three statements are equivalent.
-				\item $P\Rightarrow (Q\wedge R)$ is equivalent to $\left(P\Rightarrow Q\right)\wedge \left(P\Rightarrow R\right)$.
+We can see from the Truth table directly above that for all values in columns 4 5 and 6, all values are equal, therefore the three statements are equivalent.
+				\item $P\Rightarrow (Q\wedge R)$ is equivalent to $\left(P\Rightarrow Q\right)\wedge \left(P\Rightarrow R\right)$. \\
 Proof:
 \begin{center}
 \begin{tabular}{c||c|c|c|c|c||} 
 $$ & 1 & 2 & 3 & 4 & 5 \\ \hline 
-$$ & P & Q & R & $P\Rightarrow (Q\wedge R)$ & $\left(P\Rightarrow Q\right)\wedge \left(P\Rightarrow R\right)$ \\
+$$ & P & Q & R & $P\Rightarrow (Q\wedge R)$ & $\left(P\Rightarrow Q\right)\wedge \left(P\Rightarrow R\right)$ \\ \hline
 a & True & True & True & True & True \\ \hline
 b & True & True & False & False & False \\ \hline
 c & True & False & True & False & False \\ \hline
@@ -72,10 +88,11 @@ g & False & False & True & True & True \\ \hline
 h & False & False & False & False & False \\ \hline
 \end{tabular}
 \end{center} 
-Observing columns 4 and 5, we can see that all the values are the same, therefore $P\Rightarrow (Q\wedge R)$ and $\left(P\Rightarrow Q\right)\wedge \left(P\Rightarrow R\right)$ are equivalent.
-				\item If $P\Rightarrow R$ is true and $Q\Rightarrow R$ is true, then $\left(P\vee Q\right)\Rightarrow R$ is true.
-Proof: 
-				\item If $\left(P\vee Q\right)\Rightarrow R$ is true, then $P\Rightarrow R$ is true.
+Observing columns 4 and 5 of the truth table directly above, we can see that all the values are the same, therefore $P\Rightarrow (Q\wedge R)$ and $\left(P\Rightarrow Q\right)\wedge \left(P\Rightarrow R\right)$ are equivalent.
+				\item If $P\Rightarrow R$ is true and $Q\Rightarrow R$ is true, then $\left(P\vee Q\right)\Rightarrow R$ is true. \\
+Proof: First, we must realize that in order for wither statement to be false, R would have to be false. For the first statement $P \Rightarrow R$, P would have to be True, and in order for the second statement $Q \Rightarrow R$ to be False, Q would have to be True. Therefore, the only way both could be True while R is False is if P and Q were false, which we can see that for (P $\vee Q) \Rightarrow R$, the only way the statement could be False is if P or Q were True, which was shown to set former equations to false.
+				\item If $\left(P\vee Q\right)\Rightarrow R$ is true, then $P\Rightarrow R$ is true. \\
+Proof: According to truth table 1, $P \vee Q$ is true whenever P is true. Therefore, since the R remianed constant in the two propositions, it is therefore shown that when (P $\vee  Q) \Rightarrow Q$ is true, then so is P $\vee$ Q. 
 			\end{enumerate}
 
 			
@@ -94,14 +111,14 @@ Proof:
 		\vfill
 	\item The logical facts above will each prove to be useful in writing proofs. Below are a list of names or shorthands which correspond to logical facts (a)-(h). Match the logical fact to the name or shorthand. For some of these you will need to consult an outside source.
 		\begin{enumerate}[(I)]
-			\item {\em $\Rightarrow$ is transitive}
-			\item {\em specialization}
-			\item {\em prove each separately}
-			\item {\em modus tollens}
-			\item {\em a fortiori}
-			\item {\em rule out the undesirable case}
-			\item {\em modus ponens / direct proof}
-			\item {\em proof by cases}
+			\item {\em $\Rightarrow$ is transitive} d
+			\item {\em specialization} c
+			\item {\em prove each separately} f
+			\item {\em modus tollens} a
+			\item {\em a fortiori} h 
+			\item {\em rule out the undesirable case} e
+			\item {\em modus ponens / direct proof} b
+			\item {\em proof by cases} g
 		\end{enumerate}
 \end{enumerate}
 			
