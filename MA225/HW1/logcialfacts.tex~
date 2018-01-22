@@ -1,0 +1,109 @@
+\documentclass[11pt]{letter}  %This tells LaTeX which type of document to use. I usually use letter for exams and worksheets, but there are also article, book, and ams art.
+\usepackage{amsmath,amsthm} %Load the American Mathematical Society's theorem styles and mathematical formatting.
+\usepackage{amsfonts} %Load the AMS fonts
+\usepackage{amssymb} %Load the AMS symbols 
+\usepackage{enumerate} %Load a package for prettier numbered lists
+\usepackage[margin=1in]{geometry} %Set the margins
+\usepackage{cite} %Load a package for bibliography, if we needed one
+\usepackage{asymptote} %Load a package for drawing pictures
+
+%Any of the packages can be removed, if you don't have them. The only essential packages are amsmath, amsthm,  amsfonts, and amssymb.
+
+
+\begin{document} %The document is between the begin and end tags
+\pagestyle{empty} %This stops LaTeX from numbering the pages
+
+
+
+{\Large MA 225 Worksheet: Useful Logical Facts}\\ %\\ is a linebreak
+
+
+The following logical facts can be deduced by looking at appropriate truth tables,  by formulating a tautologous propositional formula, or by just thinking it through.
+\begin{center}
+\begin{tabular}{c||c|c|c|c|c||}
+
+$$ & 1 & 2 & 3 & 4 & 5 \\ \hline 
+a & P & Q & $P \Rightarrow Q$ & P $\wedge$ Q & P $\vee$ Q \\ \hline
+b & True & True & True & True & True \\ \hline
+c & True & False & False & False & True \\ \hline 
+d & False & True & True & False & True \\ \hline
+e & False & False & True & False & False \\ \hline
+\end{tabular}
+\end{center}
+\begin{enumerate}[(a)]
+				\item If $P\Rightarrow Q$ is true and $P$ is true, then $Q$ must be true.\\
+Proof:  Using the proof table above, we can use rows b and c which show when P is true. Then, looking on row b and c in columns 2 and 3, we can see that the only value which results in P $\Rightarrow$ Q being True is Q being True. \\
+				\item If $P\Rightarrow Q$ is true and $Q$ is false, then $P$ must be false. \\
+Proof: Looking at the proof table, we can see based off column 2 and 3, the only row which satisfies this is row e. \\
+				\item If $P\wedge Q$ is true, then $P$ is true; if $P$ is true, then $P\vee Q$ is true. \\
+Proof: We can prove the statement by looking at columns 1 2 and 4 to see that the only time P$\wedge$ Q is True is when P and Q are true, therefore P is True. Next, we can look at rows b and c where P are true and column 5 to see that when P is true, so is $P \vee Q$. \\
+				\item If $P\Rightarrow Q$ and $Q\Rightarrow R$ are both true, then $P\Rightarrow R$ is true. \\
+Proof: Looking at the proof table the only way which $P \Rightarrow R$ can be false is if P is True and R is false. We can then see that \\  
+				\item $P\Rightarrow (Q\vee R)$ is equivalent to $\left(P\wedge (\sim Q)\right)\Rightarrow R$ and $\left(P\wedge (\sim R)\right)\Rightarrow Q$.
+Proof: 
+\begin{center}
+\begin{tabular}{c||c|c|c|c|c|c|c||}
+$$ & 1 & 2 & 3 & 4 & 5 & 6\\ \hline
+$$ & P & Q & R & $P\Rightarrow (Q\vee R)$ & $\left(P\wedge (\sim Q)\right)\Rightarrow R$ & $\left(P\wedge (\sim R)\right)\Rightarrow Q$ \\
+a & True & True & True & True & True & True \\ \hline 
+b & True & True & False & True & True & True \\ \hline
+c & True & False & True & True & True & True \\ \hline
+d & True & False & False & False & False & False \\ \hline
+e & False & True & True & True & True & True \\ \hline
+f & False & True & False & True & True & True \\ \hline
+g & False & False & True & True & True & True \\ \hline
+h & False & False & False & False & False & False \\ \hline
+\end{tabular}
+\end{center}
+We can see from the proof table that for all values in columns 4 5 and 6, all values are equal, therefore the three statements are equivalent.
+				\item $P\Rightarrow (Q\wedge R)$ is equivalent to $\left(P\Rightarrow Q\right)\wedge \left(P\Rightarrow R\right)$.
+Proof:
+\begin{center}
+\begin{tabular}{c||c|c|c|c|c||} 
+$$ & 1 & 2 & 3 & 4 & 5 \\ \hline 
+$$ & P & Q & R & $P\Rightarrow (Q\wedge R)$ & $\left(P\Rightarrow Q\right)\wedge \left(P\Rightarrow R\right)$ \\
+a & True & True & True & True & True \\ \hline
+b & True & True & False & False & False \\ \hline
+c & True & False & True & False & False \\ \hline
+d & True & False & False & False & False \\ \hline
+e & False & True & True & True & True \\ \hline 
+f & False & True & False & True & True \\ \hline
+g & False & False & True & True & True \\ \hline
+h & False & False & False & False & False \\ \hline
+\end{tabular}
+\end{center} 
+Observing columns 4 and 5, we can see that all the values are the same, therefore $P\Rightarrow (Q\wedge R)$ and $\left(P\Rightarrow Q\right)\wedge \left(P\Rightarrow R\right)$ are equivalent.
+				\item If $P\Rightarrow R$ is true and $Q\Rightarrow R$ is true, then $\left(P\vee Q\right)\Rightarrow R$ is true.
+Proof: 
+				\item If $\left(P\vee Q\right)\Rightarrow R$ is true, then $P\Rightarrow R$ is true.
+			\end{enumerate}
+
+			
+\begin{enumerate}
+	\item For statements (a)-(d), give a proof by just looking at the truth table for $\Rightarrow$, $\vee$, or $\wedge$.
+		\vfill
+	\item For statements (e) and (f), give a proof by making truth tables for the claimed equivalences.
+	\vfill
+	\newpage
+	\item For statements (g) and (h), give a proof as follows:
+		\begin{enumerate}
+			\item Rewrite the $\Rightarrow$ in the formula $(P\vee Q)\Rightarrow R$ using $\vee$ and $\sim$, to get a formula that only involves $\vee$ and $\sim$.\vfill
+			\item Do the same for $P\Rightarrow R$ and $Q\Rightarrow R$.\vfill
+			\item After possibly doing some arithmetic, apply fact (c).
+		\end{enumerate}
+		\vfill
+	\item The logical facts above will each prove to be useful in writing proofs. Below are a list of names or shorthands which correspond to logical facts (a)-(h). Match the logical fact to the name or shorthand. For some of these you will need to consult an outside source.
+		\begin{enumerate}[(I)]
+			\item {\em $\Rightarrow$ is transitive}
+			\item {\em specialization}
+			\item {\em prove each separately}
+			\item {\em modus tollens}
+			\item {\em a fortiori}
+			\item {\em rule out the undesirable case}
+			\item {\em modus ponens / direct proof}
+			\item {\em proof by cases}
+		\end{enumerate}
+\end{enumerate}
+			
+			
+\end{document}
