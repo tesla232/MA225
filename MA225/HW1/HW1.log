@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  16 JAN 2018 18:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  21 JAN 2018 05:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -320,54 +320,295 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--37
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 85--86
+! LaTeX Error: Something's wrong--perhaps a missing \item.
 
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.85 			\item  $
+                --The Nile River flows east-- only if ++64 is a perfect squa...
+
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.85 			\item  $
+                --The Nile River flows east-- only if ++64 is a perfect squa...
+
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.85 			\item  $
+                --The Nile River flows east-- only if ++64 is a perfect squa...
+
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.86                         \item  $
+                                     This statement is false, as the stateme...
+
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.86                         \item  $
+                                     This statement is false, as the stateme...
+
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.86                         \item  $
+                                     This statement is false, as the stateme...
+
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.87 			\item  $
+                ++$1+1=2$++ is sufficient for -- 3>6 --.$ \\
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.87 			\item  $
+                ++$1+1=2$++ is sufficient for -- 3>6 --.$ \\
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.87 			\item  $
+                ++$1+1=2$++ is sufficient for -- 3>6 --.$ \\
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.88                         \item  $
+                                     This statement is false, as while 1+1=2...
+
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.88                         \item  $
+                                     This statement is false, as while 1+1=2...
+
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.88                         \item  $
+                                     This statement is false, as while 1+1=2...
+
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.89 			\item  $
+                If ++Euclid's birthday was April 2++, then --rectangles have...
+
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.89 			\item  $
+                If ++Euclid's birthday was April 2++, then --rectangles have...
+
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.89 			\item  $
+                If ++Euclid's birthday was April 2++, then --rectangles have...
+
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.91 			\item  $
+                ++If squares have three sides++, then --triangles have four ...
+
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.91 			\item  $
+                ++If squares have three sides++, then --triangles have four ...
+
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.91 			\item  $
+                ++If squares have three sides++, then --triangles have four ...
+
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.93 			\item $
+               --Fish bite-- only when ++the moon is full++.$ \\
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.93 			\item $
+               --Fish bite-- only when ++the moon is full++.$ \\
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.93 			\item $
+               --Fish bite-- only when ++the moon is full++.$ \\
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.95 			\item $
+               ++An indictment++ is necessary for --a conviction--.$ \\
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.95 			\item $
+               ++An indictment++ is necessary for --a conviction--.$ \\
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.95 			\item $
+               ++An indictment++ is necessary for --a conviction--.$ \\
+? 
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.98 	\end{enumerate}
+                     
+? 
+
+Overfull \hbox (73.97737pt too wide) in paragraph at lines 84--98
+[]$\OML/cmm/m/it/10 Thisstatementisfalse; asthestatementsuggeststheNileflowseas
+tif\OT1/cmr/m/n/10 64\OML/cmm/m/it/10 isaperfectsquare; whichcanbeseenwith\OT1/
+cmr/m/n/10 8[]\OML/cmm/m/it/10 :$ 
+ []
+
+
+Overfull \hbox (49.9356pt too wide) in paragraph at lines 84--98
+[]$\OML/cmm/m/it/10 Thisstatementisfalse; aswhile\OT1/cmr/m/n/10 1 + 1 = 2\OML/
+cmm/m/it/10 ; itstatesthatthistruefactisenoughtodetermine\OT1/cmr/m/n/10 3 \OML
+/cmm/m/it/10 > \OT1/cmr/m/n/10 6\OML/cmm/m/it/10 ; whichisfalse:$ 
  []
 
 [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 86--87
-
+Overfull \hbox (38.56567pt too wide) in paragraph at lines 101--102
+[]$\OMS/cmsy/m/n/10 ^^@ ^^@ \OML/cmm/m/it/10 Iwillgotothestore \OMS/cmsy/m/n/10
+ ^^@ ^^@ \OT1/cmr/m/n/10 + +\OML/cmm/m/it/10 unlessitisraining \OT1/cmr/m/n/10 
++ +\OML/cmm/m/it/10 :Ontheconditionthatitisnotraining; Iwillgotothestore:$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--88
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 88--89
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 89--90
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 91--92
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 92--93
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 98--99
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
  []
 
@@ -377,22 +618,51 @@ Underfull \hbox (badness 10000) in paragraph at lines 102--103
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 117--118
+Overfull \hbox (105.06851pt too wide) in paragraph at lines 103--104
+[]$\OMS/cmsy/m/n/10 ^^@ ^^@ \OML/cmm/m/it/10 Youcannotgotothegame \OMS/cmsy/m/n
+/10 ^^@ ^^@ \OT1/cmr/m/n/10 + +\OML/cmm/m/it/10 unlessyoudoyourhomeworkfirst \O
+T1/cmr/m/n/10 + +\OML/cmm/m/it/10 :Doingyourhomeworkisrequiredtogotothegame:$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--128
+Overfull \hbox (40.30037pt too wide) in paragraph at lines 104--105
+[]$\OMS/cmsy/m/n/10 ^^@ ^^@ \OML/cmm/m/it/10 Youwon[]twinthelottery \OMS/cmsy/m
+/n/10 ^^@ ^^@ \OT1/cmr/m/n/10 + +\OML/cmm/m/it/10 unlessyoubuyaticket \OT1/cmr/
+m/n/10 + +\OML/cmm/m/it/10 :Youneedtobuyaticketinordertowinthelottery:$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--132
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--143
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 138--139
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 154--157
+Underfull \hbox (badness 10000) in paragraph at lines 158--161
 
  []
 
@@ -400,7 +670,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 154--157
 Here is how much of TeX's memory you used:
  3160 strings out of 492995
  43164 string characters out of 6132704
- 120564 words of memory out of 5000000
+ 122564 words of memory out of 5000000
  6656 multiletter control sequences out of 15000+600000
  6291 words of font info for 25 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -411,13 +681,14 @@ s/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
 cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti1
-0.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/m
-sam10.pfb>
-Output written on HW1.pdf (3 pages, 102056 bytes).
+10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7
+.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.
+pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msa
+m10.pfb>
+Output written on HW1.pdf (3 pages, 113927 bytes).
 PDF statistics:
- 46 PDF objects out of 1000 (max. 8388607)
- 32 compressed objects within 1 object stream
+ 50 PDF objects out of 1000 (max. 8388607)
+ 35 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
