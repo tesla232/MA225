@@ -85,7 +85,7 @@
                          \begin{enumerate}
 			\item  --The Nile River flows east-- only if ++64 is a perfect square++. \\ 
                          This statement is false, as the statement suggests the Nile flows east if 64 is a perfect square, which can be seen with $8^2$. \\ 
-			\item  ++$1+1=2$++ is sufficient for -- 3>6 --. \\ 
+			\item  ++$1+1=2$++ is sufficient for -- 3$>$6 --. \\ 
                          This statement is false, as while 1+1=2, it states that this true fact is enough to determine $3>6$, which is false. \\
 			\item  If ++Euclid's birthday was April 2++, then --rectangles have four sides.-- \\
                          This statement is true, as it does not say that this is the only time when rectangles have four sides, and since they have four sides, this statement is true. \\
@@ -127,10 +127,11 @@ The expression is neither, as seen above, as all of the values aren't the same. 
                                     $P$ & $\sim\left[P\wedge (\sim P)\right]$ \\ \hline
                                     True & True \\ \hline
                                     True & True \\ \hline
+\end{tabular}
+                                    \end{center}
 The expression is a Tautologie, as all of the inputs produce True. This expression is essentially expressing how the value is binary, with the value being either true or false. \\
              
-                                    \end{tabular}
-                                    \end{center}
+                                   
 				\item $(\Psi \wedge \Phi)\vee \left[(\sim \Psi)\vee(\sim \Phi)\right]$ \\ 
                                 \begin{center}
                                   \begin{tabular}{||c|c|c||}
@@ -143,10 +144,11 @@ The expression is a Tautologie, as all of the inputs produce True. This expressi
                                     \end{tabular}
                                     \end{center}
 				\item $[A\wedge B]\vee [A\wedge (\sim B)] \vee [(\sim A)\wedge B] \vee [(\sim A)\wedge (\sim B)]$ \\ 
-                                  \begin{center}
+                                  
+The above expresion was a Tautologie, as all of the values were true regardless of input. The expression essentially checks if its inverse is true under or, which it is unless bothinput values are True, in which case the or matched with the inverse part checks to see if the is True, making the proposition always true. \\
+\begin{center}
                                   \begin{tabular}{||c|c|c||}
                                     \hline
-The above expresion was a Tautologie, as all of the values were true regardless of input. The expression essentially checks if its inverse is true under or, which it is unless bothinput values are True, in which case the or matched with the inverse part checks to see if the is True, making the proposition always true. \\
                                      A & B &  $[A\wedge B]\vee [A\wedge (\sim B)] \vee [(\sim A)\wedge B] \vee [(\sim A)\wedge (\sim B)]$ \\ \hline
                                     True & True & True \\ \hline
                                     True & False & True \\ \hline

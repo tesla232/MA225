@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  22 JAN 2018 04:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  22 JAN 2018 05:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -397,27 +397,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 123--124
  []
 
 
-Overfull \hbox (421.74812pt too wide) in paragraph at lines 125--133
- [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
+Underfull \hbox (badness 10000) in paragraph at lines 132--133
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--146
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
 
  []
 
 
-Overfull \hbox (1250.9221pt too wide) in paragraph at lines 147--156
- [] 
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 163--166
+Underfull \hbox (badness 10000) in paragraph at lines 147--148
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 166--169
 
  []
 
@@ -429,7 +429,7 @@ Here is how much of TeX's memory you used:
  6656 multiletter control sequences out of 15000+600000
  6291 words of font info for 25 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,8n,32p,413b,319s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,8n,32p,413b,317s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
@@ -439,7 +439,7 @@ mr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti1
 0.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/m
 sam10.pfb>
-Output written on HW1.pdf (3 pages, 101794 bytes).
+Output written on HW1.pdf (3 pages, 101826 bytes).
 PDF statistics:
  46 PDF objects out of 1000 (max. 8388607)
  32 compressed objects within 1 object stream
