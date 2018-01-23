@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  21 JAN 2018 05:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  23 JAN 2018 00:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -479,12 +479,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Underfull \hbox (badness 10000) in paragraph at lines 10--11
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 12--13
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
  []
 
@@ -504,29 +499,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--16
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17--18
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--33
+Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--35
+Underfull \hbox (badness 10000) in paragraph at lines 20--34
 
  []
 
 
-Overfull \hbox (637.42456pt too wide) in paragraph at lines 37--38
-[]$[] \OT1/cmr/m/n/10 = 370\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 69\OML/cmm/m/it/10
- seconds:Inorderttranslatethevalueintoseconds; wetakethevaluewesolvedforanddivi
-deby\OT1/cmr/m/n/10 60\OML/cmm/m/it/10 ; whichresultsin\OT1/cmr/m/n/10 6\OML/cm
-m/m/it/10 :\OT1/cmr/m/n/10 18\OML/cmm/m/it/10 minutes:Asformedian; wecandothesa
-methingwith\OT1/cmr/m/n/10 371\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5\OML/cmm/m/it/
-10 seconds; changingitto\OT1/cmr/m/n/10 6\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 19\O
-ML/cmm/m/it/10 minutes:$ 
+Underfull \hbox (badness 10000) in paragraph at lines 34--36
+
  []
 
 [1
@@ -534,13 +523,13 @@ ML/cmm/m/it/10 minutes:$
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 [2] (./Homework1.aux) ) 
 Here is how much of TeX's memory you used:
- 11949 strings out of 492995
- 239995 string characters out of 6132704
- 278440 words of memory out of 5000000
- 15296 multiletter control sequences out of 15000+600000
- 4748 words of font info for 18 fonts, out of 8000000 for 9000
+ 11940 strings out of 492995
+ 239334 string characters out of 6132704
+ 278439 words of memory out of 5000000
+ 15277 multiletter control sequences out of 15000+600000
+ 8457 words of font info for 31 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,7n,54p,423b,600s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,7n,54p,423b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/ams
@@ -549,15 +538,17 @@ amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmmi5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sy7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
-10.pfb>
-Output written on Homework1.pdf (2 pages, 115631 bytes).
+s/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.
+pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.p
+fb>
+Output written on Homework1.pdf (2 pages, 133619 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
- 45 compressed objects within 1 object stream
+ 70 PDF objects out of 1000 (max. 8388607)
+ 51 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

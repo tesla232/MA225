@@ -6,6 +6,7 @@
 \author{Jordan Paldino}
 \date{18 January 2018}
 \begin{document}
+\maketitle
 \begin{enumerate}
 \item \textit{Page 12 Problem 1:} \\
 \begin{enumerate}
@@ -31,10 +32,10 @@ $33$ & \\
 42 & 4\\
 \end{tabular} \\
 \item Mean=$$\frac{\sum\limits_{i=1}^{n} x_i}{n}= \frac{9638}{26}=370.69$$ \\
-Median=$371.5$ \\
+Median=$371.5$, the 2 middle values divided by 2 \\
 \item The Median could not be affected by increasing the value. This is because the median value is determined by the location relative to the other values, and since 424 is the largest value, the median cannot be increased.\\
 Decreasing the value, however, the largest value could be decreased by 51. This is because this brings the largest point down to the value which is factored into the median.
-\item  $\widetilde{x}=370.69 seconds. In order t translate the value into seconds, we take the value we solved for and divide by 60, which results in 6.18 minutes. As for median, we can do the same thing with 371.5 seconds, changing it to 6.19 minutes.$
+\item  $\widetilde{x}=370.69$ seconds. In order t translate the value into seconds, we take the value we solved for and divide by 60, which results in 6.18 minutes. As for median, we can do the same thing with 371.5 seconds, changing it to 6.19 minutes.
 \end{enumerate}
 \item Page 44 Problem 45:
 \begin{enumerate}
@@ -50,16 +51,9 @@ Deviation=$\sqrt{Varience}=43.97$
 \item C': 1 failure, 2 failure, 3 failure, and 1 failure, 2 failure, 3 success, and 1 failure 2 success 3 success, and 1 failure, 2 success, 3 failure, and 1 sucess 2 failure 3 failure. \\
   A $\cup$ C: The outcomes 1 sucess and 2 sucess 3 failure, 1 sucess 2 failure 3 success. \\
   A $\cap$ C: The outcomes 1 sucess and 2 sucess 3 failure, 1 sucess 2 failure 3 success. \\
-  B $\cup$ C: The outcomes 1 sucess 2 sucess 3 failure, and1 sucess 2 failure 3 success, and 1 success 2 sucess 3 success.
-  B $\cap$ C: The outcomes 1 sucess and 2 sucess 3 failure, 1 sucess 2failure 3 success.
+  B $\cup$ C: The outcomes 1 sucess 2 sucess 3 failure, and1 sucess 2 failure 3 success, and 1 success 2 sucess 3 success. \\
+  B $\cap$ C: The outcomes 1 sucess and 2 sucess 3 failure, 1 sucess 2 failure 3 success.
 
 \end{enumerate}
-\item
-\begin{center} 
-\begin{tikzpicture}
-\draw (-1,0) circle (1.5cm) node {$A$};
-\draw (1,0) circle (1.5cm) node {$B$};
-\end{tikzpicture}
-\end{center}
 \end{enumerate}
 \end{document}
