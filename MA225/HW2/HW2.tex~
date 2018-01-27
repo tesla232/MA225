@@ -97,7 +97,7 @@ D &= j-k \\
 D &= 2q \tag{rewrote (o-p) as q} \\
 \end{align*}
 Therefore, D is in the form of 2l=n, which means that D is even. \\
-		\item If the sum of two integers is odd, their difference is odd. 
+		\item If the sum of two integers is odd, their difference is odd.
 		\item ($\star \star$) No integer is both even and odd.
 		\item If $m$ divides $a$ and $n$ divides $b$, then $mn$ divides $ab$.
 		\item ($\star$)  Given an integer $t$, if there are integers $m$ and $n$ so that $15m+16n=t$, then there are integers $r$ and $s$ so that $3r+8s=t$.
