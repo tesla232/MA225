@@ -1,0 +1,87 @@
+\documentclass{letter}
+\usepackage{amsmath,amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage[margin=.9in]{geometry}
+\usepackage{cite}
+\usepackage{asymptote}
+
+
+
+\newtheorem*{theorem*}{Forbidden Fruit Theorem}
+\newtheorem*{allowed}{Allowed Fact}
+
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+
+\begin{document}
+\pagestyle{empty}
+
+{\Large MA 225 Problem Set 2: logic 2}\\
+
+
+\begin{description}
+\item[facts and definitions] The following fact is {\em true}, but we have not proved it so you {\bfseries may not use it} anywhere in this homework set:
+\begin{theorem*}
+	Every integer is either even or odd.
+\end{theorem*}
+
+You {\bfseries may} use the following fact:
+\begin{allowed}
+	1 is not an even number.
+\end{allowed}
+
+You will also need this definition:
+\begin{definition}
+	We call the function $f$ an {\em odd function} if $$\forall x, f(-x)=-f(x)$$  
+	
+	We call the function $f$ an {\em even function} if $$\forall x, f(-x)=f(x)$$
+\end{definition}
+\item[exercises] These problems don't require you to write proofs.
+\begin{enumerate}
+	\item For proofs 1-5, write a symbolic version of each claim. Your symbolic version may only use logical symbols, variables, numbers, and the symbols $+,-,=$.
+	\item Let $H(t)$ represent {\em $t$ is happy}. Let $S(x)$ represent {\em $x$ is short}.
+		\begin{enumerate}
+			\item Compare the meanings of $\forall t, \left[H(t)\vee \sim H(t)\right]$ and $\left[\forall t, H(t)\right] \vee \left[\forall t,\sim H(t)\right]$.
+			\item Compare the meanings of $\forall t, \left[H(t)\wedge S(t)\right]$ and $\left[\forall t, H(t)\right]\wedge \left[\forall t, S(t)\right]$.
+			\item What's the general lesson about how $\vee$ and $\wedge$ interact with $\forall$?
+		\end{enumerate} 
+	\item Let $H(t)$ represent {\em $t$ is happy}. Let $S(x)$ represent {\em $x$ is short}.
+		\begin{enumerate}
+			\item Compare the meanings of $\exists x:\left[H(x)\vee \sim H(x)\right]$ and $\left[\exists x: H(x)\right] \vee \left[\exists x:\ \sim H(x)\right]$.
+			\item Compare the meanings of $\exists x: \left[H(x)\wedge S(x)\right]$ and $\left[\exists x: H(x)\right]\wedge \left[\exists x: S(x)\right]$.
+			\item What's the general lesson about how $\vee$ and $\wedge$ interact with $\exists$?
+		\end{enumerate}
+		\item Consider the following line from William Shakespeare's {\em The Merchant of Venice}:
+			\begin{center}{All that glisters is not gold.}\end{center}
+			\begin{enumerate}
+				\item Use $G(t)$ to represent {\em $t$ glisters} and $g(x)$ to represent {\em $x$ is gold}. Write a symbolic sentence to represent {\bfseries the literal meaning} of Shakespeare's line.
+				\item Write a symbolic sentence which represents {\bfseries the meaning Shakespeare wants us to take} from the line. ({\em Hint.} If you find this request confusing, try revisiting your previous answer.)
+				\item Apply logical rules to simplify your symbolic answer to part (b). Then translate this simplified version into English.
+			\end{enumerate}
+		\item The following joke by writer Joyce Carol Oates relies on an equivocation between two plausible interpretations of the original States United tweet. Distinguish between the two interpretations by expressing each as a symbolic sentence. Use $L(x,y,z)$ to represent {\em $x$ shot $y$ in $z$}, where the universe for $x$ is all toddlers, the universe for $y$ is all people, and the universe for $z$ is all weeks.
+		
+			\begin{center}\includegraphics[width=.5\textwidth]{muderoustoddler.jpg}  \end{center}
+		\item Consider the two claims
+			\begin{enumerate}[(1)]
+				\item {\em Every time I've been to Vegas, I was high on cocaine the whole time.}
+				\item {\em I have never done illegal narcotics.}
+			\end{enumerate}
+			Explain how it is that these claims could both be true (when spoken by the same person). What is the general lesson about the relationship between the claims $\forall x, P(x)$ and $\exists x: P(x)$?
+\end{enumerate}
+\item[proofs] Write a complete proof of each of the following statements.
+	\begin{enumerate}
+		\item The product of any integer with any even integer is even.
+		\item The difference of two odd integers is always even.
+		\item If the sum of two integers is odd, their difference is odd.
+		\item ($\star \star$) No integer is both even and odd.
+		\item If $m$ divides $a$ and $n$ divides $b$, then $mn$ divides $ab$.
+		\item ($\star$)  Given an integer $t$, if there are integers $m$ and $n$ so that $15m+16n=t$, then there are integers $r$ and $s$ so that $3r+8s=t$.
+		\item ($\star$) If there are integers $m$ and $n$ with $12m+15n=1$, then $m$ and $n$ are both positive. 
+		\item ($\star$) The sum of two odd functions is [BLANK]. (Fill in the blank, and prove your answer.)
+		\item ($\star \star$) Show that there is a unique function which is both even and odd.
+\end{enumerate}
+\end{description}
+\end{document}
+
