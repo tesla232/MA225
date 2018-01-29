@@ -61,8 +61,8 @@ They mean the same thing,for all t $H(t)$ and $S(t)$ are true.
 		\item Consider the following line from William Shakespeare's {\em The Merchant of Venice}:
 			\begin{center}{All that glisters is not gold.}\end{center}
 			\begin{enumerate}
-				\item Use $G(t)$ to represent {\em $t$ glisters} and $g(x)$ to represent {\em $x$ is gold}. Write a symbolic sentence to represent {\bfseries the literal meaning} of Shakespeare's line. \\ $G(t): \forall (\sim G(t))$
-				\item Write a symbolic sentence which represents {\bfseries the meaning Shakespeare wants us to take} from the line. ({\em Hint.} If you find this request confusing, try revisiting your previous answer.)\\ $G(t): \exists (\sim G(t))$
+				\item Use $G(t)$ to represent {\em $t$ glisters} and $g(x)$ to represent {\em $x$ is gold}. Write a symbolic sentence to represent {\bfseries the literal meaning} of Shakespeare's line. \\$\forall t:(\sim G(t))$
+				\item Write a symbolic sentence which represents {\bfseries the meaning Shakespeare wants us to take} from the line. ({\em Hint.} If you find this request confusing, try revisiting your previous answer.)\\ $ \exists t:(\sim G(t))$
 				\item Apply logical rules to simplify your symbolic answer to part (b). Then translate this simplified version into English. There is something that glisters but is not gold.\\
 			\end{enumerate}
 		\item The following joke by writer Joyce Carol Oates relies on an equivocation between two plausible interpretations of the original States United tweet. Distinguish between the two interpretations by expressing each as a symbolic sentence. Use $L(x,y,z)$ to represent {\em $x$ shot $y$ in $z$}, where the universe for $x$ is all toddlers, the universe for $y$ is all people, and the universe for $z$ is all weeks. \\
@@ -78,7 +78,7 @@ States united: $L(t): \exists x \wedge \exists y \exists \wedge \forall z $
 \item[proofs] Write a complete proof of each of the following statements.
 	\begin{enumerate}
 		\item The product of any integer with any even integer is even.
-$\forall a, b,\exists k, m(b=2k \Rightarrow ab=2m$ \\
+$\forall a, b,\exists k, m:(b=2k \Rightarrow ab=2m$ \\
 \underline{Claim:} Given any integer a, the product, p with an even integer b is even. \\
 \textbf{Proof:} Given b is an even integer, we can determine that it can be writen as b=2k.
 \begin{align*}
@@ -88,7 +88,7 @@ p &= ba \\
 \end{align*} 
 Therefore, as we can see, p=2r, and since this fits the formula 2j where j is an integer, ab where b is even, the product will be even.
 		\item The difference of two odd integers is always even.
-$  \forall j, k \exists e((2j+1)+2k+1 \Rightarrow 2e)) $
+$  \forall j, k \exists e:((2j+1)+2k+1 \Rightarrow 2e)) $ \\
 Claim: Given two odd numbers j and k, the difference D will always be even. \\
 Proof: We can represent j and k as 2l+1=n, where j and k are possible values of n where l is an integer. We can use this to see that:
 \begin{align*}
@@ -100,7 +100,7 @@ D &= 2q \tag{rewrote (o-p) as q} \\
 \end{align*}
 Therefore, D is in the form of 2l=n, which means that D is even. \\
 		\item If the sum, S of two integers is odd, their difference, D is odd. \\
-$\forall a,b, \exists j,k (a+b=2j+1 \Rightarrow a+b=2j-1)$
+$\forall a,b, \exists j,k:(a+b=2j+1 \Rightarrow a+b=2j-1)$ \\
 Claim: If the sum of two integers, a and b is odd, then their difference is odd. \\
 Proof: We must first determine all of the cases which the sum of two numbers is odd.\\
 Case 1 even odd: \\
@@ -139,8 +139,9 @@ As we can see, the only case which the sum of two integers is even is if there i
 
 
 		\item ($\star \star$) No integer is both even and odd. \\
-$\forall a, b \sim (a=2k \wedge a=2j+1)$
-Let us assume that there exists an integer, $I$, which satisfies both 2k and 2j+1 where j and k are integers indicating that I is both even are odd (We use different variables to consider different values being used). We can set these values equal to eachother in order to see:\\
+$\forall a, b \sim (a=2k \wedge a=2j+1)$ \\
+Claim: No Integer is both even and odd \\
+Proof: Let us assume that there exists an integer, $I$, which satisfies both 2k and 2j+1 where j and k are integers indicating that I is both even are odd (We use different variables to consider different values being used). We can set these values equal to eachother in order to see:\\
 \begin{align*}
 2k &= 2j+1 \\
 -1 &= 2j-2k \tag{subtracts 2k and -1 from both sides}\\

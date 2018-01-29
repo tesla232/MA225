@@ -19,7 +19,7 @@
 \pagestyle{empty}
 
 {\Large MA 225 Problem Set 2: logic 2}\\
-
+Jordan Paldino
 
 \begin{description}
 \item[facts and definitions] The following fact is {\em true}, but we have not proved it so you {\bfseries may not use it} anywhere in this homework set:
@@ -61,8 +61,8 @@ They mean the same thing,for all t $H(t)$ and $S(t)$ are true.
 		\item Consider the following line from William Shakespeare's {\em The Merchant of Venice}:
 			\begin{center}{All that glisters is not gold.}\end{center}
 			\begin{enumerate}
-				\item Use $G(t)$ to represent {\em $t$ glisters} and $g(x)$ to represent {\em $x$ is gold}. Write a symbolic sentence to represent {\bfseries the literal meaning} of Shakespeare's line. \\ $G(t): \forall (\sim G(t))$
-				\item Write a symbolic sentence which represents {\bfseries the meaning Shakespeare wants us to take} from the line. ({\em Hint.} If you find this request confusing, try revisiting your previous answer.)\\ $G(t): \exists (\sim G(t))$
+				\item Use $G(t)$ to represent {\em $t$ glisters} and $g(x)$ to represent {\em $x$ is gold}. Write a symbolic sentence to represent {\bfseries the literal meaning} of Shakespeare's line. \\$\forall t:(\sim G(t))$
+				\item Write a symbolic sentence which represents {\bfseries the meaning Shakespeare wants us to take} from the line. ({\em Hint.} If you find this request confusing, try revisiting your previous answer.)\\ $ \exists t:(\sim G(t))$
 				\item Apply logical rules to simplify your symbolic answer to part (b). Then translate this simplified version into English. There is something that glisters but is not gold.\\
 			\end{enumerate}
 		\item The following joke by writer Joyce Carol Oates relies on an equivocation between two plausible interpretations of the original States United tweet. Distinguish between the two interpretations by expressing each as a symbolic sentence. Use $L(x,y,z)$ to represent {\em $x$ shot $y$ in $z$}, where the universe for $x$ is all toddlers, the universe for $y$ is all people, and the universe for $z$ is all weeks. \\
@@ -139,8 +139,9 @@ As we can see, the only case which the sum of two integers is even is if there i
 
 
 		\item ($\star \star$) No integer is both even and odd. \\
-$\forall a, b \sim (a=2k \wedge a=2j+1)$
-Let us assume that there exists an integer, $I$, which satisfies both 2k and 2j+1 where j and k are integers indicating that I is both even are odd (We use different variables to consider different values being used). We can set these values equal to eachother in order to see:\\
+$\forall a, b \sim (a=2k \wedge a=2j+1)$ \\
+Claim: No Integer is both even and odd \\
+Proof: Let us assume that there exists an integer, $I$, which satisfies both 2k and 2j+1 where j and k are integers indicating that I is both even are odd (We use different variables to consider different values being used). We can set these values equal to eachother in order to see:\\
 \begin{align*}
 2k &= 2j+1 \\
 -1 &= 2j-2k \tag{subtracts 2k and -1 from both sides}\\
