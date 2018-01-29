@@ -46,28 +46,28 @@ You will also need this definition:
 			\item Compare the meanings of $\forall t, \left[H(t)\vee \sim H(t)\right]$ and $\left[\forall t, H(t)\right] \vee \left[\forall t,\sim H(t)\right]$.
 The first statement proposes that for all t, H(t) is happy or not happy, which is a tautology. The other states that for all t in H(t), all cases are happy, while for all cases of t this is not the case. This essentially means that none or all of t return happy for H(t) 
 			\item Compare the meanings of $\forall t, \left[H(t)\wedge S(t)\right]$ and $\left[\forall t, H(t)\right]\wedge \left[\forall t, S(t)\right]$.
-They mean the same thing, for all of t, H(t) and S(t) are true 
+They mean the same thing,for all t $H(t)$ and $S(t)$ are true.
 			\item What's the general lesson about how $\vee$ and $\wedge$ interact with $\forall$? \\
                           That $\forall$ distributes over $\wedge$ but not $\vee$
 		\end{enumerate} 
 	\item Let $H(t)$ represent {\em $t$ is happy}. Let $S(x)$ represent {\em $x$ is short}.
 		\begin{enumerate}
 			\item Compare the meanings of $\exists x:\left[H(x)\vee \sim H(x)\right]$ and $\left[\exists x: H(x)\right] \vee \left[\exists x:\ \sim H(x)\right]$.
-                          They both mean the same thingm that is that there exists a value of t which is true or false.
-			\item Compare the meanings of $\exists x: \left[H(x)\wedge S(x)\right]$ and $\left[\exists x: H(x)\right]\wedge \left[\exists x: S(x)\right]$.
+                          They both mean the same thing that is that there exists a value of t which is true or false.
+			\item Compare the meanings of $\exists x: \left[H(x)\wedge S(x)\right]$ and $\left[\exists x: H(x)\right]\wedge \left[\exists x: S(x)\right]$. The first one means that there exists a value of t that $H(x)$ and $S(x)$ are true. The second one means that there is a value of x that returns true in both H and S, but it isn't necessarily the same x.
                           
-			\item What's the general lesson about how $\vee$ and $\wedge$ interact with $\exists$?
+			\item What's the general lesson about how $\vee$ and $\wedge$ interact with $\exists$? It doesn't distribute over $\wedge$ but it does over $\vee$
 		\end{enumerate}
 		\item Consider the following line from William Shakespeare's {\em The Merchant of Venice}:
 			\begin{center}{All that glisters is not gold.}\end{center}
 			\begin{enumerate}
-				\item Use $G(t)$ to represent {\em $t$ glisters} and $g(x)$ to represent {\em $x$ is gold}. Write a symbolic sentence to represent {\bfseries the literal meaning} of Shakespeare's line.
-				\item Write a symbolic sentence which represents {\bfseries the meaning Shakespeare wants us to take} from the line. ({\em Hint.} If you find this request confusing, try revisiting your previous answer.)
-				\item Apply logical rules to simplify your symbolic answer to part (b). Then translate this simplified version into English.
+				\item Use $G(t)$ to represent {\em $t$ glisters} and $g(x)$ to represent {\em $x$ is gold}. Write a symbolic sentence to represent {\bfseries the literal meaning} of Shakespeare's line. \\ $G(t): \forall (\sim G(t))$
+				\item Write a symbolic sentence which represents {\bfseries the meaning Shakespeare wants us to take} from the line. ({\em Hint.} If you find this request confusing, try revisiting your previous answer.)\\ $G(t): \exists (\sim G(t))$
+				\item Apply logical rules to simplify your symbolic answer to part (b). Then translate this simplified version into English. There is something that glisters but is not gold.\\
 			\end{enumerate}
-		\item The following joke by writer Joyce Carol Oates relies on an equivocation between two plausible interpretations of the original States United tweet. Distinguish between the two interpretations by expressing each as a symbolic sentence. Use $L(x,y,z)$ to represent {\em $x$ shot $y$ in $z$}, where the universe for $x$ is all toddlers, the universe for $y$ is all people, and the universe for $z$ is all weeks.
-		
-			\begin{center}\includegraphics[width=.5\textwidth]{muderoustoddler.jpg}  \end{center}
+		\item The following joke by writer Joyce Carol Oates relies on an equivocation between two plausible interpretations of the original States United tweet. Distinguish between the two interpretations by expressing each as a symbolic sentence. Use $L(x,y,z)$ to represent {\em $x$ shot $y$ in $z$}, where the universe for $x$ is all toddlers, the universe for $y$ is all people, and the universe for $z$ is all weeks. \\
+Oate's Interpretation: $L(t): \exists x: ( x \wedge \wedge y \wedge) \wedge \forall z$ \\
+States united: $L(t): \exists x \wedge \exists y \exists \wedge \forall z $
 		\item Consider the two claims
 			\begin{enumerate}[(1)]
 				\item {\em Every time I've been to Vegas, I was high on cocaine the whole time.}
@@ -78,7 +78,8 @@ They mean the same thing, for all of t, H(t) and S(t) are true
 \item[proofs] Write a complete proof of each of the following statements.
 	\begin{enumerate}
 		\item The product of any integer with any even integer is even.
-\underline{Claim:} Given any integer a, the product, p with an even integer b is even.
+$\forall a, b,\exists k, m(b=2k \Rightarrow ab=2m$ \\
+\underline{Claim:} Given any integer a, the product, p with an even integer b is even. \\
 \textbf{Proof:} Given b is an even integer, we can determine that it can be writen as b=2k.
 \begin{align*}
 p &= ba \\
@@ -87,7 +88,8 @@ p &= ba \\
 \end{align*} 
 Therefore, as we can see, p=2r, and since this fits the formula 2j where j is an integer, ab where b is even, the product will be even.
 		\item The difference of two odd integers is always even.
-Claim: Given two odd numbers j and k, the difference D will always be even.
+$  \forall j, k \exists e((2j+1)+2k+1 \Rightarrow 2e)) $
+Claim: Given two odd numbers j and k, the difference D will always be even. \\
 Proof: We can represent j and k as 2l+1=n, where j and k are possible values of n where l is an integer. We can use this to see that:
 \begin{align*}
 D &= j-k \\
@@ -97,28 +99,91 @@ D &= j-k \\
 D &= 2q \tag{rewrote (o-p) as q} \\
 \end{align*}
 Therefore, D is in the form of 2l=n, which means that D is even. \\
-		\item If the sum of two integers is odd, their difference is odd.
-		\item ($\star \star$) No integer is both even and odd.
-		\item If $m$ divides $a$ and $n$ divides $b$, then $mn$ divides $ab$.
-		\item ($\star$)  Given an integer $t$, if there are integers $m$ and $n$ so that $15m+16n=t$, then there are integers $r$ and $s$ so that $3r+8s=t$.
-Claim:  Given an integer $t$, if there are integers $m$ and $n$ so that $15m+16n=t$, then there are integers $r$ and $s$ so that $3r+8s=t$.
-Proof: Since m and n must be integers, as well as r and s, we can set r=5m and s=2n, which satisfies the conditions of integers.
+		\item If the sum, S of two integers is odd, their difference, D is odd. \\
+$\forall a,b, \exists j,k (a+b=2j+1 \Rightarrow a+b=2j-1)$
+Claim: If the sum of two integers, a and b is odd, then their difference is odd. \\
+Proof: We must first determine all of the cases which the sum of two numbers is odd.\\
+Case 1 even odd: \\
+\begin{align*}
+S &= 2k+1+2j \\
+&= 2(k+j)+1 \tag{Factored out two} \\
+&= 2r+1 \tag{Set r=k+j} \\
+\end{align*}
+Since this is odd, we can see if the difference is odd. \\
+\begin{align*}
+D &= 2k+1-(2j) \\
+&= 2(k-j)+1 \tag{Factor out 2} \\
+&= 2m+1 \tag{Set k-j equal to m} \\
+\end{align*} 
+We can see now that in this case, the claim remians true. We know that this remains true with subtracting an even and odd because we can simply multiply -1 by both sides and change the value of D without affecting if it is even. \\
+Case 2 odd odd: \\
+We can see that this produces an even number when added together, as seen below: \\
+\begin{align*}
+S &= 2k+1+2j+1 \\
+&=2(k+j+1) \tag{Factored out the 2}\\
+&= 2p \tag{set p as k+j+1} \\
+\end{align*}
+As we can see, this results in an even answer, therefore this case isn't considered for the claim. \\
+Case 3 Even Even: \\
+The sum of two even numbers will produce an even number, as seen below:
+\begin{align*}
+S &= 2j+2k \\
+S &= 2(j+k) \tag{Factored out 2} \\
+S &= 2f \tag{Set f equal to j+k} \\
+\end{align*}
+As we can see, the only case which the sum of two integers is even is if there is an even number and an odd function, and the difference of these numbers also produces and odd number, therefore if the sum of two integers, a and b is odd, then their difference is odd.
+
+
+
+
+
+
+		\item ($\star \star$) No integer is both even and odd. \\
+$\forall a, b \sim (a=2k \wedge a=2j+1)$
+Let us assume that there exists an integer, $I$, which satisfies both 2k and 2j+1 where j and k are integers indicating that I is both even are odd (We use different variables to consider different values being used). We can set these values equal to eachother in order to see:\\
+\begin{align*}
+2k &= 2j+1 \\
+-1 &= 2j-2k \tag{subtracts 2k and -1 from both sides}\\
+1 &= 2(k-j)\tag{multiplies -1 by both sides and factors out 2 from 2j-2k}\\
+1 &= 2m \tag{Represents k-j as m}
+\end{align*}
+Since we know that 1 is not an even number, and the above insinuates this, we know that $I$ does not exist. \\
+
+		\item If $m$ divides $a$ and $n$ divides $b$, then $mn$ divides $ab$. \\
+$ \exists a,m,k,j,b: (a=m(k) \wedge b=n(j) \Leftrightarrow \exists r: ab=mn(r))$
+Claim: If $m$ is a factor of $a$ and $n$ is a factor of $b$, then $mn$ is a factor of $ab$.
+Proof: We can first write $a$ as $mj$ and $b$ as $nk$ with j and k being integers. Once this is done, we can rewrite ab as: \\
+\begin{align*}
+ab&=nkmj \\
+&=mn(jk) \\
+ab &= mn(o) \tag{set jk to o} \\
+\end{align*}
+As we can see, mn is a factor of ab, as it is the product of mn and o. \\
+                \item ($\star$)  Given an integer $t$, if there are integers $m$ and $n$ so that $15m+16n=t$, then there are integers $r$ and $s$ so that $3r+8s=t$. \\
+Claim:  Given an integer $t$, if there are integers $m$ and $n$ so that $15m+16n=t$, then there are integers $r$ and $s$ so that $3r+8s=t$. \\
+Proof: Since m and n must be integers, as well as r and s, we can set r=5m and s=2n, which satisfies the conditions of integers. \\
 \begin{align*}
 t &= 3r + 8s \\
 &= 3(5m)+8(2n) \tag{plugged in values of r and s} \\
 t &= 15m +16n \tag{Solved for the values above} \\
 \end{align*}
-Since we know this to be true, there are integers which make 3r+8s=t when 15m+16n=t.
-		\item ($\star$) If there are integers $m$ and $n$ with $12m+15n=1$, then $m$ and $n$ are both positive. 
+Since we know this to be true, there are integers which make 3r+8s=t when 15m+16n=t. \\
+		\item ($\star$) If there are integers $m$ and $n$ with $12m+15n=1$, then $m$ and $n$ are both positive. \\
+Claim: If there are integers $m$ and $n$ with $12m+15n=1$, then $m$ and $n$ are both positive. \\
+We must first show that $12m+15n=1$ is not valid for any integer. We can first factor out 3 from the equation, giving us: \\
+\begin{align*}
+ 1 &= 3(4m+5n) \\
+\end{align*}
+Since 3 is not a factor of 1, there is no integer value which works, as 1 does not have 3 as a factor. Therefore the statement is valid, as it doesn't satisfy the initial condition. \\
 		\item ($\star$) The sum of two odd functions is [BLANK]. (Fill in the blank, and prove your answer.) \\
-Claim: The sum of two odd functions is odd.
+Claim: The sum of two odd functions is odd. \\
 Proof: Let's consider two odd functions, f(x) and g(x) in which f(-x)=-f(x) and g(-x)=-g(x): \\
 \begin{align*}
 f(-x) + g(-x) &= -f(x) + -g(x) \tag{addition of two functions} \\
 (f+g)(-x) &= -(f+g)(x) \tag{factor our (-x) from left side and (-x) and -1 from right side} \\
 h(-x) &= -h(x) \tag{Set f+g=h} \\
 \end{align*}
-Therefore, the sum of two odd functions is odd.
+Therefore, the sum of two odd functions is odd. \\
 
 		\item ($\star \star$) Show that there is a unique function which is both even and odd.
 Claim: There is a unique function that is both even and odd. \\
