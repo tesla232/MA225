@@ -1,0 +1,133 @@
+\item \documentclass[11pt]{letter}
+\usepackage{amsmath,amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage[margin=.9in]{geometry}
+\usepackage{graphicx}
+
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{IBP}{Integration by Parts}
+\newtheorem{claim}{Claim}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{PBI}{Proof by Induction:}
+
+\begin{document}
+\pagestyle{empty}
+
+{\Large MA 225 Problem Set 3: induction 1}\\
+
+\begin{description}
+	\item[facts and definitions] You will need the following definitions and facts (at some point):
+			\begin{defn}
+				We'll call strings of the symbols $a$ and $b$ {\em words}. Consider a class of words, the {\em legal words}, defined as follows. $aba$ is a legal word. If $W$ is a legal word, then so are $abW$, $aWb$, $Wab$, $baW$, $bWa$, and $Wba$. No words other than those obtained in this way are legal.
+			\end{defn}
+			\begin{defn}
+				The {\em binomial coefficients} are a collection of natural numbers $B_{n,k}$, defined for a pair of nonnegative integers $n,k$ with  $0\leq k\leq n$, as follows:
+				$$B_{n,k}=\begin{cases}1 & \text{ if } k=0\text{ or }k=n\\B_{n-1,k-1}+B_{n-1,k} & \text{ if }1\leq k\leq n-1\end{cases}$$
+			\end{defn}
+			
+			\begin{defn}
+				{\em Higher derivatives} are defined as follows: the zeroth derivative of a function $f$ is $f$ itself; we write
+					$$\frac{d^0}{dx^0}f(x)=f(x)=f^{(0)}(x)$$
+				For $n\in \mathbb{N}$, we define the $n^{th}$ derivative as the derivative of the $(n-1)^{st}$ derivative:
+					$$\frac{d^n}{dx^n}f(x)=\frac{d}{dx}\left[\frac{d^{n-1}}{dx^{n-1}} f(x)\right]$$
+					$$f^{(n)}(x)=\left(f^{(n-1)}\right)'(x)$$
+			\end{defn}
+			
+			\begin{IBP}
+				For any two differentiable functions $f$, $g$, we have
+				 $$\int f(x)g(x)\ dx = f(x)\left[\int g(x)\ dx\right]-\int f'(x)\left[\int g(x)\ dx\right]\ dx,$$ provided we adopt the convention that the constants of integration in both instances of $\int g(x)\ dx$ must be the same.
+			\end{IBP}
+
+	\item[exercises]  These problems don't require you to write proofs.
+		\begin{enumerate}
+			\item Compute $B_{n,k}$ for $0\leq n\leq 6$.
+			\item Explain why the definition given for $B_{n,k}$ actually constitutes a definition; that is, why we can compute $B_{n,k}$ for any choice of $n,k$ with $0\leq k\leq n$.
+			\item Identify, explain, and correct any correctable flaws in the following proofs:
+				\begin{claim}
+					$n^2+n$ is odd.
+				\end{claim}
+				\begin{proof}
+					$n=1$ is odd.
+					
+					Inductively, assume $n^2+n$ is odd. Then
+					$$(n+1)^2+(n+1)=n^2+2n+1+n+1=n^2+n+2(n+1)$$
+					so $(n+1)^2+(n+1)$ is the sum of an odd number and an even number, hence itself odd. This completes the inductive step.
+				\end{proof}
+				
+				\begin{claim}
+					Every natural number is odd.
+				\end{claim}
+				\begin{proof}
+					$k=1$ is clearly odd.
+					
+					Inductively, assume $k$ is odd. This means there is an integer $p$ so that $k=2p+1$. Consider $p+1$. Clearly $2(p+1)+1$ is odd.
+				\end{proof}
+				
+				\begin{claim}
+					Every natural number is both even and odd.
+				\end{claim}
+				\begin{proof}
+					Assume that $k$ is both even and odd. Consider $k+1$.
+					
+					Since $k$ is even, there is $p$ with $k=2p$. So $k+1=2p+1$ is odd. Since $k$ is odd, there is $q$ with $k=2q+1$. So $$k+1=(2q+1)+1=2(q+1)$$is even.
+				\end{proof}
+				\begin{claim}
+					$n^3-n$ is divisible by 6.
+				\end{claim}
+				\begin{proof}
+					For the base case: when $n=1$, $n^3-n=0=6\cdot 0$.
+					
+					Now proceed inductively. Assume that for all $k$, $k^3-k$ is divisible by 6. Then, since $n+1$ is one possible value of $k$, we have that $(n+1)^3-(n+1)$ is divisible by 6. 
+				\end{proof}
+
+		\end{enumerate}
+	\item[proofs] Prove the following claims. 
+		\begin{enumerate}
+			\item For any natural number $p$, 8 divides $5^{2p}-1$.
+\begin{claim}
+For any natural number $p$, 8 divides $5^{2p}-1$
+\end{claim}
+\begin{PBI}
+We must first confirm that the base case, or $5^{2p}-1$ is divisible by 8. We determine that the value of this function at 1 is 24, which is $8*3$, so this statement is valid. Next, we can see that the solution to this is $8m$, where m is a natural number. We can now use mathermatical induction and find: \\
+\begin{align*}
+8m &= 5^{2(n+1}-1 \tag{Solving for n+1, since we know that this is true when n is true when n=1} \\
+&= 5^2*5^{2n}-1 \\
+&=25(8m+1)-1 \\
+&=8(25m+3) \\
+\end{align*}
+Therefore, we can see that by mathematical induction, $5^{2p}-1$ will always be divisible by 8 as long as p is in the natural numbers.
+ 
+\end{PBI}
+
+			\item For any natural number $\ell$, $3^\ell\geq 1+2^\ell$.
+			\item Let $a_1,\ldots, a_n$ be real numbers. Then
+				$$2^{\left(\sum_{k=1}^n a_k\right)}=\prod_{k=1}^n 2^{a_k}$$
+			\item ($\star$) For any $k\in\mathbb{N}$, and any real numbers $r,s$, we have 
+				\begin{align*}
+					r^k-s^k=(r-s)\sum_{\substack{p+q=k-1\\p,q\geq 0}} r^qs^p=(r-s)\left(r^{k-1}+r^{k-2}s+r^{k-3}s^2+\cdots+r^2s^{k-3}+rs^{k-2}+s^{k-1}\right)
+				\end{align*}
+			\item Consider the possible results of flipping a fair coin $n$ times. There are $2^n$ possible outcomes. 
+			\item ($\star$) For any natural number $q$, $$\sum_{i=1}^{2^q}\frac{1}{i}\geq 1+\frac{q}{2}$$
+			\item Prove the power rule for derivatives:~for any $n\in\mathbb{N}$, we have $\frac{d}{dx}[x^n]=nx^{n-1}$. You may {\bfseries only} use the product rule for derivatives and the fact that $\frac{d}{dx}x=1$.
+			 \item ($\star$) The {\bfseries power rule for integrals}:~for any $n\in\mathbb{N}$, we have 
+				\begin{align*}
+					\int x^ndx=\frac{1}{n+1}x^{n+1}+C
+				\end{align*}
+				for some constant $C$.\\
+				You {\bfseries may not} use the previous result. You may use {\bfseries only} the following calculus facts: the linearity properties of the integral; $\int C dx=Cx+D$ for some constant $D$; $\frac{d}{dx} x=1$; integration by parts.
+			\item $\frac{d^r}{dx^r}x^r=r!$
+			\item The {\bfseries constant multiple rule for higher derivatives}: for any function $f$ with at least $n$ derivatives and any constant $c$, we have $\frac{d^n}{dx^n}\left[cf\right]=c\left[\frac{d^n}{dx^n}f\right]$. You may assume the constant multiple rule for derivatives.
+			\item The {\bfseries sum rule for higher derivatives}: for any functions $f$, $g$ with at least $n$ derivatives, we have $\frac{d^n}{dx^n}\left[f+g\right]=\frac{d^n}{dx^n}f+\frac{d^n}{dx^n}g$. You may assume the sum rule for derivatives.
+			\item ($\star$) The {\bfseries Binomial Theorem}: for any real numbers $x,y$, and any $n\in\mathbb{N}$,
+				\begin{equation*}
+					(x+y)^n=B_{n,0}x^n +B_{n,1}x^{n-1}y+B_{n,2}x^{n-2}y^2+\cdots+B_{n,n-2}x^2y^{n-2}+B_{n,n-1}x y^{n-1}+B_{n,n}y^n
+				\end{equation*}
+				({\em Hint.} At some point you will need to ``combine like terms".)
+			\item ($\star$) Any legal word has more $a$s than $b$s.
+			\end{enumerate}
+			
+\end{description}
+\end{document}

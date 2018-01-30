@@ -19,8 +19,8 @@
 \pagestyle{empty}
 
 {\Large MA 225 Problem Set 2: logic 2}\\
-Jordan Paldino
-
+Jordan Paldino \\
+(Note: throughout the document, distribution through a commaed list is assumed. for instance, $\forall a,b$ means $\forall a, \forall b$)
 \begin{description}
 \item[facts and definitions] The following fact is {\em true}, but we have not proved it so you {\bfseries may not use it} anywhere in this homework set:
 \begin{theorem*}
@@ -139,7 +139,7 @@ As we can see, the only case which the sum of two integers is even is if there i
 
 
 		\item ($\star \star$) No integer is both even and odd. \\
-$\forall a, b \sim (a=2k \wedge a=2j+1)$ \\
+$\forall a, b: \sim (a=2k \wedge a=2j+1)$ \\
 Claim: No Integer is both even and odd \\
 Proof: Let us assume that there exists an integer, $I$, which satisfies both 2k and 2j+1 where j and k are integers indicating that I is both even are odd (We use different variables to consider different values being used). We can set these values equal to eachother in order to see:\\
 \begin{align*}
@@ -151,7 +151,7 @@ Proof: Let us assume that there exists an integer, $I$, which satisfies both 2k 
 Since we know that 1 is not an even number, and the above insinuates this, we know that $I$ does not exist. \\
 
 		\item If $m$ divides $a$ and $n$ divides $b$, then $mn$ divides $ab$. \\
-$ \exists a,m,k,j,b: (a=m(k) \wedge b=n(j) \Leftrightarrow \exists r: ab=mn(r))$
+$ \exists a,m,k,j,b: (a=m(k) \wedge b=n(j) \Leftrightarrow \exists r: ab=mn(r))$ \\
 Claim: If $m$ is a factor of $a$ and $n$ is a factor of $b$, then $mn$ is a factor of $ab$.
 Proof: We can first write $a$ as $mj$ and $b$ as $nk$ with j and k being integers. Once this is done, we can rewrite ab as: \\
 \begin{align*}
@@ -186,7 +186,7 @@ h(-x) &= -h(x) \tag{Set f+g=h} \\
 \end{align*}
 Therefore, the sum of two odd functions is odd. \\
 
-		\item ($\star \star$) Show that there is a unique function which is both even and odd.
+		\item ($\star \star$) Show that there is a unique function which is both even and odd. \\
 Claim: There is a unique function that is both even and odd. \\
 Proof: Let us consider the class of even functions f(-x)=f(x) and odd functions f(-x)=-f(x). Let us also define a function as being an equation in which each input produces a unique output. Let us now define -f(x) graphically as the reflection of inputs across the x axis, as the distance between zero stays equidistant, however the direction in which these are is opposite. So, for a function to be both even and odd means for the outputs of f(-x) must equal both f(-x) and -f(-x). Because functions have unique outputs, -f(-x) must equal f(-x), or an equation in which the reflection and original converge. Because the only value which this holds true is 0, as this serves as the axis of reflection, and -0=0, the only function which would satisfy the conditions is f(x)=0.  
 \end{enumerate}
