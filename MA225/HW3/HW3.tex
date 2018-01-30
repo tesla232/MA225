@@ -1,4 +1,4 @@
-\documentclass[11pt]{letter}
+s\documentclass[11pt]{letter}
 \usepackage{amsmath,amsthm}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -11,7 +11,7 @@
 \newtheorem{claim}{Claim}
 \theoremstyle{definition}
 \newtheorem{defn}{Definition}
-\newtheorem{PBI}{Proof by Induction:}
+\newtheorem{PBI}{Proof by Induction}
 
 \begin{document}
 \pagestyle{empty}
@@ -91,23 +91,35 @@
 For any natural number $p$, 8 divides $5^{2p}-1$
 \end{claim}
 \begin{PBI}
-We must first confirm that the base case, or $5^{2p}-1$ is divisible by 8. We determine that the value of this function at 1 is 24, which is $8*3$, so this statement is valid. Next, we can see that the solution to this is $8m$, where m is a natural number. We can now use mathermatical induction and find: \\
+We must first confirm that the base case, or $5^{2p}-1$ is divisible by 8. We determine that the value of this function at 1 is 24, which is $8*3$, so this statement is valid. Next, we can see that the solution to this is $8m$, where m is a natural number. We can now use mathematical induction and find: \\
 \begin{align*}
 8m &= 5^{2(n+1}-1 \tag{Solving for n+1, since we know that this is true when n is true when n=1} \\
 &= 5^2*5^{2n}-1 \\
 &=25(8m+1)-1 \\
 &=8(25m+3) \\
 \end{align*}
-Therefore, we can see that by mathematical induction, $5^{2p}-1$ will always be divisible by 8 as long as p is in the natural numbers.
- 
+Therefore, we can see that by mathematical induction, $5^{2p}-1$ will always be divisible by 8 as long as p is in the natural numbers. \\
 \end{PBI}
 
 			\item For any natural number $\ell$, $3^\ell\geq 1+2^\ell$.
 			\item Let $a_1,\ldots, a_n$ be real numbers. Then
-				$$2^{\left(\sum_{k=1}^n a_k\right)}=\prod_{k=1}^n 2^{a_k}$$
+				$$2^{\left(\sum_{k=1}^n a_k\right)}=\prod_{k=1}^n 2^{a_k}$$ \\
+\begin{claim}
+Given $a_1,\ldots, a_n$ are real numbers then $$2^{\left(\sum_{k=1}^n a_k\right)}=\prod_{k=1}^n 2^{a_k}$$ \\
+\end{claim}
+\begin{PBI}
+We can first test our base case by plugging in n=1, which gives us $2^{a_1}=2^{a_1}$, so the base case is correct. We can now set k=r+1, to give us: \\
+\begin{align*}
+&=2^{\left(\sum_{r=1}^n a_{r}\right +a_{r+1}} \tag{replaces k with r+1} \\
+&=2^{r+1}*2^{\left(\sum_{r=1}^n a_{r}\right)} \\
+&=2^{r+1}*\prod_{r=1}^n 2^{a_r} \tag{Replaced sum formula with it's equal (As stated in claim)} \\
+&=\prod_{r=1}^n 2^{a_{r+1}} \tag{Put 2^{a_{r+1}} into the product.} \\
+\end{align*}
+As we can see, these two are equal at n=1 and all subsequent values, so this holds true. This was achieved with mathematical induction. \\
+\end{PBI}
 			\item ($\star$) For any $k\in\mathbb{N}$, and any real numbers $r,s$, we have 
 				\begin{align*}
-					r^k-s^k=(r-s)\sum_{\substack{p+q=k-1\\p,q\geq 0}} r^qs^p=(r-s)\left(r^{k-1}+r^{k-2}s+r^{k-3}s^2+\cdots+r^2s^{k-3}+rs^{k-2}+s^{k-1}\right)
+					r^k-s^k=(r-s)\sum_{\substack{p+q=k-1\\p,q\geq 0}} r^qs^p=(r-s)\left(r^{k-1}+r^{k-2}s+r^{k-3}s^2+\cdots+r^2s^{k-3}+rs^{k-2}+s^{k-1}\right) \\
 				\end{align*}
 			\item Consider the possible results of flipping a fair coin $n$ times. There are $2^n$ possible outcomes. 
 			\item ($\star$) For any natural number $q$, $$\sum_{i=1}^{2^q}\frac{1}{i}\geq 1+\frac{q}{2}$$
@@ -128,6 +140,5 @@ Therefore, we can see that by mathematical induction, $5^{2p}-1$ will always be 
 				({\em Hint.} At some point you will need to ``combine like terms".)
 			\item ($\star$) Any legal word has more $a$s than $b$s.
 			\end{enumerate}
-			
 \end{description}
 \end{document}
