@@ -80,7 +80,7 @@ States united: $L(t): \exists x \wedge \exists y \exists \wedge \forall z $
 		\item The product of any integer with any even integer is even.
 $\forall a, b,\exists k, m:(b=2k \Rightarrow ab=2m$ \\
 \underline{Claim:} Given any integer a, the product, p with an even integer b is even. \\
-\textbf{Proof:} Given b is an even integer, we can determine that it can be writen as b=2k.
+\textbf{Proof:} Given b is an even integer, we can determine that it can be writen as $b=2k$, where k is an integer that makes $b=2k$ true.We also define r to be $r=ka$.
 \begin{align*}
 p &= ba \\
  &= 2ka \tag{Replaces b with 2k} \\
@@ -90,7 +90,7 @@ Therefore, as we can see, p=2r, and since this fits the formula 2j where j is an
 		\item The difference of two odd integers is always even.
 $  \forall j, k \exists e:((2j+1)+2k+1 \Rightarrow 2e)) $ \\
 Claim: Given two odd numbers j and k, the difference D will always be even. \\
-Proof: We can represent j and k as 2l+1=n, where j and k are possible values of n where l is an integer. We can use this to see that:
+Proof: We can represent j as $j=2l+1$, where l is an integer which makes the statement true, and $k=2o+1$ where $o$ is an integer which which makes the statement true. Furthermore, we define $q$ to be $q=o-p$ We can use this to see that:
 \begin{align*}
 D &= j-k \\
 &= (2o+1)-(2p+1) \tag{Replaced j with 2o+1 and k with 2p+1} \\
@@ -141,7 +141,7 @@ As we can see, the only case which the sum of two integers is even is if there i
 		\item ($\star \star$) No integer is both even and odd. \\
 $\forall a, b: \sim (a=2k \wedge a=2j+1)$ \\
 Claim: No Integer is both even and odd \\
-Proof: Let us assume that there exists an integer, $I$, which satisfies both 2k and 2j+1 where j and k are integers indicating that I is both even are odd (We use different variables to consider different values being used). We can set these values equal to eachother in order to see:\\
+Proof: Let us assume that there exists an integer, $I$, which are equal to both 2k and 2j+1 where there exists a j and k that are integers indicating that I is both even are odd (We use different variables to consider different values being used).We also define m as m=k-j We must set these values equal to eachother in order to see:\\
 \begin{align*}
 2k &= 2j+1 \\
 -1 &= 2j-2k \tag{subtracts 2k and -1 from both sides}\\
@@ -153,11 +153,11 @@ Since we know that 1 is not an even number, and the above insinuates this, we kn
 		\item If $m$ divides $a$ and $n$ divides $b$, then $mn$ divides $ab$. \\
 $ \exists a,m,k,j,b: (a=m(k) \wedge b=n(j) \Leftrightarrow \exists r: ab=mn(r))$ \\
 Claim: If $m$ is a factor of $a$ and $n$ is a factor of $b$, then $mn$ is a factor of $ab$.
-Proof: We can first write $a$ as $mj$ and $b$ as $nk$ with j and k being integers. Once this is done, we can rewrite ab as: \\
+Proof: We can first define $a$ as $a=mj$ and $b$ as $b=nk$ with j and k being integers. Next, we define o to be o=jk. Once this is done, we can rewrite ab as: \\
 \begin{align*}
 ab&=nkmj \\
 &=mn(jk) \\
-ab &= mn(o) \tag{set jk to o} \\
+ab &= mn(o) \tag{substitute jk for o} \\
 \end{align*}
 As we can see, mn is a factor of ab, as it is the product of mn and o. \\
                 \item ($\star$)  Given an integer $t$, if there are integers $m$ and $n$ so that $15m+16n=t$, then there are integers $r$ and $s$ so that $3r+8s=t$. \\
@@ -175,10 +175,10 @@ We must first show that $12m+15n=1$ is not valid for any integer. We can first f
 \begin{align*}
  1 &= 3(4m+5n) \\
 \end{align*}
-Since 3 is not a factor of 1, there is no integer value which works, as 1 does not have 3 as a factor. Therefore the statement is valid, as it doesn't satisfy the initial condition. \\
+Since 3 is not a factor of 1, there is no integer value which works, as 1 does not have 3 as a factor. Therefore the statement is valid, as it doesn't satisfy the initial condition. So, if there are integers $m$ and $n$ with $12m+15n=1$, then $m$ and $n$ are both positive, as there are no integers which make that statement true.  \\
 		\item ($\star$) The sum of two odd functions is [BLANK]. (Fill in the blank, and prove your answer.) \\
 Claim: The sum of two odd functions is odd. \\
-Proof: Let's consider two odd functions, f(x) and g(x) in which f(-x)=-f(x) and g(-x)=-g(x): \\
+Proof: Let's consider two odd functions, $f(x)$ and $g(x)$ which $x$ is an input to $f$ and for all $x$, $f(-x)=-f(x)$ and $g(-x)=-g(x)$: \\
 \begin{align*}
 f(-x) + g(-x) &= -f(x) + -g(x) \tag{addition of two functions} \\
 (f+g)(-x) &= -(f+g)(x) \tag{factor our (-x) from left side and (-x) and -1 from right side} \\
@@ -188,7 +188,7 @@ Therefore, the sum of two odd functions is odd. \\
 
 		\item ($\star \star$) Show that there is a unique function which is both even and odd. \\
 Claim: There is a unique function that is both even and odd. \\
-Proof: Let us consider the class of even functions f(-x)=f(x) and odd functions f(-x)=-f(x). Let us also define a function as being an equation in which each input produces a unique output. Let us now define -f(x) graphically as the reflection of inputs across the x axis, as the distance between zero stays equidistant, however the direction in which these are is opposite. So, for a function to be both even and odd means for the outputs of f(-x) must equal both f(-x) and -f(-x). Because functions have unique outputs, -f(-x) must equal f(-x), or an equation in which the reflection and original converge. Because the only value which this holds true is 0, as this serves as the axis of reflection, and -0=0, the only function which would satisfy the conditions is f(x)=0.  
+Proof: Let us consider the class of even functions $f(-x)=f(x)$ and odd functions $f(-x)=-f(x)$. Let us also define a function as being an equation in which each input produces a unique output. Let us now define $-f(x)$ graphically as the reflection of inputs across the x axis, as the distance between zero stays equidistant, however the direction in which these are is opposite. So, for a function to be both even and odd means for the outputs of $f(-x)$ must equal both $f(-x)$ and $-f(-x)$. Because functions have unique outputs, $-f(-x)$ must equal $f(-x)$, or an equation in which the reflection and original converge. Because the only value which this holds true is 0, as this serves as the axis of reflection, and in terms of $f(-x)=-f(x)$, $0=-0$, which is true, and in terms of $f(-x)=f(x)$, $0=0$. Therefore, the only function which would satisfy the conditions is $f(x)=0$.  
 \end{enumerate}
 \end{description}
 \end{document}

@@ -1,11 +1,10 @@
-s\documentclass[11pt]{letter}
+\documentclass[11pt]{letter}
 \usepackage{amsmath,amsthm}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{enumerate}
 \usepackage[margin=.9in]{geometry}
 \usepackage{graphicx}
-
 \newtheorem*{theorem*}{Theorem}
 \newtheorem*{IBP}{Integration by Parts}
 \newtheorem{claim}{Claim}
@@ -43,9 +42,25 @@ s\documentclass[11pt]{letter}
 
 	\item[exercises]  These problems don't require you to write proofs.
 		\begin{enumerate}
-			\item Compute $B_{n,k}$ for $0\leq n\leq 6$.
-			\item Explain why the definition given for $B_{n,k}$ actually constitutes a definition; that is, why we can compute $B_{n,k}$ for any choice of $n,k$ with $0\leq k\leq n$.
+			\item Compute $B_{n,k}$ for $0\leq n\leq 6$. \\
+                        \begin{tabular}{||c|c|c|c|c|c|c|c||}
+                          \hline
+                        ${}$&k=0&k=1&k=2&k=3&k=4&k=5&k=6 \\
+                          n=0 &1 \\
+                          n=1&1&1 \\
+                          n=2&1&2&1\\
+                          n=3&1&3&3&1\\
+                          n=4&1&4&6&4&1\\
+                          n=5&1&5&10&5&1\\
+                          n=6&1&6&15&20&15&6&1\\
+
+                            
+                          \hline
+                          \end{tabular}  
+                          
+			\item Explain why the definition given for $B_{n,k}$ actually constitutes a definition; that is, why we can compute $B_{n,k}$ for any choice of $n,k$ with $0\leq k\leq n$. We can do this because one can work their way up from $B_{0,k}$, which is 1 and continue to get the rest of their solutions.
 			\item Identify, explain, and correct any correctable flaws in the following proofs:
+                          The problem with this proof is we don't see $n^2+n$ is odd for n, instead it tells us that this is true, when in fact this isn't as 1+1=2 which is even. To make this proof work, we could change the claim to $n^2+1$ is always even.
 				\begin{claim}
 					$n^2+n$ is odd.
 				\end{claim}
@@ -56,7 +71,7 @@ s\documentclass[11pt]{letter}
 					$$(n+1)^2+(n+1)=n^2+2n+1+n+1=n^2+n+2(n+1)$$
 					so $(n+1)^2+(n+1)$ is the sum of an odd number and an even number, hence itself odd. This completes the inductive step.
 				\end{proof}
-				
+				In this proof, the writer didn't include even numbers, instead using the formula for odd numbers and finding all numbers in there.
 				\begin{claim}
 					Every natural number is odd.
 				\end{claim}
@@ -65,7 +80,7 @@ s\documentclass[11pt]{letter}
 					
 					Inductively, assume $k$ is odd. This means there is an integer $p$ so that $k=2p+1$. Consider $p+1$. Clearly $2(p+1)+1$ is odd.
 				\end{proof}
-				
+				Didn't use a base case, instead only solving for $n+1$. 
 				\begin{claim}
 					Every natural number is both even and odd.
 				\end{claim}
@@ -74,6 +89,7 @@ s\documentclass[11pt]{letter}
 					
 					Since $k$ is even, there is $p$ with $k=2p$. So $k+1=2p+1$ is odd. Since $k$ is odd, there is $q$ with $k=2q+1$. So $$k+1=(2q+1)+1=2(q+1)$$is even.
 				\end{proof}
+                                You didn't do the inductive step, you simply stated that there was a next term, not necessarily that this was divisible by 6.
 				\begin{claim}
 					$n^3-n$ is divisible by 6.
 				\end{claim}
@@ -85,17 +101,18 @@ s\documentclass[11pt]{letter}
 
 		\end{enumerate}
 	\item[proofs] Prove the following claims. 
+          \setcounter{claim}{0}
 		\begin{enumerate}
 			\item For any natural number $p$, 8 divides $5^{2p}-1$.
 \begin{claim}
 For any natural number $p$, 8 divides $5^{2p}-1$
 \end{claim}
 \begin{PBI}
-We must first confirm that the base case, or $5^{2p}-1$ is divisible by 8. We determine that the value of this function at 1 is 24, which is $8*3$, so this statement is valid. Next, we can see that the solution to this is $8m$, where m is a natural number. We can now use mathematical induction and find: \\
+We must first confirm that the base case, or $5^{2p}-1$ is divisible by 8. We determine that the value of this function at 1 is 24, which is $8*3$, so this statement is valid. Next, we can see that the solution to this is $8m$, where m is a natural number. We can now use mathematical induction by setting p=n and plugging in p+1 to find: \\
 \begin{align*}
-8m &= 5^{2(n+1}-1 \tag{Solving for n+1, since we know that this is true when n is true when n=1} \\
-&= 5^2*5^{2n}-1 \\
-&=25(8m+1)-1 \\
+8m &= 5^{2(p+1)}-1 \tag{Solving for p+1, since we know that this is true when n is true when n=1} \\
+&= 5^2*5^{2p}-1 \\
+&=25(8m+1)-1 \\ \tag{Substituted $5^{2p}$ with $8m+1$, as $8m$ is what we are attempting to prove.}
 &=8(25m+3) \\
 \end{align*}
 Therefore, we can see that by mathematical induction, $5^{2p}-1$ will always be divisible by 8 as long as p is in the natural numbers. \\
@@ -105,15 +122,16 @@ Therefore, we can see that by mathematical induction, $5^{2p}-1$ will always be 
 			\item Let $a_1,\ldots, a_n$ be real numbers. Then
 				$$2^{\left(\sum_{k=1}^n a_k\right)}=\prod_{k=1}^n 2^{a_k}$$ \\
 \begin{claim}
-Given $a_1,\ldots, a_n$ are real numbers then $$2^{\left(\sum_{k=1}^n a_k\right)}=\prod_{k=1}^n 2^{a_k}$$ \\
+Given $a_1,\ldots, a_n$ are real numbers then $2^{\left(\sum_{k=1}^n a_k\right)}=\prod_{k=1}^n 2^{a_k}$ \\
 \end{claim}
 \begin{PBI}
 We can first test our base case by plugging in n=1, which gives us $2^{a_1}=2^{a_1}$, so the base case is correct. We can now set k=r+1, to give us: \\
 \begin{align*}
-&=2^{\left(\sum_{r=1}^n a_{r}\right +a_{r+1}} \tag{replaces k with r+1} \\
-&=2^{r+1}*2^{\left(\sum_{r=1}^n a_{r}\right)} \\
-&=2^{r+1}*\prod_{r=1}^n 2^{a_r} \tag{Replaced sum formula with it's equal (As stated in claim)} \\
-&=\prod_{r=1}^n 2^{a_{r+1}} \tag{Put 2^{a_{r+1}} into the product.} \\
+&=2^{\left(\sum_{r=1}^n a_{r}\right) +a_{r+1}} \tag{replaces k with r+1} \\
+&=2^{a_r+1}*2^{\left(\sum_{r=1}^n a_{r}\right)} \\
+&=2^{a_{r+1}}*2^{\left(\sum_{r=1}^n a_{r}\right)} \\
+&=2^{a_{r+1}}*\prod_{r=1}^n 2^{a_r} \\
+&=\prod_{r=1}^{n+1} 2^{a_r} \\
 \end{align*}
 As we can see, these two are equal at n=1 and all subsequent values, so this holds true. This was achieved with mathematical induction. \\
 \end{PBI}
@@ -122,8 +140,34 @@ As we can see, these two are equal at n=1 and all subsequent values, so this hol
 					r^k-s^k=(r-s)\sum_{\substack{p+q=k-1\\p,q\geq 0}} r^qs^p=(r-s)\left(r^{k-1}+r^{k-2}s+r^{k-3}s^2+\cdots+r^2s^{k-3}+rs^{k-2}+s^{k-1}\right) \\
 				\end{align*}
 			\item Consider the possible results of flipping a fair coin $n$ times. There are $2^n$ possible outcomes. 
+\begin{claim}
+Given $n$ coin tosses, there are $2^n$ outcomes.
+\end{claim}
+\begin{PBI}
+We can first determine that $2^n$ does satisfy the base case of one coin flip, which we know has two possibilities. We must then solve for $2^1$, which is 2, therefore verifying the base case. We can now use k with $k=n$ and solve for $k+1$, or$2^{k+1}$:\\
+\begin{align*}
+&2^{n+1}\\
+&2(2^{n}) \\
+\end{align*}
+Since the amount of flips will be twice the previous amount, as you can do all of the previous flip possibilities on heads and again on tails, this confirms that $2^n$ accurately describes the probability of heads and tails through Mathemartical Induction, we must conclude that given $n$ coin tosses, there are a total of $2^n$ possibilities. $\qed$
+\end{PBI}
 			\item ($\star$) For any natural number $q$, $$\sum_{i=1}^{2^q}\frac{1}{i}\geq 1+\frac{q}{2}$$
 			\item Prove the power rule for derivatives:~for any $n\in\mathbb{N}$, we have $\frac{d}{dx}[x^n]=nx^{n-1}$. You may {\bfseries only} use the product rule for derivatives and the fact that $\frac{d}{dx}x=1$.
+\begin{claim}
+	The derivative of a function in the form of $x^n=nx^{n-1}$.
+\end{claim}
+\begin{PBI}
+We can confirm the base case by confirming that $\frac{d}{dx}(x^1)=\frac{d}{dx}(x)=1$. Now that we have proven the base case, we can use the inductive step in which $n=k+1$. \\
+\begin{align*}
+nx^{n-1}&=\frac{d}{dx}x^{k+1}\\
+&= \frac{d}{dx}x(x^k) \\
+&= x^k+x\frac{d}{dx}x^k  \tag{Applied product rule} \\
+&= x^k+x(kx^{k-1}) \tag{Substituted with formula $\frac{d}{dx}x^n$ given in claim} \\
+&= x^k+kx^k \\
+&= (k+1)x^{(k+1)-1} \\
+\end{align*}
+As we can see, the input of k+1 in $\frac{d}{dx}x^{n}$ resulted in the same values being replaced in the second part. Therefore, through proof by mathematical induction, we can confirm that $x^n=nx^{n-1}$. $\qed$
+\end{PBI}
 			 \item ($\star$) The {\bfseries power rule for integrals}:~for any $n\in\mathbb{N}$, we have 
 				\begin{align*}
 					\int x^ndx=\frac{1}{n+1}x^{n+1}+C
@@ -131,14 +175,65 @@ As we can see, these two are equal at n=1 and all subsequent values, so this hol
 				for some constant $C$.\\
 				You {\bfseries may not} use the previous result. You may use {\bfseries only} the following calculus facts: the linearity properties of the integral; $\int C dx=Cx+D$ for some constant $D$; $\frac{d}{dx} x=1$; integration by parts.
 			\item $\frac{d^r}{dx^r}x^r=r!$
+\begin{claim}
+$\frac{d^r}{dx^r}x^r=r!$
+\end{claim}
+\begin{PBI}
+We must first confirm this is through with the base case n=1. $\frac{d^1}{dx^1}x^1=1!=1$. Now that we know the base case holds true, we can use the inductive step by having $r=k$ and substituting $n$ for $r+1$.
+\begin{align*}
+r!&=\frac{d^{k+1}}{dx^{k+1}}x^{k+1} \\
+&=\frac{d^k}{dx^k}\frac{d}{dx}x^{k+1} \\
+&=(k+1)\frac{d^k}{dx^k}x^k \tag{Uses Claim 4 as well as the constant multiple rule of derivatives.} \\
+&=(k+1)k! \tag{Substitutes equation given in the claim.} \\
+&=(k+1)! \tag{Uses definition of factorial} \\
+\end{align*}
+\end{PBI}
+Therefore, through mathematical induction, $\frac{d^r}{dx^r}x^r=r!$ is true. $\qed$
+
 			\item The {\bfseries constant multiple rule for higher derivatives}: for any function $f$ with at least $n$ derivatives and any constant $c$, we have $\frac{d^n}{dx^n}\left[cf\right]=c\left[\frac{d^n}{dx^n}f\right]$. You may assume the constant multiple rule for derivatives.
+\begin{claim}
+For any function $f$ with at least $n$ derivatives and any constant $c$, we have $\frac\
+{d^n}{dx^n}\left[cf\right]=c\left[\frac{d^n}{dx^n}f\right]$.
+\end{claim}
+\begin{PBI}
+We can first prove the base case by seeing that $\frac{d^1}{dx^1}[cf]=c\frac{d}{dx}f$ due to the constant multiple rule for derivatives. Next, we can use $k=n$ and substitute $k+1$  to perform the inductive step: \\
+\begin{align*}
+c \frac{d^{n}}{dx^{n}}[f]&=\frac{d^{k+1}}{dx^{k+1}}[cf] \\
+&=\frac{d}{dx}(\frac{d^{k}}{dx^{k}}[cf]) \\
+&=\frac{d}{dx}(c\frac{d^k}{dx^k}[f]) \tag{Substituted using equation given in claim} \\
+&=c\frac{d}{dx}(\frac{d^k}{dx^k}[f]) \tag{Used constant multiple rule for derivatives} \\
+&=c\frac{d^{k+1}}{d^{k+1}}[f] \\
+\end{align*}
+Therefore, we can see this works for n as well as n+1, therefore through mathematical induction $\frac{d^n}{dx^n}\left[cf\right]=c\left[\frac{d^n}{dx^n}f\right]$. $\qed$
+\end{PBI}
 			\item The {\bfseries sum rule for higher derivatives}: for any functions $f$, $g$ with at least $n$ derivatives, we have $\frac{d^n}{dx^n}\left[f+g\right]=\frac{d^n}{dx^n}f+\frac{d^n}{dx^n}g$. You may assume the sum rule for derivatives.
+                          \begin{claim}
+                            for any functions $f$, $g$ with at least $n$ derivatives, we have $\frac{d^n}{dx^n}\left[f+g\right]=\frac{d^n}{dx^n}f+\frac{d^n}{dx^n}g$.
+                            \end{claim}
+                          \begin{PBI}
+                            We must first prove the base case, or with n=1. We can see that  $\frac{d}{dx}\left[f+g\right]=\frac{d}{dx}f+\frac{d}{dx}g$ is true due to the sum rule for derivatives. Now that we know this is true, we can use k=n and solve for k+1. \\
+                            \begin{align*}
+                              \frac{d^{k+1}}{dx^{k+1}}f+\frac{d^{k+1}}{dx^{k+1}}g &= \frac{d^{k+1}}{dx^{k+1}}[f+g] \\
+                              &=\frac{d}{dx}\frac{d^k}{dx^k}[f+g] \\
+                              &=\frac{d}{dx}\frac{d^k}{dx^k}f+\frac{d}{dx^k}g \tag{Substituted with equation given in claim}\\
+                              &=\frac{d^{k+1}}{dx^{k+1}}f+\frac{d^{k+1}}{dx^{k+1}}g \\
+                              \end{align*}
+                            Therefore, since $\frac{d^n}{dx^n}\left[f+g\right]=\frac{d^n}{dx^n}f+\frac{d^n}{dx^n}g$ is true in the base case of n=1 and for n+1, through mathematical induction this is true. $\qed$
+
+
+                          \end{PBI}
 			\item ($\star$) The {\bfseries Binomial Theorem}: for any real numbers $x,y$, and any $n\in\mathbb{N}$,
 				\begin{equation*}
 					(x+y)^n=B_{n,0}x^n +B_{n,1}x^{n-1}y+B_{n,2}x^{n-2}y^2+\cdots+B_{n,n-2}x^2y^{n-2}+B_{n,n-1}x y^{n-1}+B_{n,n}y^n
 				\end{equation*}
 				({\em Hint.} At some point you will need to ``combine like terms".)
 			\item ($\star$) Any legal word has more $a$s than $b$s.
+\begin{claim}
+Any legal word has more $a$s than $b$s.
+\end{claim}
+\begin{PBI}
+We can see through the base case, aba, that there are more $a$s than $b$s. Next, we must realize that all of the transformations (legal alterations of an existing legal word which provide another legal word) are the same in terms of the amount of $a$s and $b$s added, so if can be proven for any of the transformations that there are more $a$s and $b$s, then it is true for all of them. These transformations offer an inductive step, and since all of them offer an equal amount of $a$s and $b$s, and the base case has an equal amount of them, there will always be more $a$s than $b$s by mathematical induction. $\qed$ 
+\end{PBI}
 			\end{enumerate}
 \end{description}
 \end{document}
