@@ -153,7 +153,7 @@ Since we know that 1 is not an even number, and the above insinuates this, we kn
 		\item If $m$ divides $a$ and $n$ divides $b$, then $mn$ divides $ab$. \\
 $ \exists a,m,k,j,b: (a=m(k) \wedge b=n(j) \Leftrightarrow \exists r: ab=mn(r))$ \\
 Claim: If $m$ is a factor of $a$ and $n$ is a factor of $b$, then $mn$ is a factor of $ab$.
-Proof: We can first write $a$ as $mj$ and $b$ as $nk$ with j and k being integers. Next, we define o to be o=jk. Once this is done, we can rewrite ab as: \\
+Proof: We can first define $a$ as $a=mj$ and $b$ as $b=nk$ with j and k being integers. Next, we define o to be o=jk. Once this is done, we can rewrite ab as: \\
 \begin{align*}
 ab&=nkmj \\
 &=mn(jk) \\
