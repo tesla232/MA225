@@ -1,3 +1,4 @@
+
 \documentclass[11pt]{letter}
 \usepackage{amsmath,amsthm}
 \usepackage{amsfonts}
@@ -108,11 +109,11 @@
 For any natural number $p$, 8 divides $5^{2p}-1$
 \end{claim}
 \begin{PBI}
-We must first confirm that the base case, or $5^{2p}-1$ is divisible by 8. We determine that the value of this function at 1 is 24, which is $8*3$, so this statement is valid. Next, we can see that the solution to this is $8m$, where m is a natural number. We can now use mathematical induction by setting p=n and plugging in p+1 to find: \\
+We must first confirm that the base case, or $5^{2p}-1$ is divisible by 8. We determine that the value of the function $5^{2p}-1$ at 1 is 24, which is $8*3$, so this statement is valid. Next, we can see that the solution to this is $8m$, where m is a natural number. We can now use mathematical induction by setting p=n and plugging in p+1 to show that: \\
 \begin{align*}
 8m &= 5^{2(p+1)}-1 \tag{Solving for p+1, since we know that this is true when n is true when n=1} \\
 &= 5^2*5^{2p}-1 \\
-&=25(8m+1)-1 \\ \tag{Substituted $5^{2p}$ with $8m+1$, as $8m$ is what we are attempting to prove.}
+&=25(8m+1)-1 \\ \tag{Substituted $5^{2p}$ through inductive assumption}
 &=8(25m+3) \\
 \end{align*}
 Therefore, we can see that by mathematical induction, $5^{2p}-1$ will always be divisible by 8 as long as p is in the natural numbers. \\
@@ -127,9 +128,9 @@ Given $a_1,\ldots, a_n$ are real numbers then $2^{\left(\sum_{k=1}^n a_k\right)}
 \begin{PBI}
 We can first test our base case by plugging in n=1, which gives us $2^{a_1}=2^{a_1}$, so the base case is correct. We can now set k=r+1, to give us: \\
 \begin{align*}
-&=2^{\left(\sum_{r=1}^n a_{r}\right) +a_{r+1}} \tag{replaces k with r+1} \\
+\prod_{r=1}^{n+1} 2^{a_r}&=2^{\left(\sum_{r=1}^n a_{r}\right) +a_{r+1}} \tag{replaces k with r+1} \\
 &=2^{a_r+1}*2^{\left(\sum_{r=1}^n a_{r}\right)} \\
-&=2^{a_{r+1}}*2^{\left(\sum_{r=1}^n a_{r}\right)} \\
+&=2^{a_{r+1}}*2^{\left(\sum_{r=1}^n a_{r}\right)} \tag{Substituted using inductive assumption}\\
 &=2^{a_{r+1}}*\prod_{r=1}^n 2^{a_r} \\
 &=\prod_{r=1}^{n+1} 2^{a_r} \\
 \end{align*}
@@ -144,12 +145,12 @@ As we can see, these two are equal at n=1 and all subsequent values, so this hol
 Given $n$ coin tosses, there are $2^n$ outcomes.
 \end{claim}
 \begin{PBI}
-We can first determine that $2^n$ does satisfy the base case of one coin flip, which we know has two possibilities. We must then solve for $2^1$, which is 2, therefore verifying the base case. We can now use k with $k=n$ and solve for $k+1$, or$2^{k+1}$:\\
+Since the amount of flips will be twice the previous amount, as you can do all of the previous flip possibilities on heads and again on tails. We can first determine that $2^n$ does satisfy the base case of one coin flip, which we know has two possibilities. We must then solve for $2^1$, which is 2, therefore verifying the base case. We can now use k with $k=n$ and solve for $k+1$, or $2^{k+1}$:\\
 \begin{align*}
-&2^{n+1}\\
-&2(2^{n}) \\
+&=2^{n+1}\\
+&=2(2^{n}) \\
 \end{align*}
-Since the amount of flips will be twice the previous amount, as you can do all of the previous flip possibilities on heads and again on tails, this confirms that $2^n$ accurately describes the probability of heads and tails through Mathemartical Induction, we must conclude that given $n$ coin tosses, there are a total of $2^n$ possibilities. $\qed$
+This confirms that $2^n$ accurately describes the probability of heads and tails. Through Mathemartical Induction, we must conclude that given $n$ coin tosses, there are a total of $2^n$ possibilities. $\qed$
 \end{PBI}
 			\item ($\star$) For any natural number $q$, $$\sum_{i=1}^{2^q}\frac{1}{i}\geq 1+\frac{q}{2}$$
 			\item Prove the power rule for derivatives:~for any $n\in\mathbb{N}$, we have $\frac{d}{dx}[x^n]=nx^{n-1}$. You may {\bfseries only} use the product rule for derivatives and the fact that $\frac{d}{dx}x=1$.
@@ -157,16 +158,16 @@ Since the amount of flips will be twice the previous amount, as you can do all o
 	The derivative of a function in the form of $x^n=nx^{n-1}$.
 \end{claim}
 \begin{PBI}
-We can confirm the base case by confirming that $\frac{d}{dx}(x^1)=\frac{d}{dx}(x)=1$. Now that we have proven the base case, we can use the inductive step in which $n=k+1$. \\
+We can confirm the base case by confirming that $\frac{d}{dx}(x^1)=\frac{d}{dx}(x)=1$. Now that we have proven the base case, we can use the inductive step in which $n=k+1$ to show that: \\
 \begin{align*}
 nx^{n-1}&=\frac{d}{dx}x^{k+1}\\
 &= \frac{d}{dx}x(x^k) \\
 &= x^k+x\frac{d}{dx}x^k  \tag{Applied product rule} \\
-&= x^k+x(kx^{k-1}) \tag{Substituted with formula $\frac{d}{dx}x^n$ given in claim} \\
+&= x^k+x(kx^{k-1}) \tag{Substituted with the inductive assumption} \\
 &= x^k+kx^k \\
 &= (k+1)x^{(k+1)-1} \\
 \end{align*}
-As we can see, the input of k+1 in $\frac{d}{dx}x^{n}$ resulted in the same values being replaced in the second part. Therefore, through proof by mathematical induction, we can confirm that $x^n=nx^{n-1}$. $\qed$
+As we can see, the input of k+1 in $\frac{d}{dx}x^{n}$ resulted in the same values being replaced in the second part. Therefore, through proof by mathematical induction, we can confirm that $\frac{d}{dx}(x^n)=nx^{n-1}$. $\qed$
 \end{PBI}
 			 \item ($\star$) The {\bfseries power rule for integrals}:~for any $n\in\mathbb{N}$, we have 
 				\begin{align*}
@@ -178,12 +179,13 @@ As we can see, the input of k+1 in $\frac{d}{dx}x^{n}$ resulted in the same valu
 \begin{claim}
 $\frac{d^r}{dx^r}x^r=r!$
 \end{claim}
-\begin{PBI}
-We must first confirm this is through with the base case n=1. $\frac{d^1}{dx^1}x^1=1!=1$. Now that we know the base case holds true, we can use the inductive step by having $r=k$ and substituting $n$ for $r+1$.
+\begin{PBI}s
+We must first confirm this is through with the base case n=1. $\frac{d^1}{dx^1}x^1=1!=1$. Now that we know the base case holds true, we can use the inductive step by having $r=k$ and substituting $n$ for $r+1$ to show that:
 \begin{align*}
 r!&=\frac{d^{k+1}}{dx^{k+1}}x^{k+1} \\
 &=\frac{d^k}{dx^k}\frac{d}{dx}x^{k+1} \\
-&=(k+1)\frac{d^k}{dx^k}x^k \tag{Uses Claim 4 as well as the constant multiple rule of derivatives.} \\
+&=\frac{d^k}{dx^k}(k+1)x^k \tag{substituted using inductive assumption} \\
+&=(k+1)\frac{d^k}{dx^k}x^k \tag{Used the constant multiple rule of derivatives.} \\
 &=(k+1)k! \tag{Substitutes equation given in the claim.} \\
 &=(k+1)! \tag{Uses definition of factorial} \\
 \end{align*}
@@ -196,7 +198,7 @@ For any function $f$ with at least $n$ derivatives and any constant $c$, we have
 {d^n}{dx^n}\left[cf\right]=c\left[\frac{d^n}{dx^n}f\right]$.
 \end{claim}
 \begin{PBI}
-We can first prove the base case by seeing that $\frac{d^1}{dx^1}[cf]=c\frac{d}{dx}f$ due to the constant multiple rule for derivatives. Next, we can use $k=n$ and substitute $k+1$  to perform the inductive step: \\
+We can first prove the base case by seeing that $\frac{d^1}{dx^1}[cf]=c\frac{d}{dx}f$, where f is any function, due to the constant multiple rule for derivatives. Next, we can use $k=n$ and substitute $k+1$  to perform the inductive step: \\
 \begin{align*}
 c \frac{d^{n}}{dx^{n}}[f]&=\frac{d^{k+1}}{dx^{k+1}}[cf] \\
 &=\frac{d}{dx}(\frac{d^{k}}{dx^{k}}[cf]) \\
@@ -211,11 +213,11 @@ Therefore, we can see this works for n as well as n+1, therefore through mathema
                             for any functions $f$, $g$ with at least $n$ derivatives, we have $\frac{d^n}{dx^n}\left[f+g\right]=\frac{d^n}{dx^n}f+\frac{d^n}{dx^n}g$.
                             \end{claim}
                           \begin{PBI}
-                            We must first prove the base case, or with n=1. We can see that  $\frac{d}{dx}\left[f+g\right]=\frac{d}{dx}f+\frac{d}{dx}g$ is true due to the sum rule for derivatives. Now that we know this is true, we can use k=n and solve for k+1. \\
+                            We must first prove the base case, or with n=1. We can see that  $\frac{d}{dx}\left[f+g\right]=\frac{d}{dx}f+\frac{d}{dx}g$ is true due to the sum rule for derivatives. Now that we know this is true, we can use k=n and solve for k+1 to show that: \\
                             \begin{align*}
                               \frac{d^{k+1}}{dx^{k+1}}f+\frac{d^{k+1}}{dx^{k+1}}g &= \frac{d^{k+1}}{dx^{k+1}}[f+g] \\
                               &=\frac{d}{dx}\frac{d^k}{dx^k}[f+g] \\
-                              &=\frac{d}{dx}\frac{d^k}{dx^k}f+\frac{d}{dx^k}g \tag{Substituted with equation given in claim}\\
+                              &=\frac{d}{dx}\frac{d^k}{dx^k}f+\frac{d}{dx^k}g \tag{Substituted using the inductive assumption}\\
                               &=\frac{d^{k+1}}{dx^{k+1}}f+\frac{d^{k+1}}{dx^{k+1}}g \\
                               \end{align*}
                             Therefore, since $\frac{d^n}{dx^n}\left[f+g\right]=\frac{d^n}{dx^n}f+\frac{d^n}{dx^n}g$ is true in the base case of n=1 and for n+1, through mathematical induction this is true. $\qed$
@@ -232,7 +234,7 @@ Therefore, we can see this works for n as well as n+1, therefore through mathema
 Any legal word has more $a$s than $b$s.
 \end{claim}
 \begin{PBI}
-We can see through the base case, aba, that there are more $a$s than $b$s. Next, we must realize that all of the transformations (legal alterations of an existing legal word which provide another legal word) are the same in terms of the amount of $a$s and $b$s added, so if can be proven for any of the transformations that there are more $a$s and $b$s, then it is true for all of them. These transformations offer an inductive step, and since all of them offer an equal amount of $a$s and $b$s, and the base case has an equal amount of them, there will always be more $a$s than $b$s by mathematical induction. $\qed$ 
+We can see through the base case, aba, that there are more $a$s than $b$s. Next, we must realize that all of the transformations (legal alterations of an existing legal word which provide another legal word) are the same in terms of the amount of $a$s and $b$s added, so if can be proven for any of the transformations that there are more $a$s and $b$s, then it is true for all of them. These transformations can be represented as an inductive step by using a recursive model and determining what happens between step n and step n+1(n represents a selected step in the natural numbers). Since all of them offer an equal amount of $a$s and $b$s, and the base case has an equal amount of them, there will always be more $a$s than $b$s by mathematical induction. $\qed$ 
 \end{PBI}
 			\end{enumerate}
 \end{description}
