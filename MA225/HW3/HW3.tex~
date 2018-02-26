@@ -113,7 +113,7 @@ We must first confirm that the base case, or $5^{2p}-1$ is divisible by 8. We de
 \begin{align*}
 8m &= 5^{2(p+1)}-1 \tag{Solving for p+1, since we know that this is true when n is true when n=1} \\
 &= 5^2*5^{2p}-1 \\
-&=25(8m+1)-1 \\ \tag{Substituted $5^{2p}$ with $8m+1$ through inductive assumption}
+&=25(8m+1)-1 \\ \tag{Substituted $5^{2p}$ through inductive assumption}
 &=8(25m+3) \\
 \end{align*}
 Therefore, we can see that by mathematical induction, $5^{2p}-1$ will always be divisible by 8 as long as p is in the natural numbers. \\
@@ -145,12 +145,12 @@ As we can see, these two are equal at n=1 and all subsequent values, so this hol
 Given $n$ coin tosses, there are $2^n$ outcomes.
 \end{claim}
 \begin{PBI}
-We can first determine that $2^n$ does satisfy the base case of one coin flip, which we know has two possibilities. We must then solve for $2^1$, which is 2, therefore verifying the base case. We can now use k with $k=n$ and solve for $k+1$, or$2^{k+1}$:\\
+Since the amount of flips will be twice the previous amount, as you can do all of the previous flip possibilities on heads and again on tails. We can first determine that $2^n$ does satisfy the base case of one coin flip, which we know has two possibilities. We must then solve for $2^1$, which is 2, therefore verifying the base case. We can now use k with $k=n$ and solve for $k+1$, or $2^{k+1}$:\\
 \begin{align*}
-&2^{n+1}\\
-&2(2^{n}) \\
+&=2^{n+1}\\
+&=2(2^{n}) \\
 \end{align*}
-Since the amount of flips will be twice the previous amount, as you can do all of the previous flip possibilities on heads and again on tails, this confirms that $2^n$ accurately describes the probability of heads and tails through Mathemartical Induction, we must conclude that given $n$ coin tosses, there are a total of $2^n$ possibilities. $\qed$
+This confirms that $2^n$ accurately describes the probability of heads and tails. Through Mathemartical Induction, we must conclude that given $n$ coin tosses, there are a total of $2^n$ possibilities. $\qed$
 \end{PBI}
 			\item ($\star$) For any natural number $q$, $$\sum_{i=1}^{2^q}\frac{1}{i}\geq 1+\frac{q}{2}$$
 			\item Prove the power rule for derivatives:~for any $n\in\mathbb{N}$, we have $\frac{d}{dx}[x^n]=nx^{n-1}$. You may {\bfseries only} use the product rule for derivatives and the fact that $\frac{d}{dx}x=1$.
