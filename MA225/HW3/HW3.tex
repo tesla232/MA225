@@ -110,13 +110,13 @@ For any natural number $p$, 8 divides $5^{2p}-1$
 \end{claim}
 \begin{PBI}
 We must first confirm that the base case, or $5^{2p}-1$ is divisible by 8. We determine that the value of the function $5^{2p}-1$ at 1 is 24, which is $8*3$, so this statement is valid. Next, we can see that the solution to this is $8m$, where m is a natural number. We can now use mathematical induction by setting p=n and plugging in p+1 to show that: \\
-\begin{align*}
-8m &= 5^{2(p+1)}-1 \tag{Solving for p+1, since we know that this is true when n is true when n=1} \\
+\begin{align*}  
+5^{2(p+1)}-1 &= 5^{2(p+1)}-1 \tag{Solving for p+1, since we know that this is true when n is true when n=1} \\
 &= 5^2*5^{2p}-1 \\
 &=25(8m+1)-1 \\ \tag{Substituted $5^{2p}$ through inductive assumption}
 &=8(25m+3) \\
 \end{align*}
-Therefore, we can see that by mathematical induction, $5^{2p}-1$ will always be divisible by 8 as long as p is in the natural numbers. \\
+Therefore, since the equation is divisible by 8 at $p+1$ as well as a base case, we can see that by mathematical induction, $5^{2p}-1$ will always be divisible by 8 as long as p is in the natural numbers. \\
 \end{PBI}
 
 			\item For any natural number $\ell$, $3^\ell\geq 1+2^\ell$.
@@ -126,9 +126,9 @@ Therefore, we can see that by mathematical induction, $5^{2p}-1$ will always be 
 Given $a_1,\ldots, a_n$ are real numbers then $2^{\left(\sum_{k=1}^n a_k\right)}=\prod_{k=1}^n 2^{a_k}$ \\
 \end{claim}
 \begin{PBI}
-We can first test our base case by plugging in n=1, which gives us $2^{a_1}=2^{a_1}$, so the base case is correct. We can now set k=r+1, to give us: \\
+We can first test our base case by plugging in n=1, which gives us $2^{a_1}=2^{a_1}$, so the base case is correct. We define r=k.We will now assume that $2^{a_r}=2^{a_r}$ is true to show that it is true for r+1:\\
 \begin{align*}
-\prod_{r=1}^{n+1} 2^{a_r}&=2^{\left(\sum_{r=1}^n a_{r}\right) +a_{r+1}} \tag{replaces k with r+1} \\
+2^{\left(\sum_{r=1}^n a_{r}\right) +a_{r+1}} &=2^{\left(\sum_{r=1}^n a_{r}\right) +a_{r+1}} \tag{replaces k with r+1} \\
 &=2^{a_r+1}*2^{\left(\sum_{r=1}^n a_{r}\right)} \\
 &=2^{a_{r+1}}*2^{\left(\sum_{r=1}^n a_{r}\right)} \tag{Substituted using inductive assumption}\\
 &=2^{a_{r+1}}*\prod_{r=1}^n 2^{a_r} \\
@@ -145,12 +145,14 @@ As we can see, these two are equal at n=1 and all subsequent values, so this hol
 Given $n$ coin tosses, there are $2^n$ outcomes.
 \end{claim}
 \begin{PBI}
-Since the amount of flips will be twice the previous amount, as you can do all of the previous flip possibilities on heads and again on tails. We can first determine that $2^n$ does satisfy the base case of one coin flip, which we know has two possibilities. We must then solve for $2^1$, which is 2, therefore verifying the base case. We can now use k with $k=n$ and solve for $k+1$, or $2^{k+1}$ to show that:\\
+Since the amount of flips will be twice the previous amount, as you can do all of the previous flip possibilities on heads and again on tails. We can first determine that $2^n$ does satisfy the base case of one coin flip, which we know has two possibilities. We must then solve for $2^1$, which is 2, therefore verifying the base case. Since by adding a coin toss, you have all of the possibilities as before as well as the same amount with the new coin flipped, this means that $f_{n+1}=2f_n$, where $f_n$ is the number of outcomes for $n$ coin tosses. We define $k=n$. We will assume that $f_{k}=2^k$ to show that $f_{k+1}=2^{k+1}$:\\
 \begin{align*}
-&2^{n+1}\\
-&2(2^{n}) \\
+f_{n+1}=f_{n+1}
+&=2^{k+1}\tag{used definition of f}\\
+&=2(2^{k}) \\
+&=2f_n \tag{Use inductive assumption} \\
 \end{align*}
-This confirms that $2^n$ accurately describes the probability of heads and tails. Through Mathemartical Induction, we must conclude that given $n$ coin tosses, there are a total of $2^n$ possibilities. $\qed$
+This confirms that $2^n$ accurately describes the probability of heads and tails. Through Mathematical Induction, we must conclude that given $n$ coin tosses, there are a total of $2^n$ possibilities. $\qed$
 \end{PBI}
 			\item ($\star$) For any natural number $q$, $$\sum_{i=1}^{2^q}\frac{1}{i}\geq 1+\frac{q}{2}$$
 			\item Prove the power rule for derivatives:~for any $n\in\mathbb{N}$, we have $\frac{d}{dx}[x^n]=nx^{n-1}$. You may {\bfseries only} use the product rule for derivatives and the fact that $\frac{d}{dx}x=1$.
@@ -158,9 +160,9 @@ This confirms that $2^n$ accurately describes the probability of heads and tails
 	The derivative of a function in the form of $x^n=nx^{n-1}$.
 \end{claim}
 \begin{PBI}
-We can confirm the base case by confirming that $\frac{d}{dx}(x^1)=\frac{d}{dx}(x)=1$. Now that we have proven the base case, we can use the inductive step in which $n=k+1$ to show that: \\
+We can confirm the base case by confirming that $\frac{d}{dx}(x^1)=\frac{d}{dx}(x)=1$. We define $n=k$. Now that we have proven the base case, we can assume that $x^(k+1)=kx^{k}$ to show that the equation is true for $k+1$: 
 \begin{align*}
-nx^{n-1}&=\frac{d}{dx}x^{k+1}\\
+\frac{d}{dx}x^{k+1}&=\frac{d}{dx}x^{k+1}\\
 &= \frac{d}{dx}x(x^k) \\
 &= x^k+x\frac{d}{dx}x^k  \tag{Applied product rule} \\
 &= x^k+x(kx^{k-1}) \tag{Substituted with the inductive assumption} \\
