@@ -1,2 +1,2 @@
 #!/bin/bash
-git add ./HW*.tex/* & git add ./HW*.pdf &git commit -a --allow-empty-message -m '' & git push
+git add ./HW*/*.tex & git add ./HW*.pdf &git commit -a --allow-empty-message -m '' & git push

@@ -1,0 +1,164 @@
+\documentclass[11pt]{letter}
+\usepackage{amsmath,amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage[margin=.9in]{geometry}
+\usepackage{cite}
+\usepackage{asymptote}
+\newtheorem{claim}{Claim}
+\newtheorem*{theorem*}{Theorem}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\begin{document}
+\pagestyle{empty}
+
+{\Large MA 225 Problem Set 8}\\
+
+Recall the following definition:
+
+
+	\begin{enumerate}
+	\item Show that a relation $R$ on the set $A$ is total iff $A\times A=R\cup R^{-1}$.
+          \begin{claim}
+            A relation $R$ on the set $A$ is total iff $A\times A=R\cup R^{-1}$.
+          \end{claim}
+          \begin{proof}
+            Let $A\times A=R\cup R^{-1}$ and $a\in A$. Since $a\times a$
+          \end{proof}
+          
+          
+	\item Formulate a set-theoretic criterion (similar to problem 1 above and problem 8 from Homework 6) for antisymmetry. Prove that your criterion is equivalent to the relation in question being antisymmetric.
+          \begin{claim}
+            A relation $R$ on the set $A$ is total iff $A\times A=R\cap R^{-1}$.
+          \end{claim}
+          \begin{proof}
+            Let $A\times A=R\cap R^{-1}$. Consider the relation $(a,b)\in R$ where $a,b\in A$. So $(a,b) \in A\times A$ if $(a,b)\in R^{-1}$. Since the only way for that to occur is if $a=b$, $R$ is antisymmetric.\\
+            Let $R$ be an antisymmetric relation. Consider $(a,b)\in R$ where $a,b\in A$. Let $(a,b)\in R$ and $(b,a)\in R$, so that $a=b$ (according to the definition of antisymmetric). So $(a,a)\in R$. Since $(a,a)\in R^{-1}$ (found inverse of $(a,a)$), and $(a,a)\in R$, $A\times A= R\cap R^{-1}$.
+          \end{proof}
+	\item ($\star\star$) For each set $A$, there is a unique relation on $A$ which is both a function and an equivalence relation. Find this relation and prove that it is unique.
+          \begin{claim}
+            Equals is the only relation which is both a function and equivalence relationship.
+          \end{claim}
+          \begin{proof}
+            Let $R$ be an equivalence relationship and function. Let $x,y\in R$ where $x=(a,b)$ and $y=(b,c)$ with $a,b,c\in A$. So $(a,c)\in R$. Since $(a,c),(a,b)\in R$, $R$ is not injective and therefore not a function. 
+          \end{proof}
+		\item Show that the inverse of a partial order is a partial order.
+                  \begin{claim}
+                    The inverse of a partial order is a partial order.
+                  \end{claim}
+                  \begin{proof}
+                    Let $R$ be a partial order and $(a,b),(b,c)\in R$. We'll show $R^{-1}$ is a partial order \\
+                    Reflexive: $(a,a)\in R$ (R is reflexive). Therefore $R^{-1}$ is reflexive.\\
+                    Transitive: $(a,c)\in R$ (Since R is transitive). So $(c,b),(b,a)\in R$ (inverses of $(a,b)$ and $(b,c)$). Therefore if $R$ is transitive, $(c,a)\in R$. Since $(c,a)\in R$ (inverse of $(a,c)$), $R^{-1}$ is transitive.\\
+                    Antisymmetric: If $(a,b),(b,a)\in R$, $a=b$. Therefore if $(b,a),(a,b)\in R^{-1}$, $a=b$. So $R^{-1}$ is symmetric.\\
+                    So $R^{-1}$ is a partial order.
+                  \end{proof}
+        	\item ($\star\star$) Let $\preceq$ be a partial order on the set $A$. Define a relation $\vdash$ on $A\times A$ by $(a,b)\vdash (c,d)$ if either $a\preceq c$ and $a\neq c$, or $a=c$ and $b\preceq d$. We call $\vdash$ the {\em lexicographic} or {\em dictionary} order on $A\times A$. Show that $\vdash$ is a partial order on $A\times A$. ({\em Hint 1.} It may help to consider why $\vdash$ is called the {\em dictionary} order. {\em Hint 2.} Both antisymmetry and transitivity involve assuming that two pairs of pairs are $\vdash$-related.  Since there are two ways for two pairs to be $\vdash$-related, there are four cases to consider. )
+		\item Let $(A, \vdash)$ be a partially-ordered set ({\em i.e.}, $\vdash$ is a partial order on $A$). For each $a\in A$, define the {\em downset} of $a$ to be $$D_a=\left\{x\in A\middle\vert x\vdash a\right\}$$
+			\begin{enumerate}
+			\item No downset is empty.
+                          \begin{claim}
+                            No downset is empty.
+                          \end{claim}
+                          \begin{proof}
+                            Let $A$ be a set and $D_a$ be a downset where $a\in A$ (So $A$ is not empty). Since $a\vdash a$ (Reflexivity by definition of parital order), $a\in D_a$ (by definition of a downset). Therefore a downset on a set is not empty but contains $a$.\\
+                           
+                            So a downset is never empty.
+                          \end{proof}
+			\item For any $a,b\in A$, $D_a\subseteq D_b$ iff $a\vdash b$.
+				\item Consider $\operatorname{Down}_{\vdash}=\left\{D_a\middle\vert a\in A\right\}$, the set of all downsets with respect to $\vdash$. Explain why $(A,\vdash)$ and $(\operatorname{Down}_{\vdash},\subseteq)$ have essentially the same structure.
+			\end{enumerate}
+		\item Let $X$ be a set. For each $A\subseteq X$, define the {\em characteristic function} of $A$,  $\chi_A:X\rightarrow \{0,1\}$ by $$\chi_A(x)=\begin{cases}1 &\text{ if } x\in A\\0&\text{ otherwise}\end{cases}$$ 
+	\begin{enumerate}
+	\item If $A$ and $B$ are subsets of $X$, what does it mean about $A$ and $B$ that $\forall x\in X, \chi_A(x)\leq \chi_B(x)$? Prove your answer.
+          \begin{claim}
+            If $\forall x\in X, \chi_A(x)\leq \chi_B(x)$, then $A\subseteq B$.
+          \end{claim}
+          \begin{proof}
+            Let $j\in A$. So $\chi_A(j)=1$. Since $\chi_A(j)\leq \chi_B(j)$, $\chi_B(j)=1$ (Since $\chi$'s highest possible value is 1). Since $j\in B$, $A\subseteq B$. 
+          \end{proof}
+	\item ($\star$) What does it mean about $A$ and $B$ that  $\chi_A=\chi_B$? Formulate your answer as an ``iff" statement and prove it.
+          \begin{claim}
+            $\chi_A=\chi_B$ iff $A=B$           
+          \end{claim}
+          \begin{proof}
+            Let $A=B$ and $x\in A$. So $x\in B$. Therefore $\chi_A(x)=1$ and $\chi_B=1$(According to the definition of $\chi$). Consider now $x\notin A$. So $x\notin B$ ($A=B$). Then $\chi_A=0$ and $\chi_B=0$ (By definition of $\chi$). Now let $y\in B$. So $y\in B$. Therefore $\chi_B(x)=1$ and $\chi_A=1$(According to the definition of $\chi$). So $\chi_A=\chi_B$ if $A=B$\\
+            Let $\chi_A=\chi_B$ and $j$ be an element. Assume $A\neq B$. Then there is an element which $\chi_A=0$ and $\chi_A=1$ or $\chi_A=1$ and $\chi_B=0$.\\
+            Case $j\in A$ and $j\notin B$. Therefore $\chi_A(x)=1$ and $\chi_B(x)=0$. Since this implies $0=1$, $A\neq b$ cannot be true.\\
+            Case $j\in B$ and $j\notin A$. Therefore $\chi_B(x)=1$ and $\chi_A(x)=0$. Since this implies $0=1$, $A\neq b$ cannot be true.\\
+            Therefore, by contradiction, $A=B$. So $\chi_A=\chi_B$ iff $A=B$.
+          \end{proof}          
+	\end{enumerate}
+      \item For any $A,B\subseteq X$, we have
+	\begin{enumerate}
+	\item  $\chi_{A\cap B}=\chi_A\chi_B$
+          \begin{claim}
+            $\chi_{A\cap B}=\chi_A\chi_B$
+          \end{claim}
+          \begin{proof}
+            There are four possibilities, ($x\in A\cap B$), ($x\in A$ and $x\notin B$),($x\notin A$ and $x\in B$), and ($x\notin A$ and $x\notin B$).\\
+            Case $x\in A\cap B$. Since $x\in A$ and $x\in B$, $\chi_{A}=1$ and $\chi_{B}=1$, Therefore, plugging in $1=(1)1$, if $x\in A\cap B$, $\chi_{A\cap B}=\chi_A\chi_B$.\\
+            Case $x\in A$ and $x\notin B$: So $\chi_{A}=1$ and $\chi{B}=0$. So $\chi_{A}\chi_B=0$. Since $x\notin A\cap B$, $\chi_{A\cap B}=0$. So $\chi_{A\cap B}=\chi_A\chi_B$.
+            Case $x\notin A$ and $x\in B$: So $\chi_{A}=0$ and $\chi{B}=1$. So $\chi_{A}\chi_B=0$. Since $x\notin A\cap B$, $\chi_{A\cap B}=0$. So $\chi_{A\cap B}=\chi_A\chi_B$.\\
+            Case $x\notin A$ and $x\notin B$: So $\chi_{A}=0$ and $\chi{B}=0$. So $\chi_{A}\chi_B=0$. Since $x\notin A\cap B$, $\chi_{A\cap B}=0$. So $\chi_{A\cap B}=\chi_A\chi_B$.\\
+            Since $\chi_{A\cap B}=\chi_A\chi_B$ for all conditions, $\chi_{A\cap B}=\chi_A\chi_B$.
+          \end{proof}
+	\item  $\chi_{A\cup B}=\max\{\chi_A,\chi_B\}$
+          \begin{claim}
+            $\chi_{A\cup B}=\max\{\chi_A,\chi_B\}$
+          \end{claim}
+          
+          \begin{proof}
+            There are three possibilities, $x\in A$, $x\in B$ and $x\notin A\cup B$.
+            Case $x\in A$: So $x\in \chi_{A\cup B}$. So $max\{\chi_{A},\chi_{B}=1$ (Since $\chi$ has a max value of 1 and $\chi_A=1$). Therefore $\chi_{A\cup B}=\max\{\chi_A,\chi_B\}$.
+            Case $x\in B$: So $x\in \chi_{A\cup B}$. So $max\{\chi_{A},\chi_{B}\}=1$ (Since $\chi$ has a max value of 1 and $\chi_B=1$). Therefore $\chi_{A\cup B}=\max\{\chi_A,\chi_B\}$.\\
+            Case $x\notin A\cup B$: So $\chi_{A\cup B}(x)=0$. So $max\{\chi_A,\chi_B\}(x)=0$ (Since both $\chi_A(x)$ and $\chi_B(x)=0$). Therefore $\chi_{A\cup B}(x)=\max\{\chi_A(x),\chi_B(x)\}$.\\
+            Since $\chi_{A\cup B}(x)=\max\{\chi_A(x),\chi_B(x)\}$ for all conditions, $\chi_{A\cup B}(x)=\max\{\chi_A(x),\chi_B(x)\}$.
+          \end{proof}
+	\item  $\chi_{A^c}=1-\chi_{A}$.
+          \begin{claim}
+            $\chi_{A^c}=1-\chi_{A}$
+          \end{claim}
+          \begin{proof}
+            There are two possibilities, $x\in A$ or $x\notin A$ and therefore $x\in A^c$.\\
+            Case $x\in A$. So $\chi_A(x)=1$ and $1-\chi_A(x)=0$. Since $x\notin A^c$, $\chi_A(x)=0$. So $\chi_{A^c}=1-\chi_{A}$.\\
+            Case $x\in A^c$.  So $x\notin A^c$, $\chi_{A^c}(x)=1$. Furthermore $\chi_{A}(x)=0$, therefore $1-\chi_A(x)=1$.So $\chi_{A^c}=1-\chi_{A}$.\\
+            Since $\chi_{A^c}=1-\chi_{A}$ for all conditions, $\chi_{A^c}=1-\chi_{A}$.
+          \end{proof}
+          
+	\end{enumerate}
+      \item ($\star$) Express $\chi_{A\setminus B}$ and $\chi_{A\Delta B}$ in terms of $\chi_A$ and $\chi_B$. Prove your answer.
+        \begin{claim}
+          $\chi_{A\setminus B}=(1-\chi_B)\chi_A$ and $\chi_{A\Delta B}=(1-\chi_A)\chi_B+(1-\chi_B)\chi_A$ 
+        \end{claim}
+        \begin{proof}
+          ($\chi_{A\setminus B}$): There are four possibilities, ($x\in A\cap B$), ($x\in A$ and $x\notin B$),($x\notin A$ and $x\in B$), and ($x\notin A$ and $x\notin B$).\\
+          Case $x\in A\cap B$: So $\chi_A(x)=1$ and $\chi_B(x)=1$ (Since $x$ is in both). So $(1-\chi_B(x))\chi_A(x)=0$. $x\notin A\setminus B$ (Since x is in B, according to the definition of setminus $x\notin A\setminus B$). So $\chi_{A\setminus B}(x)=0$. Therefore $\chi_{A\setminus B}=(1-\chi_B)\chi_A$.\\
+          Case $x\in A$ and $x\notin B$: Case $x\in A\cap B$: So $\chi_A(x)=1$ and $\chi_B(x)=0$ (Since by definition of $\chi$). So $(1-\chi_B(x))\chi_A(x)=1$. $x\in A\setminus B$ (Since x is not in B but in A, according to the definition of setminus $x\in A\setminus B$). So $\chi_{A\setminus B}(x)=1$. Therefore $\chi_{A\setminus B}=(1-\chi_B)\chi_A$.\\
+          Case $x\notin A$ and $x\in B$: So $\chi_A(x)=0$ and $\chi_B(x)=1$ (According to the definition of $\chi$). So $(1-\chi_B(x))\chi_A(x)=0$. $x\notin A\setminus B$ (Since x is in B, according to the definition of setminus $x\notin A\setminus B$). So $\chi_{A\setminus B}(x)=0$. Therefore $\chi_{A\setminus B}=(1-\chi_B)\chi_A$.\\
+          Case $x\notin A$ and $x\notin B$: So $\chi_A(x)=0$ and $\chi_B(x)=0$ (According to the definition of $\chi$). So $(1-\chi_B(x))\chi_A(x)=0$. $x\notin A\setminus B$ (Since x is in B, according to the definition of setminus $x\notin A\setminus B$). So $\chi_{A\setminus B}(x)=0$. Therefore $\chi_{A\setminus B}=(1-\chi_B)\chi_A$.
+          Since $\chi_{A\setminus B}=(1-\chi_B)\chi_A$ for all conditions, $\chi_{A\setminus B}=(1-\chi_B)\chi_A$.\\
+          ($\chi_{A\Delta B}=(1-\chi_A)\chi_B+(1-\chi_B)\chi_A$):There are four possibilities, ($x\in A\cap B$), ($x\in A$ and $x\notin B$),($x\notin A$ and $x\in B$), and ($x\notin A$ and $x\notin B$).\\
+          Case $x\in A\cap B$: So $\chi_A=1$ and $\chi_B=1$ (According to the definition of $\chi$). So $(1-\chi_A(x))\chi_B(x)+(1-\chi_B)\chi_A=0$. Since $x\notin A\Delta B$ (x is in A and B, therefore according to the definition of $\Delta$, $x\notin A\Delta B$). So $\chi_{A\Delta B}=0$. Therefore  $\chi_{A\Delta B}=(1-\chi_A)\chi_B+(1-\chi_B)\chi_A$. \\
+          Case $x\in A$ and $x\notin B$: So $\chi_A=1$ and $\chi_B=0$ (According to the definition of $\chi$). So $(1-\chi_A(x))\chi_B(x)+(1-\chi_B)\chi_A=1$. Since $x\notin A\Delta B$ (x is in A but not in B, therefore according to the definition of $\Delta$, $x\in A\Delta B$). So $\chi_{A\Delta B}=1$. Therefore  $\chi_{A\Delta B}=(1-\chi_A)\chi_B+(1-\chi_B)\chi_A$. \\
+          Case $x\notin A$ $x\in B$: So $\chi_A=0$ and $\chi_B=1$ (According to the definition of $\chi$). So $(1-\chi_A(x))\chi_B(x)+(1-\chi_B)\chi_A=1$. Since $x\in A\Delta B$ (x is not in A but in B, therefore according to the definition of $\Delta$, $x\in A\Delta B$). So $\chi_{A\Delta B}=1$. Therefore $\chi_{A\Delta B}=(1-\chi_A)\chi_B+(1-\chi_B)\chi_A$. \\
+          Case $x\notin A$ and $x\notin B$: So $\chi_A=0$ and $\chi_B=0$ (According to the definition of $\chi$). So $(1-\chi_A(x))\chi_B(x)+(1-\chi_B)\chi_A=0$. Since $x\notin A\Delta B$ (x not in A or  B, therefore according to the definition of $\Delta$, $x\notin A\Delta B$). So $\chi_{A\Delta B}=0$. Therefore  $\chi_{A\Delta B}=(1-\chi_A)\chi_B+(1-\chi_B)\chi_A$. \\
+          Since $\chi_{A\Delta B}=(1-\chi_A)\chi_B+(1-\chi_B)\chi_A$ for all conditions, $\chi_{A\Delta B}=(1-\chi_A)\chi_B+(1-\chi_B)\chi_A$.
+        \end{proof}
+			\item ($\star$) Let $h:X\rightarrow Y$. Let $R$ be an equivalence relation on $Y$. Define a relation $h^*R$ on $X$ by:
+				\begin{align*}
+					 x_1\operatorname{h^*R} x_2 &\text{ if and only if } h(x_1)\operatorname{R}h(x_2) 
+				\end{align*}
+				Show that $h^*R$ is an equivalence relation on $X$.
+                                \begin{claim}
+                                  $h^*R$ is an equivalence relation on $X$.
+                                \end{claim}
+                                \begin{proof}
+                                  (Reflexive) Let $a\in X$. So $h(a)\in Y$ (By definition of a map). So $h(a)Rh(a)$ (Since R is an equivalence relation and therefore Reflexive). So $ah^*Ra$ (Definition of $h^*$). So $h^*$ is reflexive.\\
+                                  (Symmetric) Let $(a,b)\in h^*R$. So $(h(a),h(b))\in Y$ (By definition of $h^*R$). So $(h(b),h(a))\in R$ (Since $R$ is an equivalence relation therefore symmetric). By definition of $h^*R$, $(b,a)\in h^*R$. Since $(a,b),(b,a)\in h^*R$, $h^*R$ is symmetric.\\
+                                  (Transitive) Let $(a,b),(b,c)\in h^*R$. So $(h(a),h(b)),(h(b),h(c)))\in Y$ (By definition of $h^*R$). So $(h(a),h(c))\in R$ (Since $R$ is an equivalence relation therefore transitive). By definition of $h^*R$, $(a,c)\in h^*R$. Since $(a,b),(b,c),(a,c)\in h^*R$, $h^*R$ is transitive.\\
+                                  Since $R$ is reflexive, transitive, and symmetric, $R$ is an equivallence relation on $X$.
+                                \end{proof}
+		\end{enumerate}
+\end{document}

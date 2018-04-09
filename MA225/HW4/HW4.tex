@@ -1,0 +1,181 @@
+\documentclass[10pt]{letter}
+\usepackage{amsmath,amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage[margin=.9in]{geometry}
+\usepackage{cite}
+\usepackage{asymptote}\usepackage{float}
+\usepackage{caption}
+\newfloat{figure}{htbp}{figs}
+
+
+
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{IBP}{Integration by Parts}
+\newtheorem{PBCI}{Proof by Complete Induction}
+\newtheorem*{pmi}{Principle of Mathematical Induction}
+\newtheorem*{pci}{Principle of Complete Induction}
+\newtheorem*{wop}{Well Ordering Principle}
+\newtheorem{claim}{Claim}
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+
+
+\begin{document}
+\pagestyle{empty}
+
+{\Large MA 225 Problem Set 4: induction 2}\\
+
+
+
+\begin{description}
+	\item[facts and definitions] You will need the following definitions and facts (at some point):
+	
+	\begin{defn}
+	The {\em Fibonacci numbers} are defined as follows:
+		\begin{equation*}
+			f_k=\begin{cases}1&\text{ if }k=1\text{ or }k=2\\f_{k-1}+f_{k-2}&\text{ if }k\geq 3\end{cases}
+		\end{equation*}
+\end{defn}
+
+\begin{defn}
+	$0!=1$
+\end{defn}
+
+\begin{pmi}
+	Let $P(n)$ be an open sentence with universe the natural numbers. If $P(1)$ is true and $P(n)$ is inductive, then for any $n$, $P(n)$ is true.
+\end{pmi}
+
+\begin{pci}
+	Let $P(n)$ be an open sentence with universe the natural numbers. If $P(1)$ is true and $P(n)$ is completely inductive, then for any $n$, $P(n)$ is true.
+\end{pci}\bigskip
+
+	\item[exercises]  These problems don't require you to write proofs.
+		\begin{enumerate}
+			\item Explain why ``$n$ is even" is completely inductive, but ``$n$ is odd" is not completely inductive. $n$ is odd is inductive because when adding two even numbers, we get another even number, however when we do this for odd numbers, this does not apply for n or for all integers less than n.
+			\item Is either of the above sentences inductive? Yes. As seen later in proof 1 as well as 2, we prove that $PCI \Leftrightarrow PMI$. Therefore, since $n$ is completely inductive, we can show that this is a solution. then 
+			\item We showed that if $P(n)$ is inductive, then the set of values $n$ for which $P(n)$ is true must look like $\{n_0,n_0+1,n_0+2,\ldots\}$. Characterize what the set of values $n$ for which $Q(n)$ is true, assuming $Q(n)$ is completely inductive. The values which $n$ is true for $Q(n)$ are $\{n,n-1,n-2,n-3\ldots n_0\}$
+		\end{enumerate}\bigskip
+
+	\item[proofs] Prove the following claims. 
+	\begin{enumerate}
+			\item Let $P(n)$ be an inductive sentence. Then $P(n)$ is completely inductive.
+\begin{claim}
+Let $P(n)$ be an inductive sentence. Then $P(n)$ is completely inductive. 
+\end{claim}
+\begin{PBCI}
+We can show that $P(n)$ is completely inductive by looking at the definition of both. We know that in standard induction, we use $P(n_0),P(n_0+1)...P(n)$ in order to prove that $P(n+1)$ is true. For complete induction, however, we assume that $P(n)$ is true as well as $P(n-1),P(n-2)...P(n_0)$ where $n_0$ is the base case. Because of this, we can reverse the order of the terms if standard induction to get complete induction. Therefore, if $P(n)$ is inductive, then it is completely inductive as well. $\qed$
+\end{PBCI}
+			\item ($\star$) In class we proved PCI, assuming PMI. Prove the converse: give a proof of the PMI that only assumes PCI.
+\begin{claim} Given $R(n)$ is completely inductive, then $R(t)$ is mathematically inductive.
+\end{claim}
+\begin{PBCI}
+We can first see that complete induction assumes that by assuming  $R(n)$ holds true for n as well as values less than n, then we can gather $R(n+1)$. Since regular induction requires a base case as well as for $R(n)$ to hold true for n, since complete induction implies both of these, we can see that if $R(n)$ is completely inductive, then it is mathematically inductive.$\qed$
+\end{PBCI}
+		\item The parity of the Fibonacci numbers follows the pattern: odd, odd, even, odd, odd, even, . . .
+\begin{claim}
+The parity of the Fibonacci numbers is odd, odd, even, odd, odd, even...
+\end{claim}
+\begin{PBCI}
+We can first test the base cases, given as n=1 and n=2, by seeing that $f_1=1$ is odd, $f_2=1$, which is odd, and using the equation $f_n=f_{n-1}+f_{n-2}$, $1+1=2$, which is even. We can show by setting $n=k$ and solving for $f_{k+1}$. Let's assume that $f_k$ is We can now see that $f_{k+1}=f_k+f_{k-1}$.  
+
+Because of the principal of complete induction, we can see that this pattern holds for all $n+1$.
+\end{PBCI}
+		\item There are no common factors of $f_{n}$ and $f_{n+1}$, other than $1$.
+\begin{claim}
+\begin{PBCI}
+We can first define the base cases to be 1 and 2, and as we can see, and using $f_n=f_{n-1}-f_{n-2}=f_3=1+1=2$, which shares no common multiples. We can first define k=n and assume that there are no common multiples for $f_{k}$ and $f{k-1}$ and for all natural numbers less than k but more than 2. We will show that $f_n$ shares a factor, $c$ with$f_{k+1}$, then $c$ must equal 1. We can solve for $f_{k+1}$ by adding one to k to produce $f_{k+1}=f_k+f_{k-1}$. We can see that in order for $c$ to be a common multiple of $f_k$ and $f_{k+1}$, then it must be factored out and therefore $f_{k-1}$. However, according to complete induction, this holds true for k and values less than k, therefore k must share a factor with $f_{k-1}$. This will continue until we reach the base case, which only shares the factor 1. Therefore, according to the principle of complete induction, there is not common factors of $f(n)$ and $f(n+1)$. $\qed$
+\end{PBCI}
+\end{claim}
+		\item ($\star\star$) The {\em Tower of Hanoi} puzzle consists of $n$ disks of different radii, stacked in decreasing order of radius (so the largest disk is on the bottom) on one rod; two other rods are nearby. The goal of the game is to move the entire stack to another of the rods, in the same order. The rules are:
+				\begin{itemize}
+					\item You may move the top disk of a stack onto another rod.
+					\item A disk may only be placed on top of a larger disk.
+					\item No other moves are allowed.
+				\end{itemize}
+				If the Tower of Hanoi puzzle starts with $d$ disks, you can solve it in $2^d-1$ moves.
+\begin{claim}
+Given a Towe of Hanoi with $d$ disks, it can be solved in $2^d-1$ moves.
+\end{claim}
+\begin{PBCI}
+We must first prove the base case, which is d=1. Plugging in for one, we get $2^1-1$, or 1 move, which is correct, as you only need to move the one piece.We must now find a way to represent the number of moves, $h$, that can be taken given $d-1$ disks, or $h_{d-1}$. It is noted that in order to move the bottom piece, all pieces above it must be shifted to another rod. This causes us to move $h_{d-1}$ disks, move the bottom disk, which adds an additional move, and finally move the rod with $d-1$ disks onto the bottom disk. This yet again takes $h_{d-1}$ moves, therefore the total moves which can be taken for $d$ disks is $h_d=2h_{d-1}+1$ (Formula 2). We can now show that $2h_d+1=2^d-1$(Equation 1).  We can define $k$ as $k=d$ and show that the claim is true for k+1: \\
+\begin{align*}
+2^{k+1}-1&=2^{k+1}-1 \\
+&=2*2^k-1 \\
+&= 2*(2^{h_k}+2)+1 \tag{Replaced using formuala 1} \\
+&=4h_k+3 \\
+&=2(2h_k)+3 \\
+&=2h_{k+1}+1 \tag{Replaced d with k+1 in formula 2 through complete induction and solved for h with k disks} \\  
+\end{align*}
+Therefore, since this is true for all $k+1$, through mathematical induction we can show that given a Tower of Hanoi with $d$ disks, it can be solved in $2^d-1$ moves. $\qed$
+\end{PBCI}
+		\item  $\displaystyle\sum_{k=1}^nf_k^2=f_nf_{n+1}$.
+\begin{claim}
+$\displaystyle\sum_{k=1}^nf_k^2=f_nf_{n+1}$
+\end{claim}
+\begin{PBCI}
+We can start by determining the base cases. In this instance, the base cases are n=1 and n=2. We can see by plugging in these values $\displaystyle\sum_{k=1}^1f_k^2=f_1f_{2}=1$ and n=2: $\displaystyle\sum_{k=1}^2f_k^2=f_2f_{3}=2$. We can define $r=n$, where we will assume that k satisfies the equation as well as values less than $r$. We will use this to show that the equation $\displaystyle\sum_{k=1}^2f_k^2=f_2f_{3}=2$ is satisfied under $k+1$:
+\begin{align*}
+f_{r+2}f_{r+1}&=\displaystyle\sum_{k=1}^{r+1}nf_k^2 \\
+&=\displaystyle\sum_{k=1}^{r+1}f_k^2+f^2_{r+1} \\
+&=f_rf_{r+1}+f^2_{r+1} \tag{Substituted using induction hypothesis}\\
+&=f_{r+1}(f_r+f_{r+1} \\
+&=f_{r+1}f_{r+2} \tag{Use definition of fibbanachi sequence along with complete induction by adding 1 to r in definition and substitute.}
+\end{align*}
+As we can see above, through proof by complete induction we have shown that $\displaystyle\sum_{k=1}^2f_k^2=f_2f_{3}=2$ is true for all k. $\qed$
+\end{PBCI}
+		\item ($\star\star$) The {\bfseries product rule for higher derivatives}: given any $n\in\mathbb{N}$ and functions $f,g$ with at least $n$ derivatives, we have 
+				\begin{align*}
+					\frac{d^n}{dx^n}\left[ f g\right]=&B_{n,0}f^{(n)}g+B_{n,1}f^{(n-1)}g'+B_{n,2}f^{(n-2)}g''+\cdots\\&+B_{n,n-2}f''g^{(n-2)}+B_{n,n-1}f'g^{(n-1)}+B_{n,n}fg^{(n)}.
+				\end{align*}
+			 	({\em Hint.} At some point you will need to ``combine like terms".)
+		\item ($\star\star$) If $n\geq 3$, then the sum of the interior angles of a convex $n$-gon is $(n-2)\cdot 180^\circ$.
+\begin{claim}
+If $n\geq 3$, then the sum of the interior angles of a convex $n$-gon is $(n-2)\cdot 180^\circ$ (Formula 1).
+\end{claim}
+\begin{PBCI}
+We can first prove the base case by using a 3-gon, which is $180^\circ$. Through plugging in, we can see that $(3-2)180^\circ=180^\circ$, which matches up with our expected value. We can mathematically represent the change in angles by defining adding a vertex as creating a triangle and placing two of its verticies on existing verticies. Because a triangle has 180 degrees, and we are adding a triangle , we can represent the sum of these angles, $a_n$ of a n-gon with $n$ sides by adding the sum of the angles of n-gon with $n-1$ and 180 represented as, $a_n$, where $a_{n}=a_{n-1}+180^\circ$ (Formula 2). We can now define $k=n$, where we will assume the open statement $(k-2)\cdot 180^\circ$. We can now use complete induction to show that this is valid for $k+1$:\\
+\begin{align*}
+a_{n}+180^\circ&=(k-1)180^\circ \\
+&=180^\circ k-180\circ \\
+&=a_{n-1}+360^\circ \tag{Substitute using inductive hypothesis}\\
+&=a_n+180 \tag{Substituted using Formula 2}\\
+\end{align*}
+Therefore, as seen above, it can be seen through complete induction that $(n-2)\cdot 180^\circ$ is valid for convex n-gons. $\qed$
+\end{PBCI}
+		\item Define the numbers $g_n$ as follows:
+				\begin{equation*}
+					g_n=\begin{cases}
+							2& \text{ if } n=1\text{ or }n=2\\
+							g_{n-1}g_{n-2}&\text{ if }n\geq 3
+						\end{cases}
+				\end{equation*}
+				For all $n$, $g_n=2^{f_n}$.
+		\item $f_k\leq 2^k$.
+\begin{claim}
+$f_k\leq 2^k$ is true for all $k \in \mathbb{N}$.
+\end{claim}
+\begin{PBCI}
+We will show that $f_k\leq 2^k$ is true for all k through the Principle of Complete Induction. First, we must prove a base case, in this case we will use n=1, or $g_1=2^{f_1}$, or $2=2$ and the same for $n=2$, as this results in the same value. (since both result in 2. Next we set $k+1=n$ to show that $g_k=2^{f_k}$ by assuming this works for all natural numbers before k and k to show that it works for $k+2$: \\
+\begin{align*}
+2^{f_{k+2}}&=2^{f_{k+2}} \\
+&=2^{f_{k+1}+f_{k}} \\
+&=2^{f_{k+1}}2^{f_{k}} \\
+&=g_k2^{f_{k+1}}  \tag{Used inductive hypothesis for substitution}\\
+2^{f_{k+1}}&=g_{k-1}2^{f_k} \tag{Since we assume that claim is true for values less than k, we can subtract 1 from all ks and the equation will still be true}\\
+g_{k+1}=g_{k+1}g_k \tag{Substituted using inductive hypothesis}\\
+\end{align*}
+As we can see, this results in the desired results of showing that $g_k=2^{f_k}$ by proof of complete mathematical induction. $\qed$
+
+\end{PBCI}
+		\item ($\star\star$) Let $\alpha=\frac{1+\sqrt{5}}{2}$ and $\beta=\frac{1-\sqrt{5}}{2}$ (These are the roots of the equation $x^2-x-1=0$.) Then
+				$$f_n=\frac{\alpha^n-\beta^n}{\alpha-\beta}$$
+				({\em Hint.} You will need to use the fact that $\alpha$ and $\beta$ the solutions of the given equation.)
+			\item For any $n$ and any $0\leq k\leq n$, $B_{n,k}=\frac{n!}{k!(n-k)!}$. ({\em Hint.} Induct on $n$.)
+			\item Prove two claims from Homework 3 using the Well-Ordering Principle.
+		\end{enumerate}
+		\end{description}
+		\end{document}
+		
+			 	

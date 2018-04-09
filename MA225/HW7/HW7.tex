@@ -1,0 +1,219 @@
+\documentclass[11pt]{letter}
+\usepackage{amsmath,amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage[margin=.9in]{geometry}
+\usepackage{cite}
+\usepackage{asymptote,cancel}
+\usepackage[normalem]{ulem}
+\newtheorem{claim}{Claim}
+\newtheorem*{theorem*}{Theorem}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\begin{document}
+\pagestyle{empty}
+
+{\Large MA 225 Problem Set 7}\\
+
+\begin{description}
+
+\item[facts and definitions]
+	
+	\begin{definition} 
+		We call a relation $E$ on the set $A$ {\em right-Euclidean} if for any $x,y,z\in A$, $x \operatorname{E} y$ and $x\operatorname{E} z$ together guarantee $y\operatorname{E}z$.
+	\end{definition}
+	
+	\begin{definition}
+		We call a relation $E$ on the set $A$ {\em Euclidean} if for any $x,y,z\in A$, $x \operatorname{E} y$ and $x\operatorname{E} z$ together guarantee $y\operatorname{E}z$, and $y\operatorname{E}x$ and $z\operatorname{E} x$ together guarantee $y\operatorname{E} z$. 
+	\end{definition}
+	
+	\begin{definition}
+	  We call a relation $E$ on the set $A$ {\em antisymmetric} if for any $x,y\in A$, $x\operatorname{E} y$ and $y\operatorname{E} x$ together guarantee $x=y$.
+          
+		
+		We call a relation $E$ on the set $A$ {\em asymmetric} if for any $x,y\in A$, $x\operatorname{E}y$ guarantees $y\cancel{\operatorname{E}}x$.\end{definition}\bigskip
+
+	
+\item[exercises] These problems don't require you to write proofs.
+	\begin{enumerate}
+	\item Write a blueprint for a proof of {\em If blah and yadda yadda, then $E$ is right-Euclidean}.
+          \begin{claim}
+            If blah and yadda yadda, then $E$ is right-Euclidean
+          \end{claim}
+          \begin{proof}
+            Let $x,y,z\in A$ and $xEy$ and $xEz$.\\
+            ...\\
+            So $yEz$ is guarunteed. Therefore $E$ is Right-Euclidian.
+          \end{proof}
+          
+          
+		\item Write a blueprint for a proof of {\em If blah and so on, then $\mathcal{P}$ is a partition of $A$.}
+                  \begin{claim}
+                    If blah and so on, then $\mathcal{P}$ is a partition of $A$.
+                  \end{claim}
+                  \begin{proof}
+                    Let $x\in \mathcal{P}$.\\
+                    ...\\
+                    Thereore $x\neq \varnothing$\\
+                    Let $m\in A$
+                    ...\\
+                    Therefore $m\in \bigcup \mathcal{P}$.
+                    Let $J,Y\in \mathcal{P}$.\\
+                    ...\\
+                    So $J\cap Y=\varnothing$.
+                    So $\mathcal{P}$ is a partition of A.
+                  \end{proof}
+                  
+                  
+		\item ``$R$ is antisymmetric" means something different from ``$R$ is not symmetric". Give an example to demonstrate and then explain in terms of logic.
+                 $R$ is antisymmetric means that for any relation on set A with $x,y\in A$, $xRy$ guaruntees $yRx$ is false, while not symmetric means there exists an $x,y\in A$ that $xRy$ doesn't guaruntee $yRx$. This means $(R is antisymmetric)\Rightarrow (R is not symmetric)$
+                  
+		\item ``$R$ is asymmetric" means something different from ``$R$ is not symmetric". Give an example to demonstrate and then explain in terms of logic.
+                  $R$ is asymmetric means that for any relation on set A with $x,y\in A$, if $xRy$ and $yRx$ are true, then $x=y$, while not symmetric means there exists an $x,y\in A$ that $xRy$ doesn't guaruntee $yRx$. This means $(R is asymmetric)\Rightarrow (R is not symmetric)$
+	\end{enumerate}\bigskip
+
+\item[proofs] Write a complete proof for each of the following statements.
+\begin{enumerate}
+	\item Let $R$ be a relation on the set $A$.
+				\begin{enumerate}
+				\item  ($\star$) If $\operatorname{Domain}(R)=A$, and $R$ is symmetric and transitive, then $R$ is reflexive.
+                                  \begin{claim}
+                                    If $\operatorname{Domain}(R)=A$, and $R$ is symmetric and transitive, then $R$ is reflexive.
+                                  \end{claim}
+                                  \begin{proof}
+                                    Let $a\in A$. Since $Domain(R)=A$, $(a,b)$ ($A$ is defined by the domain of $R$, so $A$ is related to another element). Since $R$ is symmetiric, $(b,a)\in R$. Since $x\in R$ and $(b,a)\in R$, and $R$ is transitive, $(a,a)\in R$. Therefore $R$ is reflexive.
+                                  \end{proof}
+                                  
+				\item ($\star$) Explain, both by giving an example and in general, why the assumption $\operatorname{Domain}(R)=A$ is necessary.\\
+                                  The assumption $\operatorname{Domain}{R}=A$ is required because this tells you that all terms in A are in a relation from R. This lets you conclude $(a,b)\in R$.
+				\end{enumerate}
+			
+			      \item Let $R$ and $S$ be equivalence relations on a set $A$. Show that $S\cap R$ is an equivalence relation.
+                                \begin{claim}
+                                  $S\cap R$ is an equivalence relation on the set $A$ if $S$ and $R$ are equivalence relationships.                            
+                                \end{claim}
+                                \begin{proof}
+                                  (Reflexive) Let $x\in A$. Therefore $(x,x)\in S$ and $(x,x)\in R$ (We know this because elements are related to themselves in equivalence classes). Therefore $S\cap R$ is Reflexive.\\
+                                  (Symmetric) Let $j\in S\cap R$. Then $j=(c,d)$ where $c,d\in A$. Since $j\in S$ and $S$ is an equivallence relationship, $(d,c)\in S$. Since $j\in R$, and $R$ is an equivallence relationship, $(d,c)\in R$. So $(d,c)\in S\cap R$. This shows $S\cap R$ is symmetric.\\
+                                  (Transitive) Let $k, i\in S\cap R$, as well as $k=(e,f)$ and $i=(f,g)$ where $e,f,g\in A$ (Since these are the conditions which transitivity occurs). So $k,i\in S$ and $k,i\in R$. Since S is an equivallence class and is transitive, i and k imply $(e,g)$. Since R is an equivallence class and is transitive, i and k imply $(e,g)$. Therefore $S\cap R$ is transitive. So $S\cap R$ is an equivallence relation. 
+                                \end{proof}                                
+                                
+			\item ($\star$) Consider the relation on $\mathbb{Z}\times(\mathbb{Z}\setminus \{0\})$ given by
+			$$(m,n)\operatorname{CP}(r,s)\text{ means } ms=nr$$
+			  Show that $CP$ is an equivalence relation. {\bfseries You may not use fractions anywhere in your proof!}
+                          \begin{claim}
+                          $CP$ is an equivallence relation.  
+                          \end{claim}
+                          \begin{proof}
+                            (Reflexive) Let $x,y\in \mathbb{Z}\times \left(\mathbb{z}\setminus \{ 0\}\right)$. Then $x,y=(a,b)$ where $a,b\in \mathbb{Z}$. Since $ab=ba$ (Used definition of CP and communative property), xCPy is true and since $x=y$,xCPx is true and CP is reflexive.\\
+                            (Symmetric) Let $j\in CP$. Then $j=((a,b),(c,d))$ where $a,b,c,d\in \mathbb{Z}$. Therefore $ad=bc$. So $bc=ad$ (equals in symmetric. So $cb=da$ (multiplication is communative over multiplication). So $((c,d),(a,b))\in CP$ therefore $CP$ is symmetric.\\
+                            (Transitive) Let $k,r\in CP$. Then $k=(g,o)CP(s,t)$, $r=(s,t)CP(e,h)$ . So $gt=so$, and $sh=et$.Therefore $shgt=soet$ (Multiplied both sides by same thing). So $gh=eo$ (Since $t$ and $s$ are multiples of both sides). So $(g,o)CP(e,h)\in CP$. Therefore, since all of the relationships in $CP$ are equivalence relationships, $CP$ is an equivalence relation. 
+                          \end{proof}
+
+                        \item We write $\frac{m}{n}$ for $[(m,n)]_{CP}$. Verify that $\frac{10}{5}=\frac{6}{3}=\frac{2}{1}$.
+                          \begin{claim}
+                            $\frac{10}{5}=\frac{6}{3}=\frac{2}{1}$.
+                          \end{claim}
+                          \begin{proof}
+                            Since $[(m,n)]_{CP}=\frac{m}{n}$ We can rewrite $\frac{10}{5}=\frac{6}{3}$ as $(10,5)CP(6,3)$ (By definition of $CP$). This means that $10*3=6*5$. Since this statement is true, $\frac{10}{5}=\frac{6}{3}$. We can now verify $\frac{6}{3}=\frac{2}{1}$ by using $6*1=3*2$(Used definition of CP), which is valid. So $\frac{10}{5}=\frac{6}{3}=\frac{2}{1}$.
+                          \end{proof}
+                          
+			\item Define $(m,n)\oplus(p,q)=(mq+pn,nq)$. 
+				\begin{enumerate}
+				\item Show that if $(m,n)\operatorname{CP} (r,s)$ and $(p,q)\operatorname{CP}(t,s)$, then $(m,n)\oplus(p,q)\operatorname{CP}(r,s)\oplus(t,s)$.
+                                  \begin{claim}
+                                    If $(m,n)\operatorname{CP} (r,s)$ and $(p,q)\operatorname{CP}(t,s)$, then $(m,n)\oplus(p,q)\operatorname{CP}(r,s)\oplus(t,s)$.
+                                  \end{claim}
+                                  \begin{proof}
+                                    $ms=nr$ and $ps=qt$ (According to the definition of $CP$). Furthermore,  $(m,n)\oplus(p,q)\operatorname{CP}(r,s)\oplus(t,s)$ is equivalent to $(mq+pn,np)CP(rs+st,ts)$. We will show that if $ms=nr$ and $ps=qt$, then $(mq+pn)ts=(rs+st)np$.
+                                    \begin{align*}
+                                      msps+qtnt&=msps+qtnt \tag{Used fact that $ms=nr$ and $ps=qt$}\\                                  
+                                      ms(qt)+(ps)nt&=(nr)ps+(ps)nt\\
+                                      mqst+pnst&=nprs+npts\\
+                                      (mq+pn)ts&=(rs+st)np\\
+                                    \end{align*}
+                                    So if $(m,n)\operatorname{CP} (r,s)$ and $(p,q)\operatorname{CP}(t,s)$, then $(m,n)\oplus(p,q)\operatorname{CP}(r,s)\oplus(t,s)$.                                                 \end{proof}
+                                  
+                                  
+					\item Rewrite the claim in part (a) using the fraction notation introduced in problem 4. If $\frac{m}{n}=\frac{r}{s}$, then and $\frac{p}{q}=\frac{t}{s}$ then $\frac{mq+np}{nq}=\frac{rs+st}{s^2}$
+				\end{enumerate}
+			\item Let $S$ and $T$ be equivalence relations on a set $A$. Assume that $S\subseteq T$.
+				\begin{enumerate}
+				\item $S\subseteq T$ means that the condition $x \operatorname{S}y$ is easier/harder to satisfy than the condition $x \operatorname{T}y$. (Pick one and explain your answer.)
+                                  \begin{claim}
+                                    The condition $xSy$ is easier to satisfy than $xTy$
+                                  \end{claim}
+                                  \begin{proof}
+                                    This is because for $xTy$ to be true, $xSy$ must also be true, while for $xSy$ to be true, only $xSy$ must be true.
+                                  \end{proof}
+                                  
+                                  
+				\item Let $a\in A$. What is the relationship between $[a]_S$ and $[a]_T$? Prove your answer.
+                                  \begin{claim}
+                                    $[a]_S\subseteq [a]_T$
+                                  \end{claim}
+                                  \begin{proof}
+                                    Let $x\in [a]_S\subseteq [a]_T$. So $x\subseteq S$ (equivalence relations are made up of specific relations in another set of relation). So $x\in T$. Since x is an equivalence class an equivalence relation, $x\in [a]_S$. So $[a]_S\subseteq[a]_R$. 
+                                  \end{proof}
+                                  
+					\item ($\star$) What is the relationship between $A_{/S}$ and $A_{/T}$? Prove your answer.
+				\end{enumerate}		
+			\item Let $A$ be a set with at least three elements.
+				\begin{enumerate}
+				\item If $\mathcal{P}=\{B_1,B_2\}$ is a partition of $A$, and $B_1\neq B_2$, what can you say about $B_1^c$ and $B_2^c$? Prove your answer.
+                                  \begin{claim}
+                                    If $\mathcal{P}=\{B_1,B_2\}$ is a partition of $A$, and $B_1\neq B_2$, $B_1= B_2^c$ and $B_2=B_1^c$.
+                                  \end{claim}
+                                  \begin{proof}
+                                    Let $x\in B_1$. So $x\notin B_2$ (By definition of a partition since $B_1\neq B_2$). So $B_1\subseteq B_2^c$. Since $B_1\cup B_2\subseteq A$ (By definition of a partition), and $B_1\cap B_2=\varnothing$, $B_1\subseteq B_2^c$ (Since there is no intersection between $B_1$ and $B_2$, and they are both in $A$, as well as cover all of $A$, what isn't in $B_2$ is in $B_1$). So $B_2=B_1^c$.
+                                    Let $x\in B_2$. So $x\notin B_1$ (By definition of a partition since $B_1\neq B_2$). So $B_2\subseteq B_1^c$. Since $B_1\cup B_2\subseteq A$ (By definition of a partition), and $B_1\cap B_2=\varnothing$, $B_2\subseteq B_1^c$ (Since there is no intersection between $B_1$ and $B_2$, and they are both in $A$, as well as cover all of $A$, what isn't in $B_2$ is in $B_1$). So $B_2=B_1^c$
+                                  \end{proof}
+				\item If $\mathcal{P}=\{B_1,B_2\}$ is a partition of $A$, $\mathcal{C}_1$ is a partition of $B_1$, and $\mathcal{C}_2$ is a partition of $B_2$, and $B_1\neq B_2$, show that $\mathcal{C}_1\cup\mathcal{C}_2$ is a partition of $A$.
+                                  \begin{claim}
+                                    $\mathcal{C}_1\cup\mathcal{C}_2$ is a partition of $A$.
+                                  \end{claim}
+                                  \begin{proof}
+                                    $B_1\subseteq \bigcup \mathcal{C}_1$ and $B_2\subseteq \bigcup \mathcal{C}_2$ (according to the definition of a partition). So $B_1\cup B_2\subseteq \bigcup(\mathcal{C}_1\cup \mathcal{C}_2)$. Since $A\subseteq B_1\cup B_2$, $A\subseteq \bigcup(\mathcal{C}_1\cup \mathcal{C}_2)$. Since $\mathcal{C}_1$ and $\mathcal{C}_2$ are partitions, $\varnothing\notin\mathcal{C}_1\cup\mathcal{C}_2$. Since $B_1\cup B_2\subseteq \subseteq A$ (By definition of a partition), and $\mathcal{C}_1\subseteq B_1$ and $\mathcal{C}_1\subseteq B_1$ as well as $\mathcal{C}_2\subseteq B_2$ (By definition of a partition). Therefore $C_1\cup C_2\subseteq A$. So $C_1\cup C_2$ is a partition of A (By rules of partitions).
+                                  \end{proof}
+                                  
+					
+                                \item Why did we assume $A$ has at least three elements?
+                                  We assumed $A$ had at least three elements because partitions $B_1$ and $B_2$ cannot be empty (by definition of partitions) and cannot overlap. Therefore there must be two elements which fill those partitions. Furthermore, since all sets contain the empty set and partitions can't contain this, we know that the empty set is in A, making a total of three elements.
+				\end{enumerate}
+						
+			      \item Show that any asymmetric relation must be antisymmetric.
+                                \begin{claim}
+                                  Any asymmetric relation must be antisymmetric.
+                                \end{claim}
+                                \begin{proof}
+                                  
+                                \end{proof}
+                                
+                                
+		
+			\item ($\star$) Let $S$ be a reflexive relation. Show that if $S$ is right-Euclidean, then $S$ is an equivalence relation.
+                          \begin{claim}
+                            If $S$ is right-Euclidean, then $S$ is an equivalence relation.
+                          \end{claim}
+                          \begin{proof}
+                            Let $x,y\in S$ where $x=(a,b)$ and $y=(a,c)$. So $(c,b)\in S$ (Right-Euclidian property). So  $(c,a)\in S$ (Right-Euclidian property with $(c,b)$ and x). Therefore S is symmetric. Then $(b,b)\in S$ (Right-Euclidian peoperty on $(c,b)$ and $(c,b)$). Therefore S is reflexive. Then, since $(a,c)\in S$ and $(c,b)\in S$ gurantees $(a,b)$, S is transitive. Since S is reflexive, transitive, and symmetric, S is an equivalence relation. 
+                          \end{proof}
+                          
+                          
+					
+			\item ($\star$) Show that if $E$ is transitive and Euclidean, then $E$ is symmetric.
+                          \begin{claim}
+                            If $E$ is transitive and Euclidean on the set $A$, then $E$ is symmetric.
+                          \end{claim}
+                         \begin{proof}
+                            Let $x,y\in E$ where $x=(a,b)$ $y=(b,c)$ where $a,b,c,d\in A$. So $(a,c)\in E$ (Transitive property). So $(b,a)\in E$ (left euclidian property on x and $(a,c)$). So $(c,a)\in E$ (Left euclidian property on y and $(b,a)$). So $(c,b)\in E$ (Right Euclidian property on $(a,c)$ and x). Therefore E is symmetric.  
+                          \end{proof}
+                          
+                          
+			
+\end{enumerate}
+
+\end{description}
+
+\end{document}

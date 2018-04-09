@@ -1,0 +1,244 @@
+\documentclass[11pt]{letter}
+\usepackage{amsmath,amsthm}
+\usepackage{amsfonts}
+\usepackage{cancel}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage[margin=.9in]{geometry}
+\usepackage{cite}
+\usepackage{asymptote}
+\newtheorem{claim}{Claim}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{fact}{Fact}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\begin{document}
+\pagestyle{empty}
+
+{\Large MA 225 Problem Set 6}\\
+
+\begin{description}
+	\item[facts and definitions] You will need the following definitions and facts (at some point):
+
+\begin{definition}
+	We call a relation $R$ on a set $A$ {\em symmetric} if for any $x,y\in A$, $x\operatorname{R} y$ guarantees $y\operatorname{R} x$. We call $R$ {\em reflexive} if for any $x\in A$, $x\operatorname{R} x$. We call $R$ {\em transitive} if for any $x,y,z\in A$, $x\operatorname{R} y$ and $y\operatorname{R} z$ together guarantee $x\operatorname{R} z$.
+\end{definition}
+
+\begin{definition}
+	We call a relation $R$ on the set $A$ {\em intransitive} if for any $x,y,z\in A$, $x\operatorname{R} y$ and $y\operatorname{R} z$ together guarantee $\sim(x\operatorname{R} z)$.
+\end{definition}
+
+\item[exercises]  These problems don't require you to write proofs.
+		\begin{enumerate}
+			\item If $A$ has exactly $a$ elements and $B$ has exactly $b$ elements, how many relations are there from $A$ to $B$? $ab$
+			\item Some sources call a relation $R$ symmetric if for any $x,y\in A$, $x\operatorname{R}y \Leftrightarrow y\operatorname{R}x$. Explain two things:~first, why this definition is different from ours, and second, why any relation which is symmetric according to this definition will be symmetric according to ours and vice versa. (You may be able to turn the second explanation into a formal $\star$ proof.) This definition is different from ours because our definition states if $xRy$ guarantees $yRx$, then R is symmetric, or $xRy\Leftarrow yRx$.
+                          \begin{claim}
+                            If a relation R is symmetric under the definition for any $x,y\in A$, $x\operatorname{R} y$ guarantees $y\operatorname{R} x$ and $xRy\Leftrightarrow yRx$
+                          \end{claim}
+                          \begin{proof}
+                            For any $x,y\in A$ let, $x\operatorname{R} y$ guarantee $y\operatorname{R} x$. Then $xRy\Leftarrow yRx$  Since $x$ and $y$ are non-specific terms, they can be switched, therefore $yRx\Leftarrow xRy$. So if for any $x,y\in A$, $x\operatorname{R} y$ guarantees $y\operatorname{R} x$, $xRy\Leftrightarrow yRx$.\\
+                            Let $xRy\Leftrightarrow yRx$. Then $xRy\Rightarrow yRx$. So if for any $x,y\in A$, $x\operatorname{R} y$ guarantees $y\operatorname{R} x$.
+                          \end{proof}
+                          
+                          
+			
+			\item For each of the following, explain whether or not it is reflexive, symmetric, transitive (in our universe)? Explain your answers
+				\begin{enumerate}
+					\item $F$: $(x,y)\in F$ if $x$ is $y$'s father. It is not reflexive, as that would be $F(x,x)$, or that x is his own father. It is not symetric, as $F(x,y)$ means x is y's father, as $F(y,x)$ means y is x's father, which is not the same. It is not transitive, as given x, y and z people, if x is y's father, and y is z's father, x is not z's father, but instead his grandfather. $R_R$ represents people who are their own fathers, which is $\varnothing$ in our universe. $S_R$ represents people who are their father's father, which does not exist in our universe. Finally, $T_R$ represents people who are both the father and grandfather of a person, which is extremely rare in our universe. 
+					\item $\neq$, as a relation on $\mathbb{R}$ $\neq$ is not reflexive, as given $a \in \mathbb{R}$, there is no a which $a\neq a$. It is symmetric, as if $a,b\in \mathbb{R}$, then if $a\neq b$, then $b\neq a$. It is not transitive either, an example of this is $4\neq 3$ and $3\neq 4$, however it is not true that $4\neq 4$. $R_R$ represents the set of real numbers that are not equal to themselves, which is none of them. $S_R$ are numbers, x and y, that if $x\neq y$ and $y\neq x$, which is all real numbers. $T_R$ are numbers which x y and z which are real numbers, if $x\neq y$ and $y\neq z$ then $x\neq z$, which includes numbers which x and z aren't equal.
+					\item ``lives within one mile of" This is reflexive, as all things in our universe are within a mile of themselves. It is also symmetric, as if a is within a mile of b, b is within a mile of a. It is not transitive, however, as if x is a mile from y, and y is a mile from z, then x can be 2 miles from z, which is not within a mile. $R_R$ are people which live within a mile of themselves, which is everyone. $S_R$ are places which if within a mile of another place, then the other place is within a mile of the original place. $T_R$ includes places which for places x, y and z, if x is within a mile of y, then y is within a mile of z, which includes a portion of places within our universe.
+					\item $S$: $x\operatorname{S} y$ if $x^2+y^2=1$ This is not reflexive, as given $2S2$, $8=1$, which is not true. It is symmetric however, as addition is communative, so if xSy is true, or $x^2+y^2=1$, then this can be changed to $y^2+x^2=1$ or $ySx$. It is not transitive, an example being $0S1$ is true, and $1S0$ is true, however $1S1$ implies $1=2$ which is false. $R_R$ is the set of numbers which $x^2+x^2=1$ holds true. $S_R$ is the set of ordered pairs which if x and y are switched, the statement still holds true (given they were true before switching), so in this case all numbers. $T_R$ are the set of relations given $xSy$ and $ySz$, $xSz$ held true. 
+				\end{enumerate}
+				
+			\item  For each relation in exercise 3, explain what $R_R$, $S_R$, and $T_R$ represent for that relation.
+			
+			\item $R_R$ is called the {\em reflexive closure of $R$}. Explain why someone might call it {\em the smallest reflexive relation which contains $R$}. $R_R$ is the samallest set that is reflixive and contains R, as 
+			
+			\item \begin{enumerate}
+			\item Make a blueprint for the claim {\em If blah blah and such, then $R$ is reflexive.}
+                          Let $x\in R$\\
+                          Good ol proofin steps...\\
+                          Therefore $x=(a,a)$.
+                          So R is reflexive.
+			\item Make a blueprint for the claim  {\em If blah blah and such, then $S$ is intransitive.}
+                          Let $x,y\in S$. So $x=(a,b)$ and $y=(b,c)$
+                          Therefore if x, and y are in $R$, $(a,c)\notin R$
+                          
+			\end{enumerate}
+	\end{enumerate}
+	
+		\item[proofs] Prove the following claims. 
+		
+		\begin{enumerate}
+		\item ($\star$) Give an example which shows that we could have $$\left(A\times B\right)\cup\left(C\times D\right)\neq\left(A\cup C\right)\times\left(B\cup D\right)$$(Prove that your example does what you say it does.)
+                  \begin{claim}
+                    $$\left(A\times B\right)\cup\left(C\times D\right)\neq\left(A\cup C\right)\times\left(B\cup D\right)$$
+                  \end{claim}
+                  \begin{proof}
+                    Let $x\in \left(A\cup C\right)\times\left(B\cup D\right)$. Let $x=a\times d$, where $a\in A$, $d\in D$, but $a\notin C$ and $d\notin B$. So $a\in(A\cup C)$ and $d\in B\cup D$, which is true. Therefore $x\in (A\times B)$ or $x\in (C\cup D)$ if the statement is equal. So if $x\in \left(A\times B\right)\cup\left(C\times D\right)$, then $a\in A$ and $d\in B$ or $a\in C$ or $d\in D$. Since $a\notin C$ and $d \notin B$, the statements are not equivalent.
+                  \end{proof}
+                  
+                  
+		\item Prove the clauses of Theorem 6.2.13: for any sets $A,B, C, D$ and relations $R$ from $A$ to $B$, $S$ from $B$ to $C$, and $T$ from $C$ to $D$,
+
+                  
+			\begin{enumerate}
+			\item $\left(R^{-1}\right)^{-1}=R$
+                          \begin{claim}
+                            $\left(R^{-1}\right)^{-1}=R$
+                          \end{claim}
+                          \begin{proof}
+                            Let $x\in (\left (R^{-1}\right)^{-1}$. Then $x=(m,n)$. So $(n,m)\in R^{-1}$. So $(m,n)\in R$. Then $m\in A$ and $n\in B$. Therefore $x\in R$, so $\left(R^{-1}\right)^{-1}$.\\
+                            Let $p \in R$. Then $p=(q,r)$ where $q\in A$ and $r\in B$. So $(r,q)\in R^{-1}$. So $(q,r)\in \left(R^{-1} \right)^{-1}$. Then $p \in \left(R^{-1} \right)^{-1}$. Therefore $R \subseteq \left(R^{-1}\right)^{-1}$. So $\left(R^{-1}\right)^{-1}=R$. 
+                          \end{proof}
+                          
+                             
+			\item $T\circ (S\circ R)=(T\circ S)\circ R$ (What's a good way to refer to this fact?)
+                          \begin{claim}
+                            $T\circ (S\circ R)=(T\circ S)\circ R$
+                          \end{claim}
+                          \begin{proof}
+                            Let $x\in T\circ (S\circ R)$. Then $x=(m,n)$.So $m=Domain(S\circ R)$. Since $Domain(S \circ R)\in A$, $m\in A$. Furthermore, $n\in D$. Since $Range(T\circ S)\in D$, and $Domain(R)\in A$, $x\in (T\circ S)\circ R$. So $T\circ (S\circ R)\subseteq (T\circ S)\circ R$
+                            Let $j\in (T\circ S)\circ R$. Then $x=(o,p)$. So $o=Range(T\circ S)$. So $o\in D$. Furthermore, $p\in A$. Since $Domain(T\circ S)\in D$ and $Domain(R\circ S)\in A$ and $Range(T)\in D$, $j\in (T\circ (S\circ R)$. Since $j\in T\circ(S\circ R)$, $(T\circ S)\circ R\subseteq T\circ (S\circ R)$. So $T\circ (S\circ R)=(T\circ S)\circ R$.
+                          \end{proof}
+                          
+			\item $I_B\circ R=R$ and $R\circ I_A=R$
+                          \begin{claim}
+                            $I_B\circ R=R$ and $R\circ I_A=R$
+                          \end{claim}
+                          \begin{proof}
+                            Let $x\in I_B\circ R$.
+                            So $x=(a,b)$ where $a\in A$ and $b\in B$.
+                            Let $j\in R\circ I_A$. So $x=(m,n)$ where $m\in A$ and $n\in B$.
+                          \end{proof}
+
+			\item $\left(S\circ R\right)^{-1}=R^{-1}\circ S^{-1}$
+                          \begin{claim}
+                            $\left(S\circ R\right)^{-1}=R^{-1}\circ S^{-1}$
+                          \end{claim}
+                          \begin{proof}
+                            Let $x\in \left(S\circ R\right)^{-1}$. Then $x=(m,n)$. So $(n,m)\in (S\circ R)$. So $n\in A$ and $m\in C$. Therefore $(m,n)\in R^{-1}\circ S^{-1}$ through inverses. So $x\in R^{-1}\circ S^{-1}$.\\
+                            Let $h\in R^{-1}\circ S^{-1}$. So 
+                          \end{proof}
+                          
+			\end{enumerate}
+
+		      \item ($\star$) Suppose $A$ is a set on which $\varnothing$ is a reflexive relation. This says something very strong about $A$.
+                        \begin{claim}
+                          If $\varnothing$ is reflexive on set $A$, then $A$ is the null set.
+                        \end{claim}
+                        \begin{proof}
+                          Let $a\in A$. Since $\varnothing$ implies that for all of elements in A, there is are not relatiionships. Since $a\in A$, $a\varnothing a$ is false unless there is no a. Therefore, the only way $\varnothing$ is reflexive on set $A$ is if $A$ is the empty set.  
+                        \end{proof}
+                        
+                        
+		\item The complement of a symmetric relation is symmetric.
+                  \begin{claim}
+                    The complement of a symmetric relation is symmetric.
+                  \end{claim}
+                  
+                  \begin{proof}
+                    Let S be a symmetric relation and let $xSy$ be true. Since S is symmetric, $ySx$. Since $xSy$ and $ySx$, the complement of this is $x\cancel{S} y$ and $y\cancel{S} x$, which is symmetric by definition. Therefore the complement of $S$ is symmetric.
+                  \end{proof}
+                  
+		\item Let $R$ be a relation on the set $A$.
+			\begin{enumerate}
+			\item Show that $R_R=I_A\cup R$ is reflexive.
+                          \begin{claim}
+                            $R_R=I_A\cup R$ is reflexive.
+                          \end{claim}
+                          \begin{proof}
+                            Let $J \in R_R$, where J is a relationship. So J is $I_A$ or $R$. \\
+                            Case 1 ($J\in I_A$): So $J=(a,a)$, where $a\in A$. Therefore $R_R$ is reflexive if $J\in I_A$.\\
+                            Case 2 ($J\in R$): So $J=(a,b)$, where $a,b\in A$. Then let $a=b$ so $J=(a,a)$. Therefore $R_R$ is reflexive if $J\in R$\\
+                            Since $R_R$ is reflexive under all conditions, it is reflexive.
+                          \end{proof}
+                          
+			\item Show that if $S$ is a reflexive relation on $A$ with $R\subseteq S$, then $R_R\subseteq S$.
+                          \begin{claim}
+                            If $S$ is a reflexive relation on $A$ with $R\subseteq S$, then $R_R\subseteq S$.
+                          \end{claim}
+                          \begin{proof}
+                            Let $x\in R_R$. Then $x\in R$ or $x\in I_A$ by definition.\\
+                            Case 1($x\in R$): Since $R \subseteq S$, $x\in S$. Therefore $R_R\subseteq S$.\\
+                            Case 2($x\in I_A$): So $x=(a,a)$ where $a\in A$. Since $S$ is reflexive, $x\in S$ and $R_R\subseteq S$.
+                            Since $R_R\subseteq S$ for all conditions, $R_R\subseteq S$.
+                          \end{proof}
+                          
+			\end{enumerate}
+			
+		\item Let $R$ be a relation on the set $A$.
+			\begin{enumerate}
+			\item Show that $S_R=R\cup R^{-1}$ is a symmetric relation.
+                          \begin{claim}
+                            $S_R=R\cup R^{-1}$ is a symmetric relation.
+                          \end{claim}
+                          \begin{proof}
+                            Let $x\in S_R$. Then x=(a,b) where $a,b\in A$. So $x\in R$ or $x\in R^{-1}$.\\
+                            Case 1 ($x\in R$): So $(b,a)\in R^{-1}$. Therefore if $x\in R$, $S_R$ is symmetric.\\
+                            Case 2 ($x\in R^{-1}$): So $(b,a)\in R$. Therefore if $x\in R$, $S_R$ is symmetric.\\
+                            Since $S_R$ is symmetric for all cases, $S_R$ is symmetric. 
+                          \end{proof}
+                          
+			\item Show that if $S$ is any symmetric relation on $A$ and $R\subseteq S$, then $S_R\subseteq S$.
+                          \begin{claim}
+                            If $S$ is any symmetric relation on $A$ and $R\subseteq S$, then $S_R\subseteq S$.
+                          \end{claim}
+                          \begin{proof}
+                            Let $x\in S_R$. Therefore $x=(a,b)$, where $a,b\in A$. So $x\in R$ or $x\in R^{-1}$.\\
+                            Case 1 ($x\in R$): Since $x\in R$ and $R\subseteq S$, $x\in S$.\\
+                            Case 2 ($x\in R^{-1}$): Since $x\in R^{-1}$. Therefore $(b,a)\in R$. Since S is symmetric, $(b,a)\in R$, and $R\subseteq S$ then $x\in S$.\\
+                            Since $x\in S$ for all of $S_R$, then $S_R\subseteq S$.
+                            
+                          \end{proof}
+                          
+                          
+			\end{enumerate}
+		
+		\item  Let $R$ be a relation on the set $A$. 
+			\begin{enumerate}
+			\item Show that $R$ is symmetric if and only if $R^{-1}=R$.
+                          \begin{claim}
+                            $R$ is symmetric if and only if $R^{-1}=R$.
+                          \end{claim}
+                          \begin{proof}
+                            Let $x\in R$. Then $x=(a,b)$ where $a,b\in A$. So, according to $R=R^{-1}$, $(a,b)$ implies $(b,a)$. Therefore whenever $R^{-1}=R$, R is symmetric. \\
+                            Let $xRy$ imply $yRx$, where $x,y\in A$(Definition of symmetric). So $R\subseteq R^{-1}$. Since x and y are arbitrary elements in A, $yRx$ implies $xRy$. So $R^{-1}\subseteq R$. Therefore, $R=R^{-1}$. So, $R$ is symmetric if and only if $R^{-1}=R$.
+                          \end{proof}
+                          
+                          
+			\item Show that $R$ is transitive if and only if $R\circ R\subseteq R$.
+                          \begin{claim}
+                            $R$ is transitive if and only if $R\circ R\subseteq R$.
+                          \end{claim}
+                          \begin{proof}
+                            Let $x\in R\circ R$. Then $x=(a,b)$, where $a,b\in A$.$R\circ R\subseteq R$ can be rewritten as  $aRc\circ cRb\subseteq aRb$ where $c\in A$. Therefore, since $aRc$ and $cRb$ implies $x$ according to $R\circ R\subseteq R$,  x is transitive. \\
+                            Let $xRy$ and $yRz$ imply $xRz$ (let R be transitive), where $x,y,z\in A$. So $xRy\circ yRz\subseteq xRz$, as the $Range(xRy)=Domain(yRz)$ and this results in $xRz$. Therefore $R$ is transitive if and only if $R\circ R\subseteq R$.
+                          \end{proof}
+                          
+                          
+			\end{enumerate}
+			
+		      \item Let $R$ be a relation on the set $A$. Let $G$ be a relation on $A$ with the property that: {\em if $S$ is any symmetric relation on $A$ and $R\subseteq S$, then $G\subseteq S$}. Show that such $G$ is unique.
+			
+		\item Let $R$ be a relation on the set $A$. Define $T_R$, a relation on $A$, by $x\operatorname{T_R}y$ if there are $a_0,a_1,\ldots, a_k\in A$ with $x=a_0$, $y=a_k$, and $a_i\operatorname{R}a_{i+1}$ for each $i=0,1,\ldots, k-1$.
+				\begin{enumerate}
+				\item ($\star$) Show that for any relation $R$, $T_R$ is transitive.
+                                  \begin{claim}
+                                    For any relation $R$, $T_R$ is transitive.
+                                  \end{claim}
+                                  \begin{proof}
+                                   Let $j,w\in T_R$. Then $j=(x,y)$ and $w=(y,z)$, where $x,y,z\in A$. Then j can be described as $x=a_0$ and $y=a_k$ $xRa_1$...$a_{k-1}Ry$. w can be described as $yRa_{i+1}...a_{m-1}Rz$ where m is the amount of elements in A between x and z inclusively. Since this holds true for all terms in between x and z, $xT_Rz$ holds for any j and w in $T_R$, therefore $T_R$ is transitive.
+                                  \end{proof}
+                                  
+					\item ($\star\star$) If $S$ is a transitive relation on $A$ with $R\subseteq S$, show that $T_R\subseteq S$.
+				\end{enumerate}
+		
+			
+	\end{enumerate}
+
+
+\end{description}
+
+\end{document}
+

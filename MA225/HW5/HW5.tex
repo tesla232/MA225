@@ -1,0 +1,230 @@
+
+\documentclass[11pt]{letter}
+\usepackage{amsmath,amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage[margin=.9in]{geometry}
+\usepackage{cite}
+\usepackage{asymptote}
+
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{fact}{Fact}
+\newtheorem{claim}{Claim}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\begin{document}
+\pagestyle{empty}
+
+{\Large MA 225 Problem Set 5}\\
+
+
+
+
+
+\begin{description}
+	\item[facts and definitions] You will need the following definitions and facts (at some point):
+	
+	\begin{definition}
+	We call a set $A$ {\em open} if, for each $p\in A$, there is a $\delta>0$ so that the $\delta$-neighborhood of $p$, $V(p,\delta)$, has $V(p,\delta)\subseteq A$. We call a set $A$ {\em closed} if its complement is open.
+\end{definition}
+
+\begin{definition}
+	Given sets $A$ and $B$, we define 
+		$$A\setminus B = \left\{x\ \middle\vert\ x\in A \wedge x\notin B\right\}$$
+	and $A\Delta B=(A\setminus B) \cup (B\setminus A)$.
+\end{definition}
+
+\begin{fact}
+	If $\alpha<\beta$, then the $\alpha$- and $\beta$-neighborhoods of $p$ are related as follows: $$V(p,\alpha)\subseteq V(p,\beta)$$
+\end{fact}
+
+\bigskip
+
+	\item[exercises]  These problems don't require you to write proofs.
+\begin{enumerate}
+		\item Some of the following strings of symbols are ambiguous because they lack bracketing. Exhibit the ambiguity by supplying different possible bracketings, and explaining why the versions are different. Be careful -- some may not be  ambiguous at all!
+			\begin{enumerate}
+				\item $2^A\cap 2^B\setminus C \subseteq D\times 2^A$\\
+Not ambiguous. While it can be written as $(2^A\cap 2^B)\setminus C \subseteq D\times 2^A$ and $2^A\cap (2^B\setminus C) \subseteq D\times 2^A$. In the equation, there exists a $p\in 2^A\cap 2^B$, but not in C. In the second equation, p is in $2^B$ but not C, and since p is in $2^A$, and not C, p would only pull elements not in C from $2^A$.
+				\item $A\cap B\cap C  \subseteq D\cup A\cup B$. Not ambiguous, as cap and cup are communative with themself.
+				\item $A\cap B \cup C$.\\
+$(A\cap B)\cup C$ and $A\cap (B \cup C)$.  A main difference is that in the first bracketing, all elements in $C$ are used. In the second one, however, terms in C are only used if in $A$ as well.
+			\end{enumerate}
+		\item  Let $A$ and $B$ be sets. Consider the collection $\mathcal{D}$ of all sets $C$ with the property $C\subseteq A$ and $C\subseteq B$.
+			\begin{enumerate}
+				\item Write the definition of $\mathcal{D}$ in set-builder notation.\\
+                                  $\mathcal{D} =\{C\vert C\subseteq A\wedge C\subseteq B\}$
+				\item Between $A\in \mathcal{D}$ and $A\subseteq\mathcal{D}$, which is {\em sensible}?
+                                  $\in$, as $\subseteq$ would imply A was a set of sets. Furthermore, if $A$ were to be a set of sets, as since it's said $C\subseteq A$, this would imply that the elements of $C$ were sets of sets, meaning $A$ was a set of set of sets, and this would continue.
+				\item Between $A\in \mathcal{D}$ and $A\subseteq\mathcal{D}$, is either {\em true}?
+As we discussed earlier, $A$ can't be a subset of $\mathcal{D}$. In would work only if $A\subseteq B$, as $A\subseteq A$.
+				\item Among $A\cap B \in \mathcal{D}$, $A\cup B \in \mathcal{D}$, $A\cap B \subseteq \mathcal{D}$, $A\cup B \subseteq \mathcal{D}$, are any true? $A\cap B$, as the intersection of A and B is a subset of A, and the intersection of A and B are a subset of B.
+			\end{enumerate}
+		\item Let $A$ and $B$ be sets. Consider the collection $\mathcal{E}$ of all sets $F$ with the property: for any $C$ with $C\subseteq A$ and $C\subseteq B$, $C\subseteq F$.
+			\begin{enumerate}
+				\item Write out the definition of $\mathcal{E}$ in set-builder notation.
+                                  $\mathcal{E}=\{F\vert C\subseteq A \wedge C\subseteq B\wedge C\subseteq F\}$
+				\item Between $A\in \mathcal{E}$ and $A\subseteq\mathcal{E}$, which is {\em sensible}? Same problem as number 2b. So $A\in \mathcal{E}$ makes more sense
+				\item Between $A\in \mathcal{E}$ and $A\subseteq\mathcal{E}$, is either {\em true}?As stated before, $A\subseteq \mathcal{E}$, so this is false. $A\in \mathcal{E}$ is true only when $A\in B$ and when $A\in F$
+				\item Among $A\cap B \in \mathcal{E}$, $A\cup B \in \mathcal{E}$, $A\cap B \subseteq \mathcal{E}$, $A\cup B \subseteq \mathcal{E}$, are any true? 
+			\end{enumerate}
+		\item In Definition 1, what kind of thing must $\delta$ be? What kind of a thing must a neighborhood be? $\delta$ must be a real number, as it is used in an inequality. A neighborhood must be a subset. 
+		\item Write out what it means for the set $J$ to be {\em not open}:
+			\begin{enumerate}
+				\item Do this in symbols.\\
+$J=\{p\vert \forall \delta: \delta \leq 0\vee V(p,\delta)\nsubseteq J\}$
+				\item Do this in English.For all $\delta$ in a J, if $\delta$ less than or equal to 0, or $V(p,\delta)$ is not a subset, then J is not open.
+			\end{enumerate}
+		\item \begin{enumerate}
+			\item Write a blueprint for the claim {\em If blah blah and such, then $A$ is open.}\\
+If $\forall p\in A$, then there exists a $\delta$ which is greater than 0 and such that $V(p,\delta$, then $A$ is open.
+
+			\item Write a blueprint for the claim  {\em If blah blah and such, then $A$ is closed.}
+If $\forall p\notin A$, then there exists a $\delta$ which is greater than 0 and such that $V(p,\delta$, then $A$ is closed.
+			\end{enumerate}
+\end{enumerate}\newpage
+
+	\item[proofs] Prove the following claims. 
+		\begin{enumerate}
+			\item For any $n\in\mathbb{N}$, $\displaystyle\sum_{k=0}^n B_{n,k}=2^n$.
+			\item If $A\subseteq B$ and $B\subseteq C$ and $C\subseteq A$, then $A=B$ and $B=C$.
+\begin{claim}
+If $A\subseteq B$ and $B\subseteq C$ and $C\subseteq A$, then $A=B$ and $B=C$.
+\end{claim}
+\begin{proof}
+Let $s\in B$. So $s\in C$ according to $B\subseteq C$. So $s\in A$ according to $C\subseteq A$. So $B\subseteq A$, and $A\subset B$ according to definition, therefore $A=B$.
+
+Let $p\in C$. So $p\in A$, according to $C\subseteq A$. So $p\in B$ according to $A\subseteq B$. So $B\subseteq C$, and $C\subseteq B$ according to definition, therefore $C=B$.
+\end{proof}
+			\item ($\star$) For any $n$, $\displaystyle\left(\bigcup_{j=1}^n A_j\right)^c=\bigcap_{j=1}^n A_j^c$.  ({\em Hint.} $n$ is a what?.)
+\begin{claim}
+For any $n$, $\displaystyle\left(\bigcup_{j=1}^n A_j\right)^c=\bigcap_{j=1}^n A_j^c$.  
+\end{claim}
+\begin{proof}
+We can see that this function holds true for $n=1$, as $\displaystyle\left(\bigcup_{j=1}^1 A_j\right)^c=\bigcap_{j=1}^1 A_j^c$ is equal to $A_1^c=A_1^c$, which is true, therefore the formula holds for the base case. Assume $\displaystyle\left(\bigcup_{j=1}^n A_j\right)^c=\bigcap_{j=1}^n A_j^c$. We can use proof by induction to prove this, as $n$ is a natural number.  We define k as k=n and evaluate for $k+1$ to show that:
+\begin{align*}
+\bigcap_{j=1}^{k+1} A_j^c&=\bigcap_{j=1}^{k+1} A_j^c \\
+&=\bigcap_{j=1}^{k} A_j^c\bigcap A_{k+1}^c \\
+&=\displaystyle\left(\bigcup_{j=1}^k A_j\right)^c\bigcap A_{k+1}^c \tag{Use inductive hypothesis} \\
+&= \displaystyle \left(\bigcup_{j=1}^{k} A_j \bigcup A_{k+1}\right)^c \tag{Used de Morgan's Law}\\
+&=\displaystyle\left(\bigcup_{j=1}^{k+1} A_j\right)^c \\
+\end{align*}
+Therefore, through induction we can conclude that $\displaystyle\left(\bigcup_{j=1}^n A_j\right)^c=\bigcap_{j=1}^n A_j^c$ for any $n$. 
+\end{proof}
+			\item Some facts about sets:
+				\begin{enumerate}
+					\item  $(X\setminus Y)\setminus Z=(X\setminus Z)\setminus(Y\setminus Z)$
+\begin{claim}
+$(X\setminus Y)\setminus Z=(X\setminus Z)\setminus(Y\setminus Z)$
+\end{claim}
+\begin{proof}
+Let $t \in (X\setminus Y)\setminus Z=(X\setminus Z)\setminus(Y\setminus Z)$. This means $t \in X$, but not in Y, and from this it is not in Z. This can be rewritten as $(X\setminus Z)\setminus(Y\setminus Z)$, as t is an element of X, but not of Z, and t is not in Y. \\
+Let $n \in  (X\setminus Z)\setminus(Y\setminus Z)$. Because n is never an element of $(X\setminus Z)\setminus(Y\setminus Z)$ by definition of $\setminus$, but instead an element of X but not Y, this can be rewritten as $(X\setminus Y)\setminus Z$. Therefore $\subseteq (X\setminus Y)\setminus  (X\setminus Z)\setminus(Y\setminus Z)$
+ Since the equation works for $\subseteq$ and $\supseteq$, $(X\setminus Y)\setminus Z=(X\setminus Z)\setminus(Y\setminus Z)$.
+
+\end{proof}
+					\item ($\star$)  $2^{A\cap B}=2^A\cap 2^B$
+\begin{claim}
+$2^{A\cap B}=2^A\cap 2^B$
+\end{claim}
+\begin{proof}
+Let $r\in 2^{A\cap B}$, where r is a set. We must do this by first showing that $2^{A\cap B}\subseteq 2^A \cap 2^B$. Let $p \in A\cap B$. p can be defined as all elements which are in both A and B, and r is defined as all combinations of p. Because of the definition of the powerset, the subsets which contain p will be able to be produced by A and B, and by finding the intersection of these set of subsets, . 
+
+
+
+
+Therefore, since $2^{A\cap B}\subseteq 2^A \cap 2^B$ and $2^A \cap 2^B \subseteq 2^{A\cap B}$ are true,  $2^{A\cap B}=2^A\cap 2^B$ is also true.  
+\end{proof}
+					\item  $2^A\cup 2^B\subseteq 2^{A\cup B}$
+\begin{claim}
+$2^A\cup 2^B\subseteq 2^{A\cup B}$
+\end{claim}
+\begin{proof}
+Let $p\in 2^A\cup 2^B$. So either $p\in 2^A$ or $2^B$. All of these elements are in $2^{A\cup B}$, as this consists of all subsets of the elements of $A\cup B$, as well as more. Therefore, $2^A\cup 2^B\subseteq 2^{A\cup B}$.
+\end{proof}
+					\item $A\Delta B=B\Delta A$
+\begin{claim}
+$A\Delta B=B\Delta A$
+\end{claim}
+\begin{proof}
+Let $p\in A\Delta B$. So $p\in (A\setminus B)\cup (B\setminus A)$ by definition. Since the operation $\cup$ is communative for sets (sets are not ordered and union just takes terms from both sets, therefore union is communative), this can be rewriten as $p\in (B\setminus A)\cup (A\setminus B)$, or $B\Delta A$ by definition. Therefore $A\Delta B= B\Delta A$. 
+
+
+
+Since $B\Delta A \subseteq B\Delta A$, and $A\Delta B\subseteq B\Delta A$, it can be concluded that $A\Delta B=B\Delta A$.
+\end{proof}
+					\item $A\Delta B=(A\cup B)\setminus(A\cap B)$
+\begin{claim}
+$A\Delta B=(A\cup B)\setminus(A\cap B)$
+\end{claim}
+\begin{proof}
+  Let $p\in A\Delta B$. So by definition, $p\in (A\setminus B)\cup (B\setminus A)$. So $p\in (A\setminus B$ or  $p\in B\setminus A$, or $p\in B$, and $p\notin A$.\\
+  Case 1 ($p\in A\setminus B$): So $p\in A$ and $p\notin B$. So $p\in A\cup B$ and $p\notin A\cap B$ therefore $p\in (A\cup B)\setminus (A\cap B)$.\\
+  Case 2 ($p\in B\setminus A$): So $p\in B$ and $p\notin A$. So $p\in A\cup B$ and $p\notin A\cap B$. Therefore $p\in (A\cup B)\setminus (A\cap B)$.\\
+  Therefore $A\Delta B\subseteq (A\cup B)\setminus(A\cap B)$.\\
+
+  Let $q\in (A\cup B)\setminus (A\cap B)$. So by definition of $\setminus$, ($q\in A$ or $q\in B$), and $q\notin (A\cap B)$.\\
+  Case 1 ($q\in A$): Since $q\in A$, $q\notin B$, as $q\notin A\cap B$. So $q\in A\setminus B$, therefore $q\in (A\setminus B)\cup (B\setminus A)$ (Definition of $A\Delta B$). Therefore \\
+  Case 2 ($q\in B$): Since $q\in B$, $q\notin A$, as $q\notin A\cap B$. So $q\in B\setminus A$, therefore $q\in (A\setminus B)\cup (B\setminus A)$ (Definition of $A\Delta B$). Therefore $q\in A\Delta B$. \\
+  Since $q\in A\Delta B$ for all cases, and $A\Delta B\subseteq (A\cup B)\setminus(A\cap B)$, $A\Delta B=(A\cup B)\setminus(A\cap B)$.
+
+Since $A\Delta B\subseteq (A\cup B)\setminus(A\cap B)$, and $(A\cup B)\setminus(A\cap B)\subseteq A\Delta B$, this means that $A\Delta B=(A\cup B)\setminus(A\cap B)$.
+\end{proof}
+					\item If $A\cup B\subseteq C\cup D$ and $A \cap B=\varnothing$, and $C\subseteq A$, then $B\subseteq D$.
+\begin{claim}
+Given $A\cup B\subseteq C\cup D$ and $A \cap B=\varnothing$, and $C\subseteq A$, then $B\subseteq D$.
+\end{claim}
+\begin{proof}
+Let $r\in C$. Then $C\cup B\subseteq C\cup D$, as $r\in C\cup A$, and since $r\in C$. Furthermore, $C\cup B=\varnothing$, as C is a subset of $A$, and which $A\cup B=\varnothing$.   So since $C\cup B\subseteq C\cup D$, and since C and B share no terms, $B\subseteq D$.
+\end{proof}
+				\end{enumerate}
+			\item ($\star$) The empty set is open. ({\em Hint.} Go to Vegas.)
+\begin{claim}
+The empty set is open.
+\end{claim}
+\begin{proof}
+The definition of an open set is that for all $s \in S$, where $S$ is a set, there also exists a term with another property. By definition, the empty set does not contain any s, therefore all elements, in this case none, satisfy the conditions of being an open set. $\qed$
+\end{proof}
+			\item ($\star\star$) If $A$ is open and $B$ is open, then $A\cup B$ is open. (Yes, you can do this even though you have no idea what an open set is.)
+\begin{claim}
+Given $A$ and $B$ are open, $A\cup B$ is open.
+\end{claim}
+\begin{proof}
+Let $p\in A\cup B$. Since $\forall a\in A, \exists \delta: \delta>0\wedge V(a, \delta)\subseteq A$, and $\forall b\in B,\exists \delta: \delta>0\wedge V(b, \delta)\subseteq B$,  $A\cup B$ consist of all elements in A as well as B, and the definition of an open set is still upheld by the union, $A\cup B$ is open.
+\end{proof}
+			\item ($\star$) If $A_1,\ldots, A_p$ are open sets, then $\displaystyle\bigcup_{k=1}^pA_k$ is an open set. ({\em Hint.} $p$ is a what?.)
+\begin{claim}
+Given $A_1,\ldots, A_p$ are open sets, then $\displaystyle\bigcup_{k=1}^pA_k$ is an open set.
+\end{claim}
+\begin{proof}
+Through proof by induction, we can determine $\displaystyle\bigcup_{k=1}^pA_k$ is open. We can first verify the base case, which results in $\displaystyle\bigcup_{k=1}^1A_k=A_1$, which is true based on the definition of $A_1$. Defining $j=p$, we will show that $\displaystyle\bigcup_{k=1}^jA_k$ is open for j+1:
+\begin{align*}
+\displaystyle\bigcup_{k=1}^{j+1}A_k&=\displaystyle\bigcup_{k=1}^{j+1}A_k\\
+&=\displaystyle\bigcup_{k=1}^pA_k\cup A_{j+1}\\
+&=\displaystyle\bigcup_{k=1}^pA_k\cup A_{j+1}\\
+\end{align*}
+According to our inductive assumption, $\displaystyle\bigcup_{k=1}^jA_k$ is an open set, as well as $A_{j+1}$ by definition (they defined $A_1,A_2,...A_p$, and the next term $A_{p+1}$ as open). Since we proved in the previous proof that the union of two open sets is open, by proof of mathematical induction $\displaystyle\bigcup_{k=1}^pA_k$ is open.
+\end{proof}
+			\item ($\star$) If $A$ is closed and $B$ is closed, then $A\cap B$ is closed.
+\begin{claim}
+If $A$ is closed and $B$ is closed, then $A\cap B$ is closed.
+\end{claim}
+\begin{proof}
+Given both A and B are closed, $A^c$ is open and $B^c$ is open by definition. We can see from a previous proof that if $A^c$ is opne and $B^c$ is open, then $A^c\cup B^c$ is open as well. Using de Morgans law, we realize this is equal to $(A\cap B)^c$. Because this set is open, and it is the complement of $A\cap B$, $A\cap B$ is closed.
+\end{proof}
+			\item ($\star \star$) If $A$ is open and $B$ is open, then $A\cap B$ is open. (Again, you can do this without any knowledge of what a neighborhood is.)
+\begin{claim}
+If $A$ is open and $B$ is open, then $A\cap B$ is open. (Again, you can do this without any knowledge of what a neighborhood is.)
+\end{claim}
+\begin{proof}
+Let $p\in A\cap B$. By definition, we know that $p\in A$ and $p\in B$. We also know that because A is open, then for all $p\in A$, there exists a subset $V(p,\delta)\subseteq A$, and the same for B. Therefore, since for all $p$ in $A\cap B$, there exists a subset $V(p,\delta)$, the set is open.
+\end{proof}
+	
+			\end{enumerate}
+
+\end{description}
+
+\end{document}
+

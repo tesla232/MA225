@@ -1,0 +1,180 @@
+\documentclass[11pt]{letter}
+\usepackage{amsmath,amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage[margin=.9in]{geometry}
+\usepackage{cite}
+\usepackage{asymptote}
+
+\newtheorem*{theorem*}{Theorem}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{claim}{Claim}
+
+
+\begin{document}
+\pagestyle{empty}
+
+{\Large MA 225 Problem Set 9}\\
+
+
+\begin{description}
+
+\item[facts and definitions]
+	\begin{definition}
+		Let $(A,\preceq)$ and $(B,\vdash)$ be partially-ordered sets (that is, $\preceq$ is a partial order on $A$ and $\vdash$ is a partial order on $B$). We call $f:A\rightarrow B$ {\em monotone} if one of the following two conditions holds: 
+			\begin{itemize}
+				\item[-] $\forall x_1,x_2\in A, x_1\preceq x_2\Rightarrow f(x_1)\vdash f(x_2)$ or
+				\item[-] $\forall x_1,x_2\in A, x_1\preceq x_2\Rightarrow f(x_2)\vdash f(x_1)$
+			\end{itemize}
+		If $f:A\rightarrow B$ is monotone with respect to $\preceq$ and $\vdash$, we often write $f:(A,\preceq)\rightarrow (B,\vdash)$.
+	\end{definition}
+
+\item[exercises] These problems don't require you to write proofs.
+	\begin{enumerate}
+		\item Let $f:X\rightarrow Y$. Explain why $f_*:2^X\rightarrow 2^Y$.
+		\item In the definition of {\em monotone}, $\vdash$ does not have to be a total order. But let's assume it was. Explain two things: first, why someone might think {\em every} function to a totally ordered set is monotone; second, what mistake they would be making.
+	\end{enumerate}\bigskip
+
+\item[proofs] Write a complete proof for each of the following statements.
+	\begin{enumerate}
+	\item Show that for any function $f: A\rightarrow B$, there is at most one function $g:B\rightarrow A$ so that $g\circ f=I_A$ and $f\circ g=I_B$.
+          \begin{claim}
+            For any function $f: A\rightarrow B$, there is at most one function $g:B\rightarrow A$ so that $g\circ f=I_A$ and $f\circ g=I_B$.
+          \end{claim}
+          \begin{proof}
+            Let us assume there is another function, $h$ which satisfies the conditions of $g$. For $h=g$, they must have the same domain and same rule. Since By definition $domain(h)=B$ and $domain(g)=B$, this is satisfied. Now let $f(a)=b$ where $a\in A$ and $b\in B$. So $h(f(a))=a$ (Identity). $So h(b)=a$. Now consider $g(f(a))=a$. So $g(b)=a$ (Identity). So $h=g$, so $g$ is unique.
+          \end{proof}
+          
+          
+			
+			\item If $f:A\rightarrow B$ and there is a function $g:B\rightarrow A$ with the property that $g\circ f=I_A$ and $f\circ g=I_B$, then $f^{-1}:B\rightarrow A$.
+			
+			\item Let $f:X\rightarrow Y$ be a function. Assume that $f^{-1}:Y\rightarrow X$. 
+				\begin{enumerate}
+				\item Show that for any $Z\subseteq Y$, $(f^{-1})_*(Z)=f^*(Z)$.
+                                  \begin{claim}
+                                    For any $Z\subseteq Y$, $(f^{-1})_*(Z)=f^*(Z)$.
+                                  \end{claim}
+                                  \begin{proof}
+                                    Let $x\in (f^{-1})_*(Z)$. So $x=f(j)$ where $j\in Z$. So  
+                                  \end{proof}
+                                  
+                                  
+					\item Explain why that makes it kind of okay that {\em SEStA} (and many others) use the notation $f^{-1}(C)$ where we use $f^*(C)$. 
+				\end{enumerate}
+	
+			      \item Let $h:X\rightarrow Y$ be a function and $C\subseteq Y$. Show that $h^*(C^c)=\left(h^*(C)\right)^c$.
+                                \begin{claim}
+                                  Let $h:X\rightarrow Y$ be a function and $C\subseteq Y$. Show that $h^*(C^c)=\left(h^*(C)\right)^c$.
+                                \end{claim}
+                                \begin{proof}
+                                  Let $j\in h^*(C^c)$. So $j=(a,b)$ where $a\in C^c$ and $b\in X$. Since $h:X\rightarrow Y$, for all $x_1,x_2\in X$, if $h(x_1)=h(x_2)$, then $x_1=x_2$.
+
+                                  So $j\in (h^*(C))^c$
+                                \end{proof}
+                                
+                                
+			\item Let $f:X\rightarrow Y$ be a function, $A,B$ subsets of $X$, and $C,D$ subsets of $Y$.
+				\begin{enumerate}
+				\item  $f_*(A\cup B)=f_*(A)\cup f_*(B)$.
+                                  \begin{claim}
+                                    $f_*(A\cup B)=f_*(A)\cup f_*(B)$.
+                                  \end{claim}
+                                  \begin{proof}
+                                    Let $j\in f_*(A\cup B)$. So $j=f(a)$ where $a\in A\cup B$. So $a\in A$ or $a\in B$. So either $j\in f_*(A)$ or $j\in f_*(B)$. Therefore $j\in f_*(A\cup B)$.\\ \\
+                                    Let $k\in f_*(A)\cup f_*(B)$. So $k=f(b)$ where $b\in X$. So $k\in f_*(A)$ or $k\in f_*(B)$. So $b\in A\cup B$. Therefore $k\in f_*(A\cup B)$. So $f_*(A\cup B)=f_*(A)\cup f_*(B)$.
+                                  \end{proof}
+                                  
+                                  
+				\item $f_*(A\cap B)\subseteq f_*(A)\cap f_*(B)$.
+                                  \begin{claim}
+                                    $f_*(A\cap B)\subseteq f_*(A)\cap f_*(B)$.
+                                  \end{claim}
+                                  \begin{proof}
+                                    Let $j\in f_*(A\cap B)$. So $j=f(a)$ where $a\in A\cap B$. So $a\in A$ and $a\in B$. Since $j$ maps to a unique output, and $a\in A\cap B$, $f_*(A)\cap f_*(B)$. Therefore $a\in f_*(A\cap B)\subseteq f_*(A)\cap f_*(B)$.
+                                    \end{proof}
+				\item $f^*(C\cup D)=f^*(C)\cup f^*(D)$.
+                                  \begin{claim}
+                                     $f^*(C\cup D)=f^*(C)\cup f^*(D)$.
+                                  \end{claim}
+                                  \begin{proof}
+                                    Let $x\in f^*(C\cup D)$. So $x=f(y)$ with $y\in C\cup D$. Since $f$ is a function, elements in $X$ can only be related to one element in $Y$. So $x\in f(C)\cup f(D)$ (since $x\in f^*(C\cup D)$ )
+                                  \end{proof}
+                                  
+                                  
+					\item $f^*(C\cap D)=f^*(C)\cap f^*(D)$.
+				\end{enumerate}
+			\item Let $g:X\rightarrow Y$ be a function. Show that for any finite collection $A_1,\ldots,A_n$ of subsets of $X$, we have
+				\begin{equation*}
+					g_*\left(\bigcup_{k=1}^nA_k\right)=\bigcup_{k=1}^ng_*(A_k)
+				\end{equation*}
+				({\em Hint.} $n$ is a natural number.)
+			        \begin{proof}(Proof by Mathematical Induction)\\ 
+                                  Base Case (n=1): $g_*A_1=g_*A_k$\\ \\
+                                  Inductive hypothesis $r=n$: $g_*\left(\bigcup_{k=1}^rA_k\right)=\bigcup_{k=1}^rg_*(A_k)$\\ \\
+                                  Inductive Step:
+                                  \begin{align*}
+                                    \bigcup_{k=1}^{r+1}g_*(A_k)&=\bigcup_{k=1}^{r+1}g_*(A_k) \\
+                                    &= \bigcup_{k=1}^rg_*(A_k)\cup g_*(A_{r+1})\\
+                                    &=  g_*\left(\bigcup_{k=1}^rA_k\right)\cup g_*(A_{r+1})\tag{Used inductive hypothesis}\\
+                                    &=g_*\left(\bigcup_{k=1}^{r+1}A_k\right) \tag{Since input is either $A_{r+1}$ or $g_*\left(\bigcup_{k=1}^rA_k\right)$, the input of $g_*$ is $\bigcup_{k=1}^{r+1}A_k$}\\                                    
+                                  \end{align*}
+                                  Therefore, through proof by mathematical induction, $g_*\left(\bigcup_{k=1}^nA_k\right)=\bigcup_{k=1}^ng_*(A_k)$.
+                                  
+                                \end{proof}
+                                
+			      \item Give an example which shows that we might not have equality in 5(b).
+                                \begin{proof}
+                                  Let $f(x)=x^2$, $A=\{-3,-2,-1,0\}$ and $b=\{0,1,2,3\}$. So $f_*(A)\cap f_*(B)$, $f_*(A)=\{4,1,0,9\}$ and $yf_*(B)=\{0,1,4,9\}$, so $f_*(A)\cap f_*(B)=\{1,4,0,9\}$. $f_*(A\cap B)=\{0\}$, so $f_*(A\cap B)\neq f_*(A)\cap f_*(B)$.
+                                \end{proof}
+                                
+			
+			\item ($\star$) Let $f:X\rightarrow Y$. Assume that $f$ is onto. Let $\mathcal{P}$ be a partition of $Y$. Define 
+				\begin{equation*}
+					f^*\mathcal{P}=\left\{f^*(A)\middle\vert A\in\mathcal{P}\right\}
+				\end{equation*}
+				Show that $f^*\mathcal{P}$ is a partition of $X$.
+                                \begin{claim}
+                                  $f^*\mathcal{P}$ is a partition of $X$.
+                                \end{claim}
+                                \begin{proof}
+                                  Since $\mathcal{P}$ is a partition on $Y$, $Y=\bigcup_{x\in\mathcal{P}}P$. Since $Y$ is surjective on $X$, $f^*\mathcal{P}\subseteq X$, and according to the definition of a function $f^*\mathcal{P}= X$ ($f^*\mathcal{P}\subseteq X$ since $Y$ is surjective and partitioned by $\mathcal{P}$ and $X\subseteq f^*\mathcal{P}$ as by definition of a function, all elements in $X$ are related to an element in $Y$). Furthermore, since $\forall x_1,x_2\in X$ if $f(x_1)=f(x_2)$ then $x_1=x_2$, this implies that given an element, $y\in Y$, $f^*(y)$ will be unique so $\bigcup_{Y\in \mathcal{P}}f^*(Y)$. Since this satisfies all conditions of a partition, $f^*\mathcal{P}$ is a partition on $X$. 
+                                \end{proof}
+                                
+                                
+				
+			\item ($\star\star$) Assume that $h:X\rightarrow Y$ is onto. Consider an equivalence relation $R$ on $Y$. Give an explicit expression for the equivalence classes of $h^*R$ (defined in HW 8) in terms of the other objects in play. ({\em Hint.} Recall that equivalence classes of $h^*R$ are subsets of $X$. Consider another problem on this sheet.)
+		
+
+			\item ($\star$) Let $f:X\rightarrow Y$. Assume $f$ is injective. If $\preceq$ is a partial order on $Y$, show that the relation $\vdash$ given by
+			$$\alpha\vdash \beta  \text{ iff } f(\alpha)\preceq f(\beta)$$
+			  is a partial order on $X$.
+                          \begin{claim}
+                            Let $f:X\rightarrow Y$. Assume $f$ is injective. If $\preceq$ is a partial order on $Y$, show that the relation $\vdash$ given by
+			$$\alpha\vdash \beta  \text{ iff } f(\alpha)\preceq f(\beta)$$
+			  is a partial order on $X$.
+                          \end{claim}
+                          \begin{proof}
+                            (Reflexivity)
+                            Let $x\in X$. Since $f(x)\preceq f(x)$ (by definition of partial order, and since x maps to a unique value), $x\vdash x$ (Since $f(x)$ goes to a unique value due to injectivity). So $\vdash$ is reflexive on $X$.\\ \\
+                            (Transitivity) Let $x,y\in (\vdash, X)$ where $x=(a,b)$ and $y=(b,c)$. By the definition of $\preceq$, $f(a)\preceq f(b)$ and $f(b)\preceq f(c)$. Since $\preceq$ is a parital order, $f(a)\preceq f(c)$. By definition of $\vdash$ and a function, $a\vdash c$. So $\vdash$ is transitive on $X$.\\ \\
+                            (Antisymmetry) Let $x,y\in (\vdash, X)$ where $x=(a,b)$ and $y=(b,a)$. By the definition of $\preceq$, $f(a)\preceq f(b)$ and $f(b)\preceq f(a)$. Since $\preceq$ is a parital order, $a=b$. So since if $x,y\in (\vdash, X)$ $a=b$, $\vdash$ is antisymmetric. So $\vdash$ is a partial order on $X$.
+                          \end{proof}
+                          
+                          
+			
+			\item ($\star$) Let $(Z,\preceq)$ and $(W,\vdash)$ be partially ordered sets. Assume $\preceq$ is a total order. Assume $g:(Z,\preceq)\rightarrow (W,\vdash)$ is monotone. Show that $g$ is injective.
+		\end{enumerate}
+		
+	
+	\end{description}
+
+
+
+\end{document}
+
+B
