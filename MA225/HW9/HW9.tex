@@ -35,8 +35,8 @@
 
 \item[exercises] These problems don't require you to write proofs.
 	\begin{enumerate}
-		\item Let $f:X\rightarrow Y$. Explain why $f_*:2^X\rightarrow 2^Y$.
-		\item In the definition of {\em monotone}, $\vdash$ does not have to be a total order. But let's assume it was. Explain two things: first, why someone might think {\em every} function to a totally ordered set is monotone; second, what mistake they would be making.
+		\item Let $f:X\rightarrow Y$. Explain why $f_*:2^X\rightarrow 2^Y$. 
+		\item In the definition of {\em monotone}, $\vdash$ does not have to be a total order. But let's assume it was. Explain two things: first, why someone might think {\em every} function to a totally ordered set is monotone; second, what mistake they would be making. One might think every totally ordered set is monotone since every term is comparable, given a $f(x_1),f(x_2)$, $f(x_1)\vdash f(x_2)$ or $f(x_2)\vdash f(x_1)$. However, only one can hold, so given $leq$, and given $f$ maps to $\{1\}$, both would hold, and therefore this wouldn't be a monotone. 
 	\end{enumerate}\bigskip
 
 \item[proofs] Write a complete proof for each of the following statements.
@@ -60,11 +60,11 @@
                                     For any $Z\subseteq Y$, $(f^{-1})_*(Z)=f^*(Z)$.
                                   \end{claim}
                                   \begin{proof}
-                                    Let $x\in (f^{-1})_*(Z)$. So $x=f(j)$ where $j\in Z$. So  
+                                    Functions are equal when they have the same rule and Domain. $Z=Domain(f^{-1}_*)=Domain(f^*(Z))$. Given $(f^*(z)=x$ for $z\in Z$ and $x\in X$. Therefor $f^{-1 *}(x)=z$ (Inverse). Therefore the pullback can be defined as $f^{-1}_*(z)=x$. Since both functions have the same rule and domain, they are equal.
                                   \end{proof}
                                   
                                   
-					\item Explain why that makes it kind of okay that {\em SEStA} (and many others) use the notation $f^{-1}(C)$ where we use $f^*(C)$. 
+					\item Explain why that makes it kind of okay that {\em SEStA} (and many others) use the notation $f^{-1}(C)$ where we use $f^*(C)$. Because $f^*(C)$ is equal to the inverse if f is bijective. 
 				\end{enumerate}
 	
 			      \item Let $h:X\rightarrow Y$ be a function and $C\subseteq Y$. Show that $h^*(C^c)=\left(h^*(C)\right)^c$.
@@ -99,10 +99,11 @@
                                     \end{proof}
 				\item $f^*(C\cup D)=f^*(C)\cup f^*(D)$.
                                   \begin{claim}
-                                     $f^*(C\cup D)=f^*(C)\cup f^*(D)$.
+                                    $f^*(C\cup D)=f^*(C)\cup f^*(D)$.
                                   \end{claim}
                                   \begin{proof}
-                                    Let $x\in f^*(C\cup D)$. So $x=f(y)$ with $y\in C\cup D$. Since $f$ is a function, elements in $X$ can only be related to one element in $Y$. So $x\in f(C)\cup f(D)$ (since $x\in f^*(C\cup D)$ )
+                                    Let $x\in f^*(C\cup D)$. So $x\in X$. Since $f$ is a function, elements in $X$ can only be related to one element in $Y$. So $x\in f(C)\cup f(D)$ (since $x\in f^*(C\cup D)$ and $f^*(C\cup D)$ are linked to a unique element in $C\cup D$, they must be related to the element in $f^*(C)$ or $f^*(D)$). So $f^*(C\cup D)\subseteq f^*(C)\cup f^*(D)$.\\ \\
+                                    Let $x\in f^*(C)\cup f^*(D)$. So $x\in X$. Since $f$ is a function, elements in $X$ can only be related to one element in $Y$. So $x\in f^*(C)$ or $x\in f^*(D)$. Since $x$ is linked with a unique element in $C$ or $D$ (Definition of a function), $x\in f^*(C\cup D)$. So $f^*(C\cup D)=f^*(C)\cup f^*(D)$.
                                   \end{proof}
                                   
                                   
@@ -177,4 +178,3 @@
 
 \end{document}
 
-B
