@@ -19,7 +19,7 @@
 \pagestyle{empty}
 
 {\Large MA 225 Problem Set 9}\\
-
+Jordan Paldino, worked with Efron Martinez
 
 \begin{description}
 
@@ -35,13 +35,15 @@
 
 \item[exercises] These problems don't require you to write proofs.
 	\begin{enumerate}
-		\item Let $f:X\rightarrow Y$. Explain why $f_*:2^X\rightarrow 2^Y$. 
+	\item Let $f:X\rightarrow Y$. Explain why $f_*:2^X\rightarrow 2^Y$. Since the push forward is used to describe all of $x\in X$, and theyre relation to elements $y\in Y$, one can break up these relations into sets of subsets $2^X$ and relate them with their corrosponding elements in $2^Y$.
+          
 		\item In the definition of {\em monotone}, $\vdash$ does not have to be a total order. But let's assume it was. Explain two things: first, why someone might think {\em every} function to a totally ordered set is monotone; second, what mistake they would be making. One might think every totally ordered set is monotone since every term is comparable, given a $f(x_1),f(x_2)$, $f(x_1)\vdash f(x_2)$ or $f(x_2)\vdash f(x_1)$. However, only one can hold, so given $leq$, and given $f$ maps to $\{1\}$, both would hold, and therefore this wouldn't be a monotone. 
 	\end{enumerate}\bigskip
 
 \item[proofs] Write a complete proof for each of the following statements.
 	\begin{enumerate}
-	\item Show that for any function $f: A\rightarrow B$, there is at most one function $g:B\rightarrow A$ so that $g\circ f=I_A$ and $f\circ g=I_B$.
+	\item Show that for any function $f: A\rightarrow B$, there is at most one function $g:B\rightarrow A$ so that $g\circ f=I_A$ and $f\circ g=I_B$. \\
+          
           \begin{claim}
             For any function $f: A\rightarrow B$, there is at most one function $g:B\rightarrow A$ so that $g\circ f=I_A$ and $f\circ g=I_B$.
           \end{claim}
@@ -51,7 +53,15 @@
           
           
 			
-			\item If $f:A\rightarrow B$ and there is a function $g:B\rightarrow A$ with the property that $g\circ f=I_A$ and $f\circ g=I_B$, then $f^{-1}:B\rightarrow A$.
+	\item If $f:A\rightarrow B$ and there is a function $g:B\rightarrow A$ with the property that $g\circ f=I_A$ and $f\circ g=I_B$, then $f^{-1}:B\rightarrow A$.
+          \begin{claim}
+            If $f:A\rightarrow B$ and there is a function $g:B\rightarrow A$ with the property that $g\circ f=I_A$ and $f\circ g=I_B$, then $f^{-1}:B\rightarrow A$.
+          \end{claim}
+          \begin{proof}
+            For $f^{-1}:B\rightarrow A$, the inverse must exist as a function. We'll show $g=f^{-1}$. Since $DOMAIN(g)=DOMAIN(f^{-1})$, this satisfies the first condition of functions being equal. Assume $f(a)=b$. Then $f^{-1}(b)=a$ (by definition of inverse). So $f^{-1}\circ f= I_A$ (composition),  $f\circ f^{-1}=I_B$ (composition). Since these are the same rules as $g$, and $f^{-1}$ shares a domain with $g$, $f^{-1}=g$, and therefore $f^{-1}$ exists. 
+          \end{proof}
+          
+          
 			
 			\item Let $f:X\rightarrow Y$ be a function. Assume that $f^{-1}:Y\rightarrow X$. 
 				\begin{enumerate}
@@ -107,7 +117,16 @@
                                   \end{proof}
                                   
                                   
-					\item $f^*(C\cap D)=f^*(C)\cap f^*(D)$.
+				\item $f^*(C\cap D)=f^*(C)\cap f^*(D)$.
+                                  \begin{claim}
+                                    $f^*(C\cap D)=f^*(C)\cap f^*(D)$.
+                                  \end{claim}
+                                  \begin{proof}
+                                    Let $x\in f^*(C\cap D)$. So $x\in X$. Since x can only be related to one term in $C\cap D$ (definition of a function), $x\in f^*(C)\cap f^*(D)$ (Since it can't be related to additional terms).\\ \\
+                                    Let $x\in f^*(C)\cap f^*(D)$. So $x\in X$. So either $x\in f^*(C)$ or $x\in f^*(D)$. Since x can only be related to one term in $C\cap D$ (definition of a function), $x\in f^*(C\cap D)$ (Since it can't be related to additional terms). So $f^*(C\cap D)=f^*(C)\cap f^*(D)$.
+                                  \end{proof}
+                                  
+                                  
 				\end{enumerate}
 			\item Let $g:X\rightarrow Y$ be a function. Show that for any finite collection $A_1,\ldots,A_n$ of subsets of $X$, we have
 				\begin{equation*}
