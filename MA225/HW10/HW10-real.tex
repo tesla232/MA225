@@ -1,0 +1,186 @@
+\documentclass[11pt]{letter}
+\usepackage{amsmath,amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage[margin=.9in]{geometry}
+\usepackage{cite}
+\usepackage{asymptote}
+
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{claim}{Claim}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+
+\begin{document}
+\pagestyle{empty}
+
+{\Large MA 225 Problem Set 10}\\
+
+
+\begin{description}
+
+	
+
+\item[proofs] Write a complete proof for each of the following statements.
+	\begin{enumerate}
+        \item The composition of injections is an injection.
+          \begin{claim}
+            The composition of injections is an injection.
+          \end{claim}
+          \begin{proof}
+  Let $\phi: A\rightarrow B$ and $\rho: B\rightarrow C$ be injective. Consider $(a,b)\in \phi$, where $\phi(a)=b$ and $a\in A$ and $b\in B$. Since $\phi$ is injective, $\phi(a)$ is unique to $a$. Now consider $\rho(\phi(a))=(\phi(a),c)$($\rho\circ\phi$), where $c\in C$. Since $\rho$ is injective, $c$ is unique to $\phi(a)$, and by extension unique to $a$. Since each input produces a unique output in $\rho\circ\phi$, and these are arbitrary transformations, the composition of two injective functions is injective.
+\end{proof}
+
+
+\item The composition of surjections is a surjection.
+  \begin{claim}
+    The composition of surjections is a surjection.
+  \end{claim}
+  \begin{proof}
+    Let $\phi: A\rightarrow B$ and $\rho: B\rightarrow C$ be surjective. Since $\phi$ is surjective, $\phi$ maps to all $b\in B$. Now consider $\rho(\phi)$. Since all values of $b$ are mapped to a value of $C$, $\phi(\rho)$ is surjective.
+  \end{proof}
+  
+\item The composition of bijections is a bijection.
+  \begin{claim}
+    The composition of bijections is a bijection.
+  \end{claim}
+  \begin{proof}
+    Let S and T be bijective functions. Since they are both surjective, their composition would be surjective (as seen in the above proof). Since they are both injective, their composition would be injective (as seen in the above proof). Therefore, since the composition is both injective and surjective, the composition is bijective.
+\end{proof}
+
+\item Set equivalence is an equivalence relation.
+  \begin{claim}
+    Set equivalence is an equivalence relation.
+  \end{claim}
+  \begin{proof}
+    (Symmetric)Let $A\approx B$ for sets $A$ and $B$. Since there exists an inverse, $B\approx A$ (according to the definition of equivalence/bijection).\\ \\
+  (Reflexive) Let $A$ be a set. Now consider a map which maps all elements to themself ($\phi:A\rightarrow A$). Since this is invertible (it's own inverse), $A\approx A$.\\ \\
+  (Transitive) Let $A\approx B$ and $B\approx C$ where A,B, and C are sets. So there exists a bijections, $g:A\rightarrow B$ and $f:B\rightarrow C$. Consider $f\circ g$. Since, as proven before the composition of two bijections is a bijections, $f\circ g:A\rightarrow C$ (By definition of composition). So $A\approx C$. So set equivallence is an equivallence relation.
+\end{proof}
+
+\item $f:X\rightarrow Y$ is injective if and only if there is some $g:\operatorname{Range}(f)\rightarrow X$ with $g\circ f = I_X$. ({\em Hint.} Your job in one direction is to define $g$, which should, given any element $y\in \operatorname{Range}(f)$, produce some $x\in X$.)
+  \begin{claim}
+    $f:X\rightarrow Y$ is injective if and only if there is some $g:\operatorname{Range}(f)\rightarrow X$ with $g\circ f = I_X$.
+  \end{claim}
+  \begin{proof}
+    If $f:X\rightarrow Y$ is injective if and only if there is some $g:Range(f)\rightarrow X$ with $g\circ f=I_X$, then if $f:X\rightarrow Y$ is not injective if and only if there is not some $g:Range(f)\rightarrow X$ with $g\circ f=I_X$. Consider a noninjective function $f:X\rightarrow Y$. Since f isn't injective, $\exists (x,z),(y,z)\in f$ with $x,y\in X$ and $z\in Y$ where $x\neq z$. Therefore $(z,x),(z,y)\in g$. Therefore $(z,y)\circ (x,z)\in g\circ f$ but $\notin I_X$ so $I_X\neq g\circ f$.\\ \\
+    Assume there is not some $g:range(f)\rightarrow X$ with $g\circ f=I_X$. Then if $g$ exists, $(x,y)\in g\circ f$ where $x\neq y$, where $x\in Domain(f)$ and $y\in Range(g)$. This means $(y,z)\in f$ and $(z,x)\in g$ for some $x\in Y$ (by definition of composition of functions). So, by definition of $g$, $(x,z),(x,y)\in f$ where $y\neq x$. Therefore $f$ is injective.
+  \end{proof}
+  
+\item $f:X\rightarrow Y$ is surjective if and only if there is some $g:Y\rightarrow X$ with $f\circ g=I_Y$. ({\em Hint.} Your job in one direction is to define $g$, which should, given any element $y\in Y$, produce some $x\in X$.)
+  \begin{claim}
+    $f:X\rightarrow Y$ is surjective if and only if there is some $g:Y\rightarrow X$ with $f\circ g=I_Y$.
+  \end{claim}
+  
+  \begin{proof}
+Assume $f:X\rightarrow Y$ is surjective. Then $\forall y\in Y$, $\exists x: f(x)=y$. Let $(x,y)\in f$, and let $(y,x)\in g$. With one relation for each y(Since f is surjective, all of domain(g) is hit). So $(x,y)\circ(y,x)=(y,y)$. Therefore there exists a function $g$ such that $f\circ g=I_Y$.
+    Assume $f\circ g=I_Y$. Then $Domain(g)=Range(f)$ (def of composition). Since $Domain(g)$ is all of $Y$ (by def of function), the Range(f) is all of Y. So f is surjective.
+  \end{proof}
+  
+\item If $f:X\rightarrow Y$ is injective, then for any $A\subseteq X$, $f^*(f_*(A))=A$. ({\em Hint.} One direction is from a previous homework.)
+  \begin{claim}
+    If $f:X\rightarrow Y$ is injective, then for any $A\subseteq X$, $f^*(f_*(A))=A$.
+  \end{claim}
+  \begin{proof}
+    Let $f$ be injective. Consider $x\in f^*(f_*(A))$. So $f(x)\in f_*(A)$ where $f(x)$ is unique (def of a function). So $x\in A$ where $x$ is unique (def of injective). So $f^*(f_*(A))\subseteq A$\\ \\
+    Let $x\in A$. Then $f(x)\in f_*(A)$ (pushed both sides forward) where $f(x)$ is unique to $x$ (def of injective). Then $x\in f^*(f_*(A))$ (Pulled both sides back) where $x$ is unique to $f(x)$ (Def of function). So $A\subseteq f^*(f_*(A))$. So $f^*(f_*(A))=A$.
+    \end{proof}
+  \item Let $f:X\rightarrow Y$. Assume that for any $A\subseteq X$, $f^*(f_*(A))=A$. Show that $f$ is injective. ({\em Hint.} You only need to consider one particular kind of $A$.)
+    \begin{claim}
+      Let $f:X\rightarrow Y$. Assume that for any $A\subseteq X$, $f^*(f_*(A))=A$. Then $f$ is injective.
+    \end{claim}
+    
+    \begin{proof}
+      Assume $f$ is not injective. Then $\exists f(x)=f(y)$ where $x,y\in X$ and $x\neq y$. Assume $x\in f^*(f_*(A))$. So $f(x)\in f_*(A)$. So $x\in A$, however $y\notin A$ (Since $a$ is already in it for $f(x)$ which equals $f(y)$). Therefore by contrapositive, if $f^*(f_*(A))=A$, then $f$ is injective.   
+    \end{proof}
+    
+		\item ($\star$) Show that the union of any collection of finitely many finite sets is finite; that is, for any $n\in\mathbb{N}$, if $A_1,\ldots,A_n$ are each finite, then $\displaystyle\bigcup_{k=1}^nA_k$ is finite. ({\em Hint.} $n$ is a natural number. Focus on the case $n=2$.)
+                  \begin{claim}
+                    The union of any collection of finitely many finite sets is finite
+                  \end{claim}
+                  \begin{proof}
+                    Base Case: $n=1$. $A_1$ by definition is finite.\\ \\
+                    Inductive hypothesis:$j=n$, $\displaystyle\bigcup_{k=1}^jA_k$ is finite. \\ \\
+                    Inductive step:
+                    \begin{align*}
+                      \displaystyle\bigcup_{k=1}^{j+1}A_k \\
+                      \displaystyle\bigcup_{k=1}^j(A_k)\cup A_{j+1}\\
+                    \end{align*}
+                    There are p elements in $\displaystyle\bigcup_{k=1}^j(A_k)$(finite by inductive hypothesis) and r elements in $A_{j+1}$ where $p,r\in \mathbb{N}$ (Since both sets have a natural number of elements). So $\displaystyle\bigcup_{k=1}^j(A_k)\cup A_{j+1}$ has $\leq$ $r+q$ elements, which is a natural number. Since $\displaystyle\bigcup_{k=1}^{j+1}A_k$ is finite, by induction the union of finitely many finite sets is finite.
+                  \end{proof}
+                  
+		
+		\item ($\star$) Let $R$ be an equivalence relation on the set $A$, and consider the {\em quotient function} $\pi_R: A\rightarrow A_{/R}$ given by $\pi_R(a)=[a]_R$.
+			\begin{enumerate}
+                        \item Explain why $\pi_R$ is a function.
+                          \begin{claim}
+                            $\pi_R$ is a function.
+                          \end{claim}
+                          \begin{proof}
+                            Let $x\in A$. Then since $a\in [a]_R$ (Reflexivity), $\pi_R$. So $\pi_R$ satisfies the first definition of a function.\\ \\
+  Let $a\in A$. Assume it outputs to two classes, $[a]_R$ and $[b]_R$. Since $[a]_R\cap[b]_R\neq\varnothing$(a is in both), then by definition of equivalence classes, $[a]_R=[b]_R$. So $\pi_R$ is a function.
+                          \end{proof}
+                          
+                        \item $\pi_R$ is surjective.
+                          \begin{claim}
+                            $\pi_R$ is surjective.
+                          \end{claim}
+                          \begin{proof}
+                            Let $[a]_S\in A_{/S}$. Since $A\subseteq \bigcup_{b\in A}[a]_R$(because R is reflexive, each element must at least relate to itself), there exists $[a]_R$ (Since $R$ covers $A$, given any $a\in A$ there will exist a $[a]_R$). So $\psi$ is surjective. 
+                          \end{proof}
+                          
+			\end{enumerate}
+		\item ($\star \star$) Let $R$ and $S$ be equivalence relations on the set $A$, such that $R\subseteq S$. Define a relation $\psi$ from $A_{/R}$ to $A_{/S}$ by: for every $a\in A$, $([a]_R,[a]_S)\in \psi$.
+			\begin{enumerate}
+                        \item Show that $\psi$ is a function from $A_{/R}$ to $A_{/S}$. ({\em Hint.} The thing to worry about is if we picked a different representative, say $b\in A$ with $[a]_R=[b]_R$.)
+                          \begin{claim}
+                            $\psi$ is a function
+                          \end{claim}
+                          \begin{proof}
+                            Since both cover $A$, for any $a\in A$, $a$ will be related to itself in $[a]_R$ and have an output to itself in $[a]_S$ (Since both are reflexive). Therefore all $Domain(\psi)$ have an output. Consider $[a]_S$ Since equivalence classes don't overlap with themselves, if $([a]_R,[a]_S)\in \psi$,  $[a]_R$ only relates to one equivalence class of $S$. Consider however $[a]_R=[b]_S$. Since $R\subseteq S$, and $aRb\in R$, $bSa\in S$, and so it's in $[a]_S$. So if $([b]_R,[a]_S)\in \psi$. 
+                          \end{proof}
+                          
+				\item Show that $\psi$ is a surjection.
+                                  \begin{claim}
+                                    $\psi$ is a surjection.
+                                  \end{claim}
+                                  \begin{proof}
+                                    Let $[a]_S\in A_{/S}$. Since $A\subseteq \bigcup_{b\in A}[a]_R$(because R is reflexive, each element must at least relate to itself), there exists $[a]_R$ (Since $R$ covers $A$, given any $a\in A$ there will exist a $[a]_R$). So $\psi$ is surjective. 
+                                  \end{proof}
+                                  
+			\end{enumerate}
+		\item Let $f:X\rightarrow Y$. 
+				\begin{enumerate}
+                                \item ($\star\star$) Show that $f$ is a bijection if and only if $f_*:2^X\rightarrow 2^Y$ is a bijection.
+                                  \begin{claim}
+                                    $f$ is a bijection if and only if $f_*:2^X\rightarrow 2^Y$ is a bijection.
+                                  \end{claim}
+                                  \begin{proof}
+                                      Assume $f$ is not a bijection. Then $f$ isn't injective or isn't surjective. Assume $f$ isn't injective. Then $(x,f(x)),(y,f(y))\in f$ where $f(x)=f(y)$ and $x\neq y$ where $x,y\in X$. Let $r,k\in f_*(A)$ where $A\subseteq X$ and $x,y\in A$. Define $r$ as an arbitrary subset of $f_*(A)$ where $x\in f_*(A)$ and $k$ is identical except $x$ is replaced with $y$. Since these would map to the same place, $f_*$ is not bijective. \\ \\
+  Assume $f_*$ is not a bijection. Then $f$ isn't injective or isn't surjective. Assume $f_*$ isn't injective. Then $\exists a,b\in A$ such that $f_*(a)=f_*(b)$ where $a\neq b$ and are sets. Since $a\neq b$, meaning one or more elements have been replaced (def of function and image). This implies $\exists k\in a, \exists j\in b: f(j)=f(k)$ (Since two powersets produce the same powerset). So $f$ is not injective.
+  Therefore by contrapositive, $f$ is bijective iff $f_*$ is bijective.
+                                  \end{proof}
+                                  
+                                  
+                                  
+					\item In this case, what is $(f_*)^{-1}:2^Y\rightarrow 2^X$? Prove your answer.
+                                        \end{enumerate}
+                                        \begin{claim}
+                                          $(f_*)^{-1}=f^*$
+                                        \end{claim}
+                                        \begin{proof}
+                                            Same Domain:$(f_*)^{-1}$ and $f^*$ both have a domain of $f^*$\\
+  Same Rule: $(f_*(A))^{-1}=A$ (def of inverse). Since $f_*(f^(A))=A$ if $f$ is injective (Proven in proof 7), meaning they have the same rule.Therefore $(f_*(A))^{-1}=f^*$.
+                                        \end{proof}
+                                        
+	\end{enumerate}		
+	
+	\end{description}
+
+
+
+\end{document}
+
