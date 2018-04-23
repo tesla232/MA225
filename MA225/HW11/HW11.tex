@@ -1,0 +1,183 @@
+\documentclass[11pt]{letter}
+\usepackage{amsmath,amsthm}
+\usepackage{amsfonts,mathabx}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage[margin=.9in]{geometry}
+\usepackage{cite}
+\usepackage{asymptote}
+
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{claim}{Claim}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+
+\begin{document}
+\pagestyle{empty}
+
+{\Large MA 225 Problem Set 11}\\
+
+
+\begin{description}
+\item[exercises]
+	\begin{enumerate}
+        \item Write three blueprints for a proof that {\em If blah blah and so on, then $A$ is finite.}: each blue print should use a different approach.
+          Consider $\phi:A\rightarrow \mathbb{N}_k$\\
+          ...\\
+          Since if $\phi(a)=\phi(b)$ means $a=b$, $\phi$ is injective.\\
+          ...\\
+          Since $\forall g\in\mathbb{N}_k, \exists a\in A: \phi(a)=g$, A is surjective. So $A$ is finite.\\ \\ \\
+          Consider $\phi:A\rightarrow \mathbb{N}_k$.\\
+          ...\\
+          So there exists a $\phi^{-1}:\mathbb{N}_k\rightarrow A$. So there exists a bijection between $A$ and $N_k$, $A$ is finite.\\ \\ \\
+          Consider the set $A$ with the rule blah blah blah\\
+          ...\\
+          So $A=\varnothing$, so $A$ is finite.
+          
+          
+		\item Write two blueprints for a proof that {\em If blah blah and so on, then $A$ is infinite.}. \\
+                  Let A be finite.\\
+                  Blah blah blah...\\
+                  So $x\in A$. By the original definition, $x\notin A$. So $A$ is infinite by contradiction.  \\ \\ \\
+                  Consider $x\in B$ where B is an infinite set.\\
+                  Since $x\in A$, $B\subseteq A$. So $A$ is infinite.  
+                  
+		\item Why does problem 11 make the assumption that $S$ has at least two elements? Because if it has less than 2, then there are no numbers, c which $a<c<b$ as there is no b.
+	\end{enumerate}
+
+\item[proofs] Write a complete proof for each of the following statements.
+	\begin{enumerate}
+        \item Long ago, we gave a bit of a handwavey argument that the product of two finite sets was finite. Let $A$ be a finite set (say, with cardinality $n$) and $B$ be a finite set (say, with cardinality $m$). Give a concrete proof that $A\times B$ is finite by explicitly constructing a bijection between $A\times B$ and some $\mathbb{N}_{k}$.
+          \begin{claim}
+            $A\times B$ is finite if $A$ and $B$ are finite.
+          \end{claim}
+          \begin{proof}
+            $A\approx \mathbb{N}_n$ and $B\approx \mathbb{N}_m$.  By proof 3, $A\times B\approx N_n\times N_k$. Since there are $n*k$ objects in $\mathbb{N}_n\times \mathbb{N}_k$, $\mathbb{N}_n\times \mathbb{N}_k\approx \mathbb{N}_j$. So $A\times B\approx \mathbb{N}_j$ (Transitivity) and therefore is finite.
+          \end{proof}
+          
+          
+		
+        \item If $A_1,\ldots, A_p$ are each finite sets, then $\displaystyle\bigtimes_{k=1}^p A_k=\left\{(x_1,\ldots,x_p)\middle\vert x_i\in A_i\right\}$ is finite.
+          \begin{claim}
+            If $A_1,\ldots, A_p$ are each finite sets, then $\displaystyle\bigtimes_{k=1}^p A_k=\left\{(x_1,\ldots,x_p)\middle\vert x_i\in A_i\right\}$ is finite.
+          \end{claim}
+          \begin{proof}
+            Base Case($p=1$): $A_1$ is finite (by def)\\ \\
+            Inductive hypothesis($p=r$): $\displaystyle\bigtimes_{k=1}^p A_k$ is finite.\\ \\
+            Inductive step($r+1$): We'll show $\displaystyle\bigtimes_{k=1}^{r+1} A_k$ is finite:\\
+            \begin{align*}
+              & \displaystyle\bigtimes_{k=1}^{r+1} A_k \\
+              & \displaystyle\bigtimes_{k=1}^r A_k\times A_{r+1}
+            \end{align*}
+            Since $A_{r+1}$ and $\displaystyle\bigtimes_{k=1}^r A_k$ are finite, $\displaystyle\bigtimes_{k=1}^r A_k\times A_{r+1}$ is finite (proof 1). So by PMI, $\displaystyle\bigtimes_{k=1}^p A_k=\left\{(x_1,\ldots,x_p)\middle\vert x_i\in A_i\right\}$ is finite. 
+          \end{proof}
+          
+          
+		
+        \item Write out in detail the proof that if $A\approx X$ and $B\approx Y$, then $A\times B\approx X\times Y$.
+          \begin{claim}
+            If $A\approx X$ and $B\approx Y$, then $A\times B\approx X\times Y$.
+          \end{claim}
+          \begin{proof}
+            Consider the bijections $\psi: A\rightarrow X$ and $\phi: B\rightarrow Y$.\\
+            Let $\psi\times\phi:A\times B \rightarrow X\times Y$ which $(a,b)\mapsto (\psi(a),\phi(b))$ where $a\in A$ and $b\in B$. \\
+            Injectivity: Let $\psi\times\phi((a_1,b_1))=\psi\times\phi((a_2,b_2))$. In particular, $\psi(a_1)=\psi(a_2)$, so $a_1=a_2$ (injectivity of $\psi$). Also $\phi(b_1)=\phi(b_2)$, so $b_1=b_2$. Therefore $\psi\times\phi$ is injective. \\ \\
+            Surjectivity: Let $(x,y)\in X\times Y$ where $x\in X$ and $y\in Y$. So $\exists a\in A$ such that $\psi(a)=x$ and $\exists b\in B$ such that $\phi(b)=y$. So $\psi\times\phi((x,y))=(a,b)$, so $\psi\times\phi$ is bijective. Therefore $A\times B\approx X\times Y$.
+          \end{proof}
+          
+		
+        \item ($\star\star$) It's a fact of arithmetic that for any natural numbers $b,m,n$, $b^{m+n}=b^mb^n$. State, and prove, the set equivalence which reduces to this fact if the three sets involved happen to be finite.
+          \begin{proof}
+            
+          \end{proof}
+          
+		
+		\item ($\star\star$) It's a fact of arithmetic that for any natural numbers $b,m,n$, $b^{mn}=(b^m)^n$. State, and prove, the set equivalence which reduces to this fact if the three sets involved happen to be finite.
+
+	
+		\item Let $A$ be an infinite set and $R$ an equivalence relation on $A$ with the property that each equivalence class $[a]_R$ is finite. Show that $A_{/R}$ is infinite.
+                  \begin{claim}
+                    If $A$ is an infinite set and $R$ an equivalence relation on $A$ with the property that each equivalence class $[a]_R$ is finite, then $A_{/R}$ is finite.
+                  \end{claim}
+                  \begin{proof}
+                    Assume $A_{/R}$ is finite. So $\bigcup_{x\in A_{/R}}x=A$. Since $\bigcup_{x\in A_{/R}}x$ is finite (Proof 9 Problem set 10) and $A$ is not. So by contradiction, $A_{/R}$ cannot be finite, and therefore must be infinite.
+                  \end{proof}
+                  		
+		\item Show that the union of any collection of finitely many denumerable sets is denumerable; that is, for any $n\in\mathbb{N}$, if $A_1,\ldots,A_n$ are each denumerable, then $\displaystyle\bigcup_{k=1}^nA_k$ is denumerable. ({\em Hint}. $n$ is a natural number.)
+                  \begin{claim}
+                    The union of any collection of finitely many denumerable sets is denumerable; that is, for any $n\in\mathbb{N}$, if $A_1,\ldots,A_n$ are each denumerable, then $\displaystyle\bigcup_{k=1}^nA_k$ is denumerable.
+                  \end{claim}
+                  \begin{proof}
+                    Base case(n=1): $\displaystyle\bigcup_{k=1}^nA_k=A_1$ (denumerable by definition) \\ \\
+                    Inductive Hypothesis($r=n$): $\displaystyle\bigcup_{k=1}^rA_k$ is denumerable.\\ \\
+                    Inductive Step:
+                    \begin{align*}
+                      &\displaystyle\bigcup_{k=1}^{r+1}A_k
+                        &\displaystyle\bigcup_{k=1}^rA_k\cup A_r
+                    \end{align*}
+                    So $\displaystyle\bigcup_{k=1}^rA_k\approx \mathbb{N}$ (inductive hypothesis). Since adding a denumerable number keeps a set denumerable, $\displaystyle\bigcup_{k=1}^rA_k\cup A_r$ is denumerable. By PMI, $\displaystyle\bigcup_{k=1}^nA_k$ is denumerable.
+                  \end{proof}
+                  
+                  
+		
+		\item Let $A$ be a countable set and $R$ an equivalence relation on $A$. Show that $A_{/R}$ is countable.
+                  \begin{claim}
+                    $A_{/R}$ is countable.
+                  \end{claim}
+                  \begin{proof}
+                    Assume $A_{/R}$ is not countable and $A$ is countable. So $\bigcup_{a\in A}[a]_R=A$. However we earlier established $A$ is countable, and $\bigcup_{a\in A}[a]_R$ isn't, this is a contradiction and so $A_{/R}$ is countable.
+                    \end{proof}
+                    
+                  
+		
+		\item Show that the set of all lines in the plane with rational slope and rational intercept is denumerable. ({\em Hint.} Write each line in slope-intercept form.)
+		
+		\item ($\star$) No powerset is denumerable.
+                  \begin{claim}
+                    No powerset is denumerable.
+                  \end{claim}
+                  \begin{proof}
+                    Let $A$ be a set.\\
+                    Case $A$ is finite: Then $card(2^A)=2^{card(A)}$. Since this is finite, $2^A$ is not denumerable.\\ \\
+                    Case $A$ is denumerable: Assume $2^A$ is denumerable. So $2^A=A_1,A_2 ,\dotsb$ for infinite sets. Let $B=b_1,b_2,...$ be a subset of $A$. Consider $A_n$ term. Change the nth element  to $k$ in $A_n$ and define $b_n=k$. Since $b_n\notin 2^A$ (since it differs by definition from every element in $2^A$), this is a contradiction, as by definition $b_n\in 2^A$. So $2^A$ isn't denumerable in this case.  \\ \\
+                    Case $A$ is uncountable: Since $2^A$ is not smaller than $A$, $2^A$ is not denumerable.\\
+                    So no powerset is denumerable.
+                  \end{proof}
+                  
+                  
+b                  
+		
+		\item ($\star\star$) Let $S\subseteq \mathbb{R}$ be a set with the property: given any $a,b\in S$ with $a<b$, there is some $c\in S$ with $a<c<b$. Assume $S$ has at least two elements.
+			\begin{enumerate}
+                        \item Show that $S$ is infinite.
+                          \begin{claim}
+                            $S$ is infinite.
+                          \end{claim}
+                          \begin{proof}
+                            Assume $S$ is finite. Then $S=s_1,...s_n$ where $n\in \mathbb{N}$ and $s_1<s_2<...<s_n$. Consider $c=\frac{s_1+s_2}{2}$.Since $s_1,s_2\in S$ and $s_1<c<s_2$. So $c\in S$. However we claimed to have a complete list, and since there were no elements between $s_1$ and $s_2$, this is a contradiction. So $S$ is infinite.
+                          \end{proof}
+
+                          
+                            
+                          
+                        \item Show that between any two distinct elements of $S$, there are infinitely many elements of $S$.
+                          \begin{claim}
+                            Between any two distinct elements of $S$, there are infinitely many elements of $S$.
+                          \end{claim}
+                          \begin{proof}
+                            Let $a,b\in A$. Consider the set $C$ where $a,b\in C$ where $C=a,c_2...b$ and $a<c_2<...<b$. So $C$ is infinite (previous proof). Since all elements of $C$ are $<a$ and $>b$, there exists an infinite amount of elements between any two distinct points in $A$.
+                            \end{proof}
+                          
+                          
+			\end{enumerate}
+	
+	\end{enumerate}		
+		
+	\end{description}
+
+
+
+\end{document}
+
