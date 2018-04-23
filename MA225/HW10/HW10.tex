@@ -40,7 +40,7 @@
     The composition of surjections is a surjection.
   \end{claim}
   \begin{proof}
-    Let $\phi: A\rightarrow B$ and $\rho: B\rightarrow C$ be surjective. Since $\phi$ is surjective, $\phi$ maps to all $b\in B$. Now consider $\rho(\phi)$. Since all values of $b$ are mapped to a value of $C$, $\phi(\rho)$ is surjective.
+    Let $\phi: A\rightarrow B$ and $\rho: B\rightarrow C$ be surjective. Let $c\in C$.  So $\exists b\in B: \rho(b)=c$ (surjectivity). Since $b\in B, \exists a\in A: \phi(a)=b$ (Surjectivity). So  if $c\in C$, then $\exists (a,b)\in \phi,(b,c)\in\rho$. Therefore given $(b,c)\circ(a,b)=(a,c)$. Since arbitrary elements were used, the composition of surjections is a surjection.
   \end{proof}
   
 \item The composition of bijections is a bijection.
